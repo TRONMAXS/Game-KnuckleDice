@@ -6,49 +6,24 @@ using UnityEngine.UI;
 
 public class GameBones : MonoBehaviour
 {
-    public static GameObject MasivBonesDiceRandom;
+    int MasivRandomBonesPlayer;
+    int MasivRandomBonesPlayerOFF;
     public GameObject Button;
-    public GameObject[] PanelStart;
-    public GameObject[] GameRedLine;
-    public GameObject[] GameBlueLine;
-
-    public static GameObject Dice0;
-    public static GameObject Dice1;
-    public static GameObject Dice2;
-    public static GameObject Dice3;
-    public static GameObject Dice4;
-    public GameObject Dice5;
-
-    GameObject[,] masivPanelRed = new GameObject[3, 3];
-    GameObject[,] masivPanelBlue = new GameObject[3, 3];
 
     public static int PanelStartRandom;
-    public int setoffActiveX;
-    public int setoffAcliveY;
-    public static int RandomMasivX;
-    public static int RandomMasivY;
+
+    public GameObject[] PanelStart;
+    public GameObject[] RandomBonesPlayer;
 
 
-    GameObject[,] masivBones = new GameObject[3, 3]
-    {
-      {Dice0, Dice3, Dice0},
-      {Dice1, Dice4, Dice1},
-      {Dice2, Dice5, Dice2}
-    };
+
+
 
     private void Start()
     {
-        setoffActiveX = 0;
-        setoffAcliveY = 0;
-
         StartCoroutine(CoroutineSample());
+    }
 
-        masivBones[2,1].SetActive(true);
-    }
-    private void Update()
-    {
-        
-    }
 
     private IEnumerator CoroutineSample()
     {
@@ -67,25 +42,16 @@ public class GameBones : MonoBehaviour
 
     public void RandomButtonBones()
     {
-            RandomMasivX = Random.Range(0, 3);
-            RandomMasivY = Random.Range(0, 3);
+        RandomBonesPlayer[MasivRandomBonesPlayerOFF].SetActive(false);
 
-            Debug.Log(RandomMasivX + "-RandomMasivX");
-            Debug.Log(RandomMasivY + "-RandomMasivY");
+        MasivRandomBonesPlayer = Random.Range(0, 6);
 
-            //masivBones[setoffActiveX, setoffAcliveY].SetActive(false);
-            masivBones[RandomMasivX, RandomMasivY].SetActive(true);
+        MasivRandomBonesPlayerOFF = MasivRandomBonesPlayer;
 
-            masivPanelRed[RandomMasivX, RandomMasivY] = masivBones[RandomMasivX, RandomMasivY];
-            masivPanelBlue[RandomMasivX, RandomMasivY] = masivBones[RandomMasivX, RandomMasivY];
-
-            setoffActiveX = RandomMasivX;
-            setoffAcliveY = RandomMasivY;
+        RandomBonesPlayer[MasivRandomBonesPlayer].SetActive(true);
 
 
+        Debug.Log(MasivRandomBonesPlayer + "-MasivRandomBonesPlayer");
 
-            Debug.Log(masivBones + "-masivBONES");
-            Debug.Log(masivPanelRed + "-masivPanelRed");
-            Debug.Log(masivPanelBlue + "-masivPanelBlue");
     }
 }
