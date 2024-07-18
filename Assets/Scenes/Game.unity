@@ -5187,8 +5187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1124031141}
-  - component: {fileID: 1124031143}
-  - component: {fileID: 1124031142}
+  - component: {fileID: 1124031144}
   m_Layer: 0
   m_Name: PlayButtonRedBlue
   m_TagString: Untagged
@@ -5211,19 +5210,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1124031142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1124031140}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b4951602d774f247a132378b52732ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1124031143
+--- !u!114 &1124031144
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5232,7 +5219,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1124031140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1119565123d7a5841bf15e7c04f32559, type: 3}
+  m_Script: {fileID: 11500000, guid: c31f9e0ebbfe285408e8a8b7d15cdbd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ButtonRed1: {fileID: 1311184663}
@@ -5253,29 +5240,8 @@ MonoBehaviour:
   ButtonBlue7: {fileID: 1635695056}
   ButtonBlue8: {fileID: 592829292}
   ButtonBlue9: {fileID: 692133578}
-  BonesRed:
-  - {fileID: 9210855777731689666, guid: d1875f621d4aa5f43ba3257c494aacea, type: 3}
-  - {fileID: 9210855777731689666, guid: d1875f621d4aa5f43ba3257c494aacea, type: 3}
-  - {fileID: 9210855777731689666, guid: d1875f621d4aa5f43ba3257c494aacea, type: 3}
-  - {fileID: 9210855777731689666, guid: d1875f621d4aa5f43ba3257c494aacea, type: 3}
-  - {fileID: 9210855777731689666, guid: d1875f621d4aa5f43ba3257c494aacea, type: 3}
-  - {fileID: 9210855777731689666, guid: d1875f621d4aa5f43ba3257c494aacea, type: 3}
-  BonesBlue:
-  - {fileID: 8611441520705628849, guid: dc7cc3cf327d17f489ef509bf66807ea, type: 3}
-  - {fileID: 8611441520705628849, guid: dc7cc3cf327d17f489ef509bf66807ea, type: 3}
-  - {fileID: 8611441520705628849, guid: dc7cc3cf327d17f489ef509bf66807ea, type: 3}
-  - {fileID: 8611441520705628849, guid: dc7cc3cf327d17f489ef509bf66807ea, type: 3}
-  - {fileID: 8611441520705628849, guid: dc7cc3cf327d17f489ef509bf66807ea, type: 3}
-  - {fileID: 8611441520705628849, guid: dc7cc3cf327d17f489ef509bf66807ea, type: 3}
-  quaternionBones:
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
-  vector2BonesRed: []
-  vector2BonesBlue: []
+  BonesRed: {fileID: 9210855777731689666, guid: d1875f621d4aa5f43ba3257c494aacea, type: 3}
+  BonesBlue: {fileID: 8611441520705628849, guid: dc7cc3cf327d17f489ef509bf66807ea, type: 3}
   MasivRandomBones: 0
   PanelPlayer: 0
 --- !u!1 &1136060095

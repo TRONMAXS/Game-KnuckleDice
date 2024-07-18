@@ -24,25 +24,16 @@ public class GamePanelButtonRed : MonoBehaviour
     public Button ButtonBlue8;
     public Button ButtonBlue9;
 
-    public GameObject[] BonesRed;
-    public GameObject[] BonesBlue;
+    public GameObject BonesRed;
+    public GameObject BonesBlue;
 
-    public Quaternion[] quaternionBones = new Quaternion[6];
+    private Quaternion[] quaternionBones = new Quaternion[6];
 
-    public Vector2[] vector2BonesRed;
-    public Vector2[] vector2BonesBlue;
+    private Vector2[] vector2BonesRed;
+    private Vector2[] vector2BonesBlue;
 
-    public GameObject[,] InstantiateBonesRED;
-    public GameObject[,] InstantiateBonesBLUE;
-
-    /*    public float[,] positionBonesRed = { { -179, 838, 0 }, { 3, 4, 5 }, { 3, 4, 5 },
-                                             { 0, 1, 2 }, { 3, 4, 5 }, { 3, 4, 5 },
-                                             { 0, 1, 2 }, { 3, 4, 5 }, { 3, 4, 5 }};
-
-        public int[,] positionBonesBlue = { { 0, 1, 2 }, { 3, 4, 5 }, { 3, 4, 5 },
-                                            { 0, 1, 2 }, { 3, 4, 5 }, { 3, 4, 5 },
-                                            { 0, 1, 2 }, { 3, 4, 5 }, { 3, 4, 5 }};*/
-
+    public int[,] InstantiateBonesRED = new int[3, 3];
+    public int[,] InstantiateBonesBLUE = new int[3, 3];
 
     public int MasivRandomBones;
     public int PanelPlayer;
@@ -71,7 +62,8 @@ public class GamePanelButtonRed : MonoBehaviour
         ButtonBlue8.onClick.AddListener(OnButtonBlue7Clicked);
         ButtonBlue9.onClick.AddListener(OnButtonBlue8Clicked);
 
-        PanelPlayer = GameBones.PanelStartRandom;
+
+
 
         quaternionBones[0] = Quaternion.Euler(-180f, 0f, 0f);
         quaternionBones[1] = Quaternion.Euler(-90f, 0f, 0f);
@@ -104,12 +96,18 @@ public class GamePanelButtonRed : MonoBehaviour
         vector2BonesBlue[7] = new Vector2(179, 314);
         vector2BonesBlue[8] = new Vector2(179, 468);
 
-        Debug.Log(vector2BonesRed[1]);
+        StartCoroutine(PanelStart());
     }
 
     private void Update()
     {
         MasivRandomBones = GameBones.MasivRandomBonesPlayer;
+    }
+
+    private IEnumerator PanelStart()
+    {
+        yield return new WaitForSeconds(4);
+        PanelPlayer = GameBones.PanelStartRandom;
     }
 
     private IEnumerator ResetBones()
@@ -119,122 +117,118 @@ public class GamePanelButtonRed : MonoBehaviour
         ResetRandomBones = 0;
     }
 
-
-    void OnButtonRed0Clicked()
+    private void OnButtonRed0Clicked()
     {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0)
+        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[0, 0] <= 0)
         {
             PanelPlayer = 1;
+            InstantiateBonesRED[0, 0] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
-            Debug.Log(BonesRed[MasivRandomBones]);
-            Debug.Log(new Vector2(-179, 830));
-            Debug.Log(quaternionBones[MasivRandomBones]);
-
-            GameObject bonesRed = Instantiate(BonesRed[MasivRandomBones]) as GameObject;
+            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[0], quaternionBones[MasivRandomBones]);
         }
     }
 
-    void OnButtonRed1Clicked()
+    private void OnButtonRed1Clicked()
     {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0)
+        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[1, 0] <= 0)
         {
             PanelPlayer = 1;
+            InstantiateBonesRED[1, 0] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
-
-            GameObject bonesRed = Instantiate(BonesRed[MasivRandomBones]) as GameObject;
+            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[1], quaternionBones[MasivRandomBones]);
         }
 
     }
 
-    void OnButtonRed2Clicked()
+    private void OnButtonRed2Clicked()
     {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0)
+        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[2, 0] <= 0)
         {
             PanelPlayer = 1;
+            InstantiateBonesRED[2, 0] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
-
-            GameObject bonesRed = Instantiate(BonesRed[MasivRandomBones]) as GameObject;
+            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[2], quaternionBones[MasivRandomBones]);
         }
 
     }
 
-    void OnButtonRed3Clicked()
+    private void OnButtonRed3Clicked()
     {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0)
+        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[0, 1] <= 0)
         {
 
             PanelPlayer = 1;
+            InstantiateBonesRED[0, 1] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
-
-            GameObject bonesRed = Instantiate(BonesRed[MasivRandomBones]) as GameObject;
+            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[3], quaternionBones[MasivRandomBones]);
         }
     }
 
-    void OnButtonRed4Clicked()
+    private void OnButtonRed4Clicked()
     {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0)
+        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[1, 1] <= 0)
         {
 
             PanelPlayer = 1;
+            InstantiateBonesRED[1, 1] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
-
-            GameObject bonesRed = Instantiate(BonesRed[MasivRandomBones]) as GameObject;
+            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[4], quaternionBones[MasivRandomBones]);
         }
     }
 
-    void OnButtonRed5Clicked()
+    private void OnButtonRed5Clicked()
     {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0)
+        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[2, 1] <= 0)
         {
 
             PanelPlayer = 1;
+            InstantiateBonesRED[2, 1] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
-
-            GameObject bonesRed = Instantiate(BonesRed[MasivRandomBones]) as GameObject;
+            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[5], quaternionBones[MasivRandomBones]);
         }
     }
 
-    void OnButtonRed6Clicked()
+    private void OnButtonRed6Clicked()
     {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0)
+        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[0, 2] <= 0)
         {
 
             PanelPlayer = 1;
+            InstantiateBonesRED[0, 2] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
-
-            GameObject bonesRed = Instantiate(BonesRed[MasivRandomBones]) as GameObject;
+            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[6], quaternionBones[MasivRandomBones]);
         }
     }
 
-    void OnButtonRed7Clicked()
+    private void OnButtonRed7Clicked()
     {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0)
+        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[1, 2] <= 0)
         {
 
             PanelPlayer = 1;
+            InstantiateBonesRED[1, 2] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
-
-            GameObject bonesRed = Instantiate(BonesRed[MasivRandomBones]) as GameObject;
+            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[7], quaternionBones[MasivRandomBones]);
         }
     }
 
-    void OnButtonRed8Clicked()
+    private void OnButtonRed8Clicked()
     {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0)
+        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[2, 2] <= 0)
         {
 
             PanelPlayer = 1;
+            InstantiateBonesRED[2, 2] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
-
-            GameObject bonesRed = Instantiate(BonesRed[MasivRandomBones]) as GameObject;
+            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[8], quaternionBones[MasivRandomBones]);
         }
     }
@@ -244,118 +238,117 @@ public class GamePanelButtonRed : MonoBehaviour
     /// Blue
     /// </summary>
 
-    void OnButtonBlue0Clicked()
+    private void OnButtonBlue0Clicked()
     {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0)
+        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[0, 0] <= 0)
         {
-            Debug.Log("второй игрок");
             PanelPlayer = 0;
+            InstantiateBonesBLUE[0, 0] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
-
-            GameObject bonesBlue = Instantiate(BonesBlue[MasivRandomBones]) as GameObject;
+            GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
             bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[0], quaternionBones[MasivRandomBones]);
         }
     }
 
-    void OnButtonBlue1Clicked()
+    private void OnButtonBlue1Clicked()
     {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0)
+        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[1, 0] <= 0)
         {
-            Debug.Log("второй игрок");
+            
             PanelPlayer = 0;
             StartCoroutine(ResetBones());
-
-            GameObject bonesBlue = Instantiate(BonesBlue[MasivRandomBones]) as GameObject;
+            InstantiateBonesBLUE[1, 0] = MasivRandomBones + 1;
+            GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
             bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[1], quaternionBones[MasivRandomBones]);
         }
     }
-    void OnButtonBlue2Clicked()
+    private void OnButtonBlue2Clicked()
     {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0)
+        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[2, 0] <= 0)
         {
-            Debug.Log("второй игрок");
+            
             PanelPlayer = 0;
             StartCoroutine(ResetBones());
-
-            GameObject bonesBlue = Instantiate(BonesBlue[MasivRandomBones]) as GameObject;
+            InstantiateBonesBLUE[2, 0] = MasivRandomBones + 1;
+            GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
             bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[2], quaternionBones[MasivRandomBones]);
         }
     }
 
-    void OnButtonBlue3Clicked()
+    private void OnButtonBlue3Clicked()
     {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0)
+        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[0, 1] <= 0)
         {
-            Debug.Log("второй игрок");
+            
             PanelPlayer = 0;
+            InstantiateBonesBLUE[0, 1] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
-
-            GameObject bonesBlue = Instantiate(BonesBlue[MasivRandomBones]) as GameObject;
+            GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
             bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[3], quaternionBones[MasivRandomBones]);
         }
     }
 
-    void OnButtonBlue4Clicked()
+    private void OnButtonBlue4Clicked()
     {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0)
+        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[1, 1] <= 0)
         {
-            Debug.Log("второй игрок");
-            PanelPlayer = 0;
-            StartCoroutine(ResetBones());
             
-            GameObject bonesBlue = Instantiate(BonesBlue[MasivRandomBones]) as GameObject;
+            PanelPlayer = 0;
+            InstantiateBonesBLUE[1, 1] = MasivRandomBones + 1;
+            StartCoroutine(ResetBones());
+            GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
             bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[4], quaternionBones[MasivRandomBones]);
         }
     }
 
-    void OnButtonBlue5Clicked()
+    private void OnButtonBlue5Clicked()
     {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0)
+        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[2, 1] <= 0)
         {
-            Debug.Log("второй игрок");
+            
             PanelPlayer = 0;
+            InstantiateBonesBLUE[2, 1] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
-
-            GameObject bonesBlue = Instantiate(BonesBlue[MasivRandomBones]) as GameObject;
+            GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
             bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[5], quaternionBones[MasivRandomBones]);
         }
     }
 
-    void OnButtonBlue6Clicked()
+    private void OnButtonBlue6Clicked()
     {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0)
+        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[0, 2] <= 0)
         {
-            Debug.Log("второй игрок");
+            
             PanelPlayer = 0;
+            InstantiateBonesBLUE[0, 2] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
-
-            GameObject bonesBlue = Instantiate(BonesBlue[MasivRandomBones]) as GameObject;
+            GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
             bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[6], quaternionBones[MasivRandomBones]);
         }
     }
 
-    void OnButtonBlue7Clicked()
+    private void OnButtonBlue7Clicked()
     {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0)
+        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[1, 2] <= 0)
         {
-            Debug.Log("второй игрок");
+            
             PanelPlayer = 0;
+            InstantiateBonesBLUE[1, 2] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
-
-            GameObject bonesBlue = Instantiate(BonesBlue[MasivRandomBones]) as GameObject;
+            GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
             bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[7], quaternionBones[MasivRandomBones]);
         }
     }
 
-    void OnButtonBlue8Clicked()
+    private void OnButtonBlue8Clicked()
     {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0)
+        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[2, 2] <= 0)
         {
-            Debug.Log("второй игрок");
+            
             PanelPlayer = 0;
+            InstantiateBonesBLUE[2, 2] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
-
-            GameObject bonesBlue = Instantiate(BonesBlue[MasivRandomBones]) as GameObject;
+            GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
             bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[8], quaternionBones[MasivRandomBones]);
         }
     }
