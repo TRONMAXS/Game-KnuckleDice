@@ -856,7 +856,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -323, y: -163}
+  m_AnchoredPosition: {x: -300, y: -165}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &187176388
@@ -1122,7 +1122,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: 129}
+  m_AnchoredPosition: {x: 0, y: 130}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &295394495
@@ -2310,7 +2310,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 305, y: 131}
+  m_AnchoredPosition: {x: 300, y: 130}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &534437804
@@ -3391,7 +3391,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4, y: -166.99995}
+  m_AnchoredPosition: {x: 0, y: -165}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &693849705
@@ -4827,7 +4827,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -312, y: 131}
+  m_AnchoredPosition: {x: -300, y: 130}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1018365330
@@ -5244,6 +5244,7 @@ MonoBehaviour:
   BonesBlue: {fileID: 8611441520705628849, guid: dc7cc3cf327d17f489ef509bf66807ea, type: 3}
   MasivRandomBones: 0
   PanelPlayer: 0
+  ScorePlayer: {fileID: 1300118940}
 --- !u!1 &1136060095
 GameObject:
   m_ObjectHideFlags: 0
@@ -5723,7 +5724,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 297, y: -165.99995}
+  m_AnchoredPosition: {x: 300, y: -165}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1258974304
@@ -6216,6 +6217,63 @@ RectTransform:
   m_AnchoredPosition: {x: -4, y: -24}
   m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1300118940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1300118942}
+  - component: {fileID: 1300118941}
+  m_Layer: 0
+  m_Name: ScorePlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1300118941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300118940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbae4ca651b79044c8ae417f1fade5be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textScoreR1: {fileID: 1018365330}
+  textScoreR2: {fileID: 295394495}
+  textScoreR3: {fileID: 534437804}
+  textScoreB1: {fileID: 187176388}
+  textScoreB2: {fileID: 693849705}
+  textScoreB3: {fileID: 1258974304}
+  REDtext1: 0
+  REDtext2: 0
+  REDtext3: 0
+  BLUEtext1: 0
+  BLUEtext2: 0
+  BLUEtext3: 0
+  InstantiateMSRED: {fileID: 1124031140}
+--- !u!4 &1300118942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300118940}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1311184661
 GameObject:
   m_ObjectHideFlags: 0
@@ -9322,8 +9380,9 @@ SceneRoots:
   - {fileID: 342519775}
   - {fileID: 1050374633}
   - {fileID: 613443559}
-  - {fileID: 1124031141}
   - {fileID: 1900324582}
   - {fileID: 656065377}
   - {fileID: 895589763}
   - {fileID: 747593303}
+  - {fileID: 1124031141}
+  - {fileID: 1300118942}

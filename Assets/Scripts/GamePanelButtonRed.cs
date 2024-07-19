@@ -33,15 +33,20 @@ public class GamePanelButtonRed : MonoBehaviour
     private Vector2[] vector2BonesBlue;
 
     public int[,] InstantiateBonesRED = new int[3, 3];
-    public int[,] InstantiateBonesBLUE = new int[3, 3];
+    public static int[,] InstantiateBonesBLUE = new int[3, 3];
 
     public int MasivRandomBones;
     public int PanelPlayer;
 
     public static int ResetRandomBones = 0;
 
+    public GameObject ScorePlayer;
+    private ScorePlayer _actionTarget;
+
     private void Start()
     {
+        _actionTarget = ScorePlayer.GetComponent<ScorePlayer>();
+
         ButtonRed1.onClick.AddListener(OnButtonRed0Clicked);
         ButtonRed2.onClick.AddListener(OnButtonRed1Clicked);
         ButtonRed3.onClick.AddListener(OnButtonRed2Clicked);
@@ -61,8 +66,6 @@ public class GamePanelButtonRed : MonoBehaviour
         ButtonBlue7.onClick.AddListener(OnButtonBlue6Clicked);
         ButtonBlue8.onClick.AddListener(OnButtonBlue7Clicked);
         ButtonBlue9.onClick.AddListener(OnButtonBlue8Clicked);
-
-
 
 
         quaternionBones[0] = Quaternion.Euler(-180f, 0f, 0f);
@@ -123,9 +126,11 @@ public class GamePanelButtonRed : MonoBehaviour
         {
             PanelPlayer = 1;
             InstantiateBonesRED[0, 0] = MasivRandomBones + 1;
+            Debug.Log(InstantiateBonesRED[0, 0] + "InstantiateBonesRED[0, 0] = MasivRandomBones + 1");
             StartCoroutine(ResetBones());
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[0], quaternionBones[MasivRandomBones]);
+            _actionTarget.Score();
         }
     }
 
@@ -138,6 +143,8 @@ public class GamePanelButtonRed : MonoBehaviour
             StartCoroutine(ResetBones());
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[1], quaternionBones[MasivRandomBones]);
+            Debug.Log(InstantiateBonesRED[0, 0] + InstantiateBonesRED[1, 0] + InstantiateBonesRED[2, 0]);
+           _actionTarget.Score();
         }
 
     }
@@ -151,6 +158,7 @@ public class GamePanelButtonRed : MonoBehaviour
             StartCoroutine(ResetBones());
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[2], quaternionBones[MasivRandomBones]);
+           _actionTarget.Score();
         }
 
     }
@@ -159,7 +167,7 @@ public class GamePanelButtonRed : MonoBehaviour
     {
         if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[0, 1] <= 0)
         {
-
+           // _actionTarget.Score();
             PanelPlayer = 1;
             InstantiateBonesRED[0, 1] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
@@ -172,12 +180,13 @@ public class GamePanelButtonRed : MonoBehaviour
     {
         if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[1, 1] <= 0)
         {
-
+           // _actionTarget.Score();
             PanelPlayer = 1;
             InstantiateBonesRED[1, 1] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[4], quaternionBones[MasivRandomBones]);
+            
         }
     }
 
@@ -185,7 +194,7 @@ public class GamePanelButtonRed : MonoBehaviour
     {
         if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[2, 1] <= 0)
         {
-
+           // _actionTarget.Score();
             PanelPlayer = 1;
             InstantiateBonesRED[2, 1] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
@@ -198,7 +207,7 @@ public class GamePanelButtonRed : MonoBehaviour
     {
         if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[0, 2] <= 0)
         {
-
+           // _actionTarget.Score();
             PanelPlayer = 1;
             InstantiateBonesRED[0, 2] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
@@ -211,7 +220,7 @@ public class GamePanelButtonRed : MonoBehaviour
     {
         if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[1, 2] <= 0)
         {
-
+           // _actionTarget.Score();
             PanelPlayer = 1;
             InstantiateBonesRED[1, 2] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
@@ -224,7 +233,7 @@ public class GamePanelButtonRed : MonoBehaviour
     {
         if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[2, 2] <= 0)
         {
-
+           // _actionTarget.Score();
             PanelPlayer = 1;
             InstantiateBonesRED[2, 2] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
@@ -242,6 +251,7 @@ public class GamePanelButtonRed : MonoBehaviour
     {
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[0, 0] <= 0)
         {
+           // _actionTarget.Score();
             PanelPlayer = 0;
             InstantiateBonesBLUE[0, 0] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
@@ -254,7 +264,7 @@ public class GamePanelButtonRed : MonoBehaviour
     {
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[1, 0] <= 0)
         {
-            
+           // _actionTarget.Score();
             PanelPlayer = 0;
             StartCoroutine(ResetBones());
             InstantiateBonesBLUE[1, 0] = MasivRandomBones + 1;
@@ -266,7 +276,7 @@ public class GamePanelButtonRed : MonoBehaviour
     {
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[2, 0] <= 0)
         {
-            
+           // _actionTarget.Score();
             PanelPlayer = 0;
             StartCoroutine(ResetBones());
             InstantiateBonesBLUE[2, 0] = MasivRandomBones + 1;
@@ -279,7 +289,7 @@ public class GamePanelButtonRed : MonoBehaviour
     {
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[0, 1] <= 0)
         {
-            
+           // _actionTarget.Score();
             PanelPlayer = 0;
             InstantiateBonesBLUE[0, 1] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
@@ -292,7 +302,7 @@ public class GamePanelButtonRed : MonoBehaviour
     {
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[1, 1] <= 0)
         {
-            
+           // _actionTarget.Score();
             PanelPlayer = 0;
             InstantiateBonesBLUE[1, 1] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
@@ -305,7 +315,7 @@ public class GamePanelButtonRed : MonoBehaviour
     {
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[2, 1] <= 0)
         {
-            
+           // _actionTarget.Score();
             PanelPlayer = 0;
             InstantiateBonesBLUE[2, 1] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
@@ -318,7 +328,7 @@ public class GamePanelButtonRed : MonoBehaviour
     {
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[0, 2] <= 0)
         {
-            
+           // _actionTarget.Score();
             PanelPlayer = 0;
             InstantiateBonesBLUE[0, 2] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
@@ -331,7 +341,7 @@ public class GamePanelButtonRed : MonoBehaviour
     {
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[1, 2] <= 0)
         {
-            
+           // _actionTarget.Score();
             PanelPlayer = 0;
             InstantiateBonesBLUE[1, 2] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
@@ -344,7 +354,7 @@ public class GamePanelButtonRed : MonoBehaviour
     {
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[2, 2] <= 0)
         {
-            
+           // _actionTarget.Score();
             PanelPlayer = 0;
             InstantiateBonesBLUE[2, 2] = MasivRandomBones + 1;
             StartCoroutine(ResetBones());
