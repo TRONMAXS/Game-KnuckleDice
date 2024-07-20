@@ -1,7 +1,5 @@
 using UnityEngine;
 
-
-
 [SelectionBase]
 
 public class Background : MonoBehaviour
@@ -14,9 +12,6 @@ public class Background : MonoBehaviour
     {
         //direction = Random.RandomRange(0, 2);
         SpawnerDirection = Spawner.direction;
-
-        Debug.Log("SpawnerDirection;");
-        Debug.Log(SpawnerDirection);
 
 
         if (SpawnerDirection == 0)

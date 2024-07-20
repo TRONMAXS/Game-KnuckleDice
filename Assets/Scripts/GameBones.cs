@@ -9,7 +9,7 @@ public class GameBones : MonoBehaviour
     public GameObject Button;
 
     private int Reset = 0;
-    private int randomON = 0;
+    private bool randomON = true;
 
     public static int PanelStartRandom;
 
@@ -38,14 +38,14 @@ public class GameBones : MonoBehaviour
         PanelStart[PanelStartRandom].SetActive(true);
 
         yield return new WaitForSeconds(3);
-        randomON = 1;
+        randomON = true;
         PanelStart[0].SetActive(false);
         PanelStart[1].SetActive(false);
     }
 
     private void RandomButtonBones()
     {
-        if (randomON == 1)
+        if (randomON == true)
         {
             RandomBonesPlayer[MasivRandomBonesPlayerOFF].SetActive(false);
 
@@ -54,9 +54,8 @@ public class GameBones : MonoBehaviour
             MasivRandomBonesPlayerOFF = MasivRandomBonesPlayer;
 
             RandomBonesPlayer[MasivRandomBonesPlayer].SetActive(true);
-
+            randomON = false;
             Debug.Log(MasivRandomBonesPlayer + "-MasivRandomBonesPlayer");
-            randomON = 0;
             Button.SetActive(false);
         }
     }
@@ -64,9 +63,10 @@ public class GameBones : MonoBehaviour
     private IEnumerator ResetBones()
     {
         RandomBonesPlayer[MasivRandomBonesPlayer].SetActive(false);
-        yield return new WaitForSeconds(1); 
+        yield return new WaitForSeconds(1);
+        //yield return new WaitUntil(() => );
         MasivRandomBonesPlayer = -1;
-        randomON = 1;
+        randomON = true;
         Button.SetActive(true);
     }
 }

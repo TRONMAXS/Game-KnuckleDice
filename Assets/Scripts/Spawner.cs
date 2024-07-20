@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Spawner : MonoBehaviour
 {
-
     public GameObject BonesRB;
 
     public float timeStart;
@@ -17,17 +13,12 @@ public class Spawner : MonoBehaviour
 
     Vector2 vectorY;
 
-
     private void Start()
     {
        randMax = timeMax;
        randMax -= 4;
-
-        direction = Random.Range(0, 2);
-        Debug.Log("direction");
-        Debug.Log(direction);
+       direction = Random.Range(0, 2);
     }
-
 
     private void Update()
     {
@@ -39,14 +30,10 @@ public class Spawner : MonoBehaviour
             float randY = Random.Range(120, 1000);
             vectorY = new Vector2(2000, randY);
 
-
             if (timeStart >= timeMax)
             {
-
                 Instantiate(BonesRB, vectorY, Quaternion.identity);
-
                 timeStart = rand;
-
             }
         }
 
@@ -55,14 +42,10 @@ public class Spawner : MonoBehaviour
             float randY = Random.Range(120, 1000);
             vectorY = new Vector2(-2000, randY);
 
-
             if (timeStart >= timeMax)
             {
-
                 Instantiate(BonesRB, vectorY, Quaternion.identity);
-
                 timeStart = rand;
-
             }
         }
     }
