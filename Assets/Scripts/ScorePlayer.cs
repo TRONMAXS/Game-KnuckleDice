@@ -108,27 +108,27 @@ public  class ScorePlayer : MonoBehaviour
                 if (arrayRED[0, 0] == arrayRED[1, 0] & arrayRED[0, 0] == arrayRED[2, 0])
                 {
                     REDtext1 = (arrayRED[0, 0] + arrayRED[1, 0] + arrayRED[2, 0]) * 3;
-                    //Debug.Log("все равны   " + REDtext1);
+                    //все равны
                 }
                 else if (arrayRED[0, 0] == arrayRED[1, 0] & arrayRED[0, 0] != arrayRED[2, 0])
                 {
                     REDtext1 = ((arrayRED[0, 0] + arrayRED[1, 0]) * 2) + arrayRED[2, 0];
-                    //Debug.Log("равны 0 и 1   " + REDtext1);
+                    //("равны 0 и 1
                 }
                 else if (arrayRED[1, 0] == arrayRED[2, 0] & arrayRED[1, 0] != arrayRED[0, 0])
                 {
                     REDtext1 = ((arrayRED[1, 0] + arrayRED[2, 0]) * 2) + arrayRED[0, 0];
-                    //Debug.Log("равны 1 и 2   " + REDtext1);
+                    //равны 1 и 2 
                 }
                 else if (arrayRED[0, 0] == arrayRED[2, 0] & arrayRED[0, 0] != arrayRED[1, 0])
                 {
                     REDtext1 = ((arrayRED[0, 0] + arrayRED[2, 0]) * 2) + arrayRED[1, 0];
-                    //Debug.Log("равны 0 и 2   " + REDtext1);
+                    //равны 0 и 2
                 }
                 else if (arrayRED[0, 0] != arrayRED[1, 0] & arrayRED[0, 0] != arrayRED[2, 0])
                 {
                     REDtext1 = arrayRED[0, 0] + arrayRED[1, 0] + arrayRED[2, 0];
-                    //Debug.Log("все не равны   " + REDtext1);
+                    //все не равны
                 }
                 TextScore("R1");
                 break;            
@@ -139,31 +139,31 @@ public  class ScorePlayer : MonoBehaviour
                 {
                     REDtext2 = (arrayRED[0, 1] + arrayRED[1, 1] + arrayRED[2, 1]) * 3;
                     TextScore("R2");
-                    //Debug.Log("все равны   " + REDtext1);
+                    //все равны
                 }
                 else if (arrayRED[0, 1] == arrayRED[1, 1] & arrayRED[0, 1] != arrayRED[2, 1])
                 {
                     REDtext2 = ((arrayRED[0, 1] + arrayRED[1, 1]) * 2) + arrayRED[2, 1];
                     TextScore("R2");
-                   //Debug.Log("равны 0 и 1   " + REDtext1);
+                   //равны 0 и 1
                 }
                 else if (arrayRED[1, 1] == arrayRED[2, 1] & arrayRED[1, 1] != arrayRED[0, 1])
                 {
                     REDtext2 = ((arrayRED[1, 1] + arrayRED[2, 1]) * 2) + arrayRED[0, 1];
                     TextScore("R2");
-                    //Debug.Log("равны 1 и 2   " + REDtext1);
+                    //равны 1 и 2
                 }
                 else if (arrayRED[0, 1] == arrayRED[2, 1] & arrayRED[0, 1] != arrayRED[1, 1])
                 {
                     REDtext2 = ((arrayRED[0, 1] + arrayRED[2, 1]) * 2) + arrayRED[1, 1];
                     TextScore("R2");
-                    //Debug.Log("равны 0 и 2   " + REDtext1);
+                    //равны 0 и 2
                 }
                 else if (arrayRED[0, 1] != arrayRED[1, 1] & arrayRED[0, 1] != arrayRED[2, 1])
                 {
                     REDtext2 = arrayRED[0, 1] + arrayRED[1, 1] + arrayRED[2, 1];
                     TextScore("R2");
-                    //Debug.Log("все не равны   " + REDtext1);
+                    //все не равны
                 }
                 break;
 
@@ -173,31 +173,31 @@ public  class ScorePlayer : MonoBehaviour
                 {
                     REDtext3 = (arrayRED[0, 2] + arrayRED[1, 2] + arrayRED[2, 2]) * 3;
                     TextScore("R3");
-                    //Debug.Log("все равны   " + REDtext1);
+                    //все равны
                 }
                 else if (arrayRED[0, 2] == arrayRED[1, 2] & arrayRED[0, 2] != arrayRED[2, 2])
                 {
                     REDtext3 = ((arrayRED[0, 2] + arrayRED[1, 2]) * 2) + arrayRED[2, 2];
                     TextScore("R3");
-                    //Debug.Log("равны 0 и 1   " + REDtext1);
+                    //равны 0 и 1
                 }
                 else if (arrayRED[1, 2] == arrayRED[2, 2] & arrayRED[1, 2] != arrayRED[0, 2])
                 {
                     REDtext3 = ((arrayRED[1, 2] + arrayRED[2, 2]) * 2) + arrayRED[0, 2];
                     TextScore("R3");
-                    //Debug.Log("равны 1 и 2   " + REDtext1);
+                    //равны 1 и 2
                 }
                 else if (arrayRED[0, 2] == arrayRED[2, 2] & arrayRED[0, 2] != arrayRED[1, 2])
                 {
                     REDtext3 = ((arrayRED[0, 2] + arrayRED[2, 2]) * 2) + arrayRED[1, 2];
                     TextScore("R3");
-                    //Debug.Log("равны 0 и 2   " + REDtext1);
+                    //равны 0 и 2
                 }
                 else if (arrayRED[0, 2] != arrayRED[1, 2] & arrayRED[0, 2] != arrayRED[2, 2])
                 {
                     REDtext3 = arrayRED[0, 2] + arrayRED[1, 2] + arrayRED[2, 2];
                     TextScore("R3");
-                    //Debug.Log("все не равны   " + REDtext1);
+                    //все не равны
                 }
                 break;
 
@@ -207,31 +207,31 @@ public  class ScorePlayer : MonoBehaviour
                 {
                     BLUEtext1 = (arrayBLUE[0, 0] + arrayBLUE[1, 0] + arrayBLUE[2, 0]) * 3;
                     TextScore("B1");
-                    //Debug.Log("все равны   " + BLUEtext1);
+                    //все равны
                 }
                 else if (arrayBLUE[0, 0] == arrayBLUE[1, 0] & arrayBLUE[0, 0] != arrayBLUE[2, 0])
                 {
                     BLUEtext1 = ((arrayBLUE[0, 0] + arrayBLUE[1, 0]) * 2) + arrayBLUE[2, 0];
                     TextScore("B1");
-                    //Debug.Log("равны 0 и 1   " + BLUEtext1);
+                    //равны 0 и 1
                 }
                 else if (arrayBLUE[1, 0] == arrayBLUE[2, 0] & arrayBLUE[1, 0] != arrayBLUE[0, 0])
                 {
                     BLUEtext1 = ((arrayBLUE[1, 0] + arrayBLUE[2, 0]) * 2) + arrayBLUE[0, 0];
                     TextScore("B1");
-                    //Debug.Log("равны 1 и 2   " + BLUEtext1);
+                    //равны 1 и 2
                 }
                 else if (arrayBLUE[0, 0] == arrayBLUE[2, 0] & arrayBLUE[0, 0] != arrayBLUE[1, 0])
                 {
                     BLUEtext1 = ((arrayBLUE[0, 0] + arrayBLUE[2, 0]) * 2) + arrayBLUE[1, 0];
                     TextScore("B1");
-                    //Debug.Log("равны 0 и 2   " + BLUEtext1);
+                    //равны 0 и 2
                 }
                 else if (arrayBLUE[0, 0] != arrayBLUE[1, 0] & arrayBLUE[0, 0] != arrayBLUE[2, 0])
                 {
                     BLUEtext1 = arrayBLUE[0, 0] + arrayBLUE[1, 0] + arrayBLUE[2, 0];
                     TextScore("B1");
-                    //Debug.Log("все не все не равны   " + BLUEtext1);
+                    //все не все не равны
                 }
                 break;
 
@@ -241,31 +241,31 @@ public  class ScorePlayer : MonoBehaviour
                 {
                     BLUEtext2 = (arrayBLUE[0, 1] + arrayBLUE[1, 1] + arrayBLUE[2, 1]) * 3;
                     TextScore("B2");
-                    //Debug.Log("все равны   " + BLUEtext1);
+                    //все равны
                 }
                 else if (arrayBLUE[0, 1] == arrayBLUE[1, 1] & arrayBLUE[0, 1] != arrayBLUE[2, 1])
                 {
                     BLUEtext2 = ((arrayBLUE[0, 1] + arrayBLUE[1, 1]) * 2) + arrayBLUE[2, 1];
                     TextScore("B2");
-                    //Debug.Log("равны 0 и 1   " + BLUEtext1);
+                    //равны 0 и 1
                 }
                 else if (arrayBLUE[1, 1] == arrayBLUE[2, 1] & arrayBLUE[1, 1] != arrayBLUE[0, 1])
                 {
                     BLUEtext2 = ((arrayBLUE[1, 1] + arrayBLUE[2, 1]) * 2) + arrayBLUE[0, 1];
                     TextScore("B2");
-                    //Debug.Log("равны 1 и 2   " + BLUEtext1);
+                    //равны 1 и 2
                 }
                 else if (arrayBLUE[0, 1] == arrayBLUE[2, 1] & arrayBLUE[0, 1] != arrayBLUE[1, 1])
                 {
                     BLUEtext2 = ((arrayBLUE[0, 1] + arrayBLUE[2, 1]) * 2) + arrayBLUE[1, 1];
                     TextScore("B2");
-                    //Debug.Log("равны 0 и 2   " + BLUEtext1);
+                    //равны 0 и 2
                 }
                 else if (arrayBLUE[0, 1] != arrayBLUE[1, 1] & arrayBLUE[0, 1] != arrayBLUE[2, 1])
                 {
                     BLUEtext2 = arrayBLUE[0, 1] + arrayBLUE[1, 1] + arrayBLUE[2, 1];
                     TextScore("B2");
-                    //Debug.Log("все не все не равны   " + BLUEtext1);
+                    //все не все не равны
                 }
                 break;
 
@@ -275,31 +275,31 @@ public  class ScorePlayer : MonoBehaviour
                 {
                     BLUEtext3 = (arrayBLUE[0, 2] + arrayBLUE[1, 2] + arrayBLUE[2, 2]) * 3;
                     TextScore("B3");
-                    //Debug.Log("все равны   " + BLUEtext1);
+                    //все равны
                 }
                 else if (arrayBLUE[0, 2] == arrayBLUE[1, 2] & arrayBLUE[0, 2] != arrayBLUE[2, 2])
                 {
                     BLUEtext3 = ((arrayBLUE[0, 2] + arrayBLUE[1, 2]) * 2) + arrayBLUE[2, 2];
                     TextScore("B3");
-                    //Debug.Log("равны 0 и 1   " + BLUEtext1);
+                    //равны 0 и 1
                 }
                 else if (arrayBLUE[1, 2] == arrayBLUE[2, 2] & arrayBLUE[1, 2] != arrayBLUE[0, 2])
                 {
                     BLUEtext3 = ((arrayBLUE[1, 2] + arrayBLUE[2, 2]) * 2) + arrayBLUE[0, 2];
                     TextScore("B3");
-                    //Debug.Log("равны 1 и 2   " + BLUEtext1);
+                    //равны 1 и 2
                 }
                 else if (arrayBLUE[0, 2] == arrayBLUE[2, 2] & arrayBLUE[0, 2] != arrayBLUE[1, 2])
                 {
                     BLUEtext3 = ((arrayBLUE[0, 2] + arrayBLUE[2, 2]) * 2) + arrayBLUE[1, 2];
                     TextScore("B3");
-                    //Debug.Log("равны 0 и 2   " + BLUEtext1);
+                    //равны 0 и 2
                 }
                 else if (arrayBLUE[0, 2] != arrayBLUE[1, 2] & arrayBLUE[0, 2] != arrayBLUE[2, 2])
                 {
                     BLUEtext3 = arrayBLUE[0, 2] + arrayBLUE[1, 2] + arrayBLUE[2, 2];
                     TextScore("B3");
-                    //Debug.Log("все не равны   " + BLUEtext1);
+                    //все не равны
                 }
                 break;
         }

@@ -51,6 +51,8 @@ public class GamePanelButtonRed : MonoBehaviour
     public GameObject ScorePlayerWIN;
     private winPlayer _actionCheckingWinning;
 
+    public GameObject Resetaction;
+    private GameBones _actionResetBones;
 
     private void Start()
     {
@@ -58,6 +60,9 @@ public class GamePanelButtonRed : MonoBehaviour
         _actionDeleteBones = ScorePlayer1.GetComponent<ScorePlayer>();
 
         _actionCheckingWinning  = ScorePlayerWIN.GetComponent<winPlayer>();
+
+        _actionResetBones = Resetaction.GetComponent<GameBones>();
+
 
         ButtonRed1.onClick.AddListener(OnButtonRed0Clicked);
         ButtonRed2.onClick.AddListener(OnButtonRed1Clicked);
@@ -125,11 +130,9 @@ public class GamePanelButtonRed : MonoBehaviour
         PanelPlayer = GameBones.PanelStartRandom;
     }
 
-    private IEnumerator ResetBones()
+    private void ResetBonesStart()
     {
-        ResetRandomBones = 1;
-        yield return new WaitForSeconds(1);
-        ResetRandomBones = 0;
+        _actionResetBones.ResetBones();
     }
 
     private void OnButtonRed0Clicked()
@@ -138,7 +141,7 @@ public class GamePanelButtonRed : MonoBehaviour
         {
             PanelPlayer = 1;
             InstantiateBonesRED[0, 0] = MasivRandomBones + 1;
-            StartCoroutine(ResetBones());
+            ResetBonesStart();
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[0], quaternionBones[MasivRandomBones]);
             bonesRed.name = "R-" + (MasivRandomBones + 1) + "0";
@@ -155,7 +158,7 @@ public class GamePanelButtonRed : MonoBehaviour
         {
             PanelPlayer = 1;
             InstantiateBonesRED[1, 0] = MasivRandomBones + 1;
-            StartCoroutine(ResetBones());
+            ResetBonesStart();
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[1], quaternionBones[MasivRandomBones]);
             bonesRed.name = "R-" + InstantiateBonesRED[1, 0] + "0";
@@ -173,7 +176,7 @@ public class GamePanelButtonRed : MonoBehaviour
         {
             PanelPlayer = 1;
             InstantiateBonesRED[2, 0] = MasivRandomBones + 1;
-            StartCoroutine(ResetBones());
+            ResetBonesStart();
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[2], quaternionBones[MasivRandomBones]);
             bonesRed.name = "R-" + InstantiateBonesRED[2, 0] + "0";
@@ -191,7 +194,7 @@ public class GamePanelButtonRed : MonoBehaviour
         {
             PanelPlayer = 1;
             InstantiateBonesRED[0, 1] = MasivRandomBones + 1;
-            StartCoroutine(ResetBones());
+            ResetBonesStart();
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[3], quaternionBones[MasivRandomBones]);
             bonesRed.name = "R-" + InstantiateBonesRED[0, 1] + "1";
@@ -208,7 +211,7 @@ public class GamePanelButtonRed : MonoBehaviour
         {
             PanelPlayer = 1;
             InstantiateBonesRED[1, 1] = MasivRandomBones + 1;
-            StartCoroutine(ResetBones());
+            ResetBonesStart();
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[4], quaternionBones[MasivRandomBones]);
             bonesRed.name = "R-" + InstantiateBonesRED[1, 1] + "1";
@@ -225,7 +228,7 @@ public class GamePanelButtonRed : MonoBehaviour
         {
             PanelPlayer = 1;
             InstantiateBonesRED[2, 1] = MasivRandomBones + 1;
-            StartCoroutine(ResetBones());
+            ResetBonesStart();
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[5], quaternionBones[MasivRandomBones]);
             bonesRed.name = "R-" + InstantiateBonesRED[2, 1] + "1";
@@ -242,7 +245,7 @@ public class GamePanelButtonRed : MonoBehaviour
         {
             PanelPlayer = 1;
             InstantiateBonesRED[0, 2] = MasivRandomBones + 1;
-            StartCoroutine(ResetBones());
+            ResetBonesStart();
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[6], quaternionBones[MasivRandomBones]);
             bonesRed.name = "R-" + InstantiateBonesRED[0, 2] + "2";
@@ -259,7 +262,7 @@ public class GamePanelButtonRed : MonoBehaviour
         {
             PanelPlayer = 1;
             InstantiateBonesRED[1, 2] = MasivRandomBones + 1;
-            StartCoroutine(ResetBones());
+            ResetBonesStart();
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[7], quaternionBones[MasivRandomBones]);
             bonesRed.name = "R-" + InstantiateBonesRED[1, 2] + "2";
@@ -276,7 +279,7 @@ public class GamePanelButtonRed : MonoBehaviour
         {
             PanelPlayer = 1;
             InstantiateBonesRED[2, 2] = MasivRandomBones + 1;
-            StartCoroutine(ResetBones());
+            ResetBonesStart();
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[8], quaternionBones[MasivRandomBones]);
             bonesRed.name = "R-" + InstantiateBonesRED[2, 2] + "2";
@@ -286,11 +289,9 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionCheckingWinning.CheckingWinning();
         }
     }
-    /// <summary>
     /// Red
     /// ///////////////////////////////////////////////////////////////////////////////////////
     /// Blue
-    /// </summary>
 
     private void OnButtonBlue0Clicked()
     {
@@ -298,7 +299,7 @@ public class GamePanelButtonRed : MonoBehaviour
         {
             PanelPlayer = 0;
             InstantiateBonesBLUE[0, 0] = MasivRandomBones + 1;
-            StartCoroutine(ResetBones());
+            ResetBonesStart();
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
             bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[0], quaternionBones[MasivRandomBones]);
             bonesBlue.name = "B-" + InstantiateBonesBLUE[0, 0] + "0";
@@ -314,7 +315,7 @@ public class GamePanelButtonRed : MonoBehaviour
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[1, 0] <= 0)
         {
             PanelPlayer = 0;
-            StartCoroutine(ResetBones());
+            ResetBonesStart();
             InstantiateBonesBLUE[1, 0] = MasivRandomBones + 1;
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
             bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[1], quaternionBones[MasivRandomBones]);
@@ -330,7 +331,7 @@ public class GamePanelButtonRed : MonoBehaviour
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[2, 0] <= 0)
         {
             PanelPlayer = 0;
-            StartCoroutine(ResetBones());
+            ResetBonesStart();
             InstantiateBonesBLUE[2, 0] = MasivRandomBones + 1;
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
             bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[2], quaternionBones[MasivRandomBones]);
@@ -348,7 +349,7 @@ public class GamePanelButtonRed : MonoBehaviour
         {
             PanelPlayer = 0;
             InstantiateBonesBLUE[0, 1] = MasivRandomBones + 1;
-            StartCoroutine(ResetBones());
+            ResetBonesStart();
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
             bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[3], quaternionBones[MasivRandomBones]);
             bonesBlue.name = "B-" + InstantiateBonesBLUE[0, 1] + "1";
@@ -365,7 +366,7 @@ public class GamePanelButtonRed : MonoBehaviour
         {
             PanelPlayer = 0;
             InstantiateBonesBLUE[1, 1] = MasivRandomBones + 1;
-            StartCoroutine(ResetBones());
+            ResetBonesStart();
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
             bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[4], quaternionBones[MasivRandomBones]);
             bonesBlue.name = "B-" + InstantiateBonesBLUE[1, 1] + "1";
@@ -382,7 +383,7 @@ public class GamePanelButtonRed : MonoBehaviour
         {
             PanelPlayer = 0;
             InstantiateBonesBLUE[2, 1] = MasivRandomBones + 1;
-            StartCoroutine(ResetBones());
+            ResetBonesStart();
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
             bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[5], quaternionBones[MasivRandomBones]);
             bonesBlue.name = "B-" + InstantiateBonesBLUE[2, 1] + "1";
@@ -399,7 +400,7 @@ public class GamePanelButtonRed : MonoBehaviour
         {
             PanelPlayer = 0;
             InstantiateBonesBLUE[0, 2] = MasivRandomBones + 1;
-            StartCoroutine(ResetBones());
+            ResetBonesStart();
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
             bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[6], quaternionBones[MasivRandomBones]);
             bonesBlue.name = "B-" + InstantiateBonesBLUE[0, 2] + "2";
@@ -416,7 +417,7 @@ public class GamePanelButtonRed : MonoBehaviour
         {
             PanelPlayer = 0;
             InstantiateBonesBLUE[1, 2] = MasivRandomBones + 1;
-            StartCoroutine(ResetBones());
+            ResetBonesStart();
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
             bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[7], quaternionBones[MasivRandomBones]);
             bonesBlue.name = "B-" + InstantiateBonesBLUE[1, 2] + "2";
@@ -433,7 +434,7 @@ public class GamePanelButtonRed : MonoBehaviour
         {
             PanelPlayer = 0;
             InstantiateBonesBLUE[2, 2] = MasivRandomBones + 1;
-            StartCoroutine(ResetBones());
+            ResetBonesStart();
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
             bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[8], quaternionBones[MasivRandomBones]);
             bonesBlue.name = "B-" + (MasivRandomBones + 1) + "2";

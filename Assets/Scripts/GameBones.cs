@@ -20,7 +20,6 @@ public class GameBones : MonoBehaviour
     private void Start()
     {
         StartCoroutine(PanelRandom());
-        //Time.timeScale = 1f;
     }
 
     private void Update()
@@ -28,7 +27,7 @@ public class GameBones : MonoBehaviour
         Reset = GamePanelButtonRed.ResetRandomBones;
         if (Reset == 1)
         {
-            StartCoroutine(ResetBones());
+            ResetBones();
         }
     }
 
@@ -61,13 +60,11 @@ public class GameBones : MonoBehaviour
         }
     }
 
-    private IEnumerator ResetBones()
+    public void ResetBones()
     {
         RandomBonesPlayer[MasivRandomBonesPlayer].SetActive(false);
-        yield return new WaitForSeconds(1);
-        //yield return new WaitUntil(() => );
-        MasivRandomBonesPlayer = -1;
         randomON = true;
         Button.SetActive(true);
+        MasivRandomBonesPlayer = -1;
     }
 }

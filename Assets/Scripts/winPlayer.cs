@@ -70,7 +70,7 @@ public class winPlayer : MonoBehaviour
                 }
             }
         }
-        if (isFilledRED == true /*&& ScoreWinerRed > ScoreWinerBlue*/)
+        if (isFilledRED == true)
         {
         ScoreWinerRed = _TextScoreR1.REDtext1 + _TextScoreR2.REDtext2 + _TextScoreR3.REDtext3;
         ScoreWinerBlue = _TextScoreB1.BLUEtext1 + _TextScoreB1.BLUEtext2 + _TextScoreB1.BLUEtext3;
@@ -88,7 +88,7 @@ public class winPlayer : MonoBehaviour
             ScoreRED.text = ScoreWinerRed.ToString();
             ScoreBLUE.text = ScoreWinerBlue.ToString();
         }
-        else if (isFilledBLUE == true /*&& ScoreWinerBlue > ScoreWinerRed*/)
+        else if (isFilledBLUE == true)
         {
             ScoreWinerRed = _TextScoreR1.REDtext1 + _TextScoreR2.REDtext2 + _TextScoreR3.REDtext3;
             ScoreWinerBlue = _TextScoreB1.BLUEtext1 + _TextScoreB1.BLUEtext2 + _TextScoreB1.BLUEtext3;
