@@ -20,6 +20,7 @@ public class GameBones : MonoBehaviour
     private void Start()
     {
         StartCoroutine(PanelRandom());
+        //Time.timeScale = 1f;
     }
 
     private void Update()
