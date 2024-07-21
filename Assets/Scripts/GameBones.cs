@@ -8,7 +8,6 @@ public class GameBones : MonoBehaviour
     int MasivRandomBonesPlayerOFF;
     public GameObject Button;
 
-    private int Reset = 0;
     private bool randomON = true;
 
     public static int PanelStartRandom;
@@ -19,19 +18,20 @@ public class GameBones : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(PanelRandom());
+        //StartCoroutine(PanelRandom());
+        PanelRandom();
     }
 
-    private void Update()
+/*    private void Update()
     {
         Reset = GamePanelButtonRed.ResetRandomBones;
         if (Reset == 1)
         {
             ResetBones();
         }
-    }
+    }*/
 
-    private IEnumerator PanelRandom()
+/*    private IEnumerator PanelRandom()
     {
         PanelStartRandom = Random.Range(0, 2);
 
@@ -41,6 +41,13 @@ public class GameBones : MonoBehaviour
         randomON = true;
         PanelStart[0].SetActive(false);
         PanelStart[1].SetActive(false);
+    }*/
+
+    private void PanelRandom()
+    {
+        PanelStartRandom = Random.Range(0, 2);
+        PanelStart[PanelStartRandom].SetActive(true);
+        randomON = true;
     }
 
     private void RandomButtonBones()
@@ -55,8 +62,9 @@ public class GameBones : MonoBehaviour
 
             RandomBonesPlayer[MasivRandomBonesPlayer].SetActive(true);
             randomON = false;
-            Debug.Log(MasivRandomBonesPlayer + "-MasivRandomBonesPlayer");
             Button.SetActive(false);
+            PanelStart[0].SetActive(false);
+            PanelStart[1].SetActive(false);
         }
     }
 

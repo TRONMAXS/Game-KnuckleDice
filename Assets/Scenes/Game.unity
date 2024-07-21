@@ -5816,6 +5816,9 @@ MonoBehaviour:
   ScorePlayer1: {fileID: 1300118940}
   ScorePlayerWIN: {fileID: 2032553532}
   Resetaction: {fileID: 895589760}
+  PanelPlayerPlay01:
+  - {fileID: 1276746903}
+  - {fileID: 1294612788}
 --- !u!1 &1136060095
 GameObject:
   m_ObjectHideFlags: 0
