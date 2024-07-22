@@ -118,18 +118,12 @@ public class GamePanelButtonRed : MonoBehaviour
         vector2BonesBlue[7] = new Vector2(179, 314);
         vector2BonesBlue[8] = new Vector2(179, 468);
 
-        StartCoroutine(PanelStart());
+        PanelPlayer = GameBones.PanelStartRandom;
     }
 
     private void Update()
     {
         MasivRandomBones = GameBones.MasivRandomBonesPlayer;
-    }
-
-    private IEnumerator PanelStart()
-    {
-        yield return new WaitForSeconds(4);
-        PanelPlayer = GameBones.PanelStartRandom;
     }
 
     private void ResetBonesStart()
@@ -151,8 +145,6 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesRED[0, 0], 0, "RED");
             _actionScore.Score("CNR1");
             _actionCheckingWinning.CheckingWinning();
-            PanelPlayerPlay01[0].SetActive(false);
-            PanelPlayerPlay01[1].SetActive(true);
         }
     }
 
@@ -170,8 +162,6 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesRED[1, 0], 0, "RED");
             _actionScore.Score("CNR1");
             _actionCheckingWinning.CheckingWinning();
-            PanelPlayerPlay01[0].SetActive(false);
-            PanelPlayerPlay01[1].SetActive(true);
         }
 
     }
@@ -190,8 +180,6 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesRED[2, 0], 0, "RED");
             _actionScore.Score("CNR1");
             _actionCheckingWinning.CheckingWinning();
-            PanelPlayerPlay01[0].SetActive(false);
-            PanelPlayerPlay01[1].SetActive(true);
         }
 
     }
@@ -210,8 +198,6 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesRED[0, 1], 1, "RED");
             _actionScore.Score("CNR2");
             _actionCheckingWinning.CheckingWinning();
-            PanelPlayerPlay01[0].SetActive(false);
-            PanelPlayerPlay01[1].SetActive(true);
         }
     }
 
@@ -229,8 +215,6 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesRED[1, 1], 1, "RED");
             _actionScore.Score("CNR2");
             _actionCheckingWinning.CheckingWinning();
-            PanelPlayerPlay01[0].SetActive(false);
-            PanelPlayerPlay01[1].SetActive(true);
         }
     }
 
@@ -248,8 +232,6 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesRED[2, 1], 1, "RED");
             _actionScore.Score("CNR2");
             _actionCheckingWinning.CheckingWinning();
-            PanelPlayerPlay01[0].SetActive(false);
-            PanelPlayerPlay01[1].SetActive(true);
         }
     }
 
@@ -267,8 +249,6 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesRED[0, 2], 2, "RED");
             _actionScore.Score("CNR3");
             _actionCheckingWinning.CheckingWinning();
-            PanelPlayerPlay01[0].SetActive(false);
-            PanelPlayerPlay01[1].SetActive(true);
         }
     }
 
@@ -286,8 +266,6 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesRED[1, 2], 2, "RED");
             _actionScore.Score("CNR3");
             _actionCheckingWinning.CheckingWinning();
-            PanelPlayerPlay01[0].SetActive(false);
-            PanelPlayerPlay01[1].SetActive(true);
         }
     }
 
@@ -305,8 +283,6 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesRED[2, 2], 2, "RED");
             _actionScore.Score("CNR3");
             _actionCheckingWinning.CheckingWinning();
-            PanelPlayerPlay01[0].SetActive(false);
-            PanelPlayerPlay01[1].SetActive(true);
         }
     }
     /// Red
@@ -327,8 +303,6 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[0, 0], 0, "BLUE");
             _actionScore.Score("CNB1");
             _actionCheckingWinning.CheckingWinning();
-            PanelPlayerPlay01[0].SetActive(true);
-            PanelPlayerPlay01[1].SetActive(false);
         }
     }
 
@@ -346,8 +320,6 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[1, 0], 0, "BLUE");
             _actionScore.Score("CNB1");
             _actionCheckingWinning.CheckingWinning();
-            PanelPlayerPlay01[0].SetActive(true);
-            PanelPlayerPlay01[1].SetActive(false);
         }
     }
     private void OnButtonBlue2Clicked()
@@ -364,8 +336,6 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[2, 0], 0, "BLUE");
             _actionScore.Score("CNB1");
             _actionCheckingWinning.CheckingWinning();
-            PanelPlayerPlay01[0].SetActive(true);
-            PanelPlayerPlay01[1].SetActive(false);
         }
     }
 
@@ -383,8 +353,6 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[0, 1], 1, "BLUE");
             _actionScore.Score("CNB2");
             _actionCheckingWinning.CheckingWinning();
-            PanelPlayerPlay01[0].SetActive(true);
-            PanelPlayerPlay01[1].SetActive(false);
         }
     }
 
@@ -402,8 +370,6 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[1, 1], 1, "BLUE");
             _actionScore.Score("CNB2");
             _actionCheckingWinning.CheckingWinning();
-            PanelPlayerPlay01[0].SetActive(true);
-            PanelPlayerPlay01[1].SetActive(false);
         }
     }
 
@@ -421,8 +387,8 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[2, 1], 1, "BLUE");
             _actionScore.Score("CNB2");
             _actionCheckingWinning.CheckingWinning();
-            PanelPlayerPlay01[0].SetActive(true);
-            PanelPlayerPlay01[1].SetActive(false);
+            
+
         }
     }
 
@@ -440,8 +406,6 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[0, 2], 2, "BLUE");
             _actionScore.Score("CNB3");
             _actionCheckingWinning.CheckingWinning();
-            PanelPlayerPlay01[0].SetActive(true);
-            PanelPlayerPlay01[1].SetActive(false);
         }
     }
 
@@ -459,8 +423,6 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[1, 2], 2, "BLUE");
             _actionScore.Score("CNB3");
             _actionCheckingWinning.CheckingWinning();
-            PanelPlayerPlay01[0].SetActive(true);
-            PanelPlayerPlay01[1].SetActive(false);
         }
     }
 
@@ -478,8 +440,6 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[2, 2], 2, "BLUE");
             _actionScore.Score("CNB3");
             _actionCheckingWinning.CheckingWinning();
-            PanelPlayerPlay01[0].SetActive(true);
-            PanelPlayerPlay01[1].SetActive(false);
         }
     }
 }

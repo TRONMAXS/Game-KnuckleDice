@@ -70,6 +70,9 @@ public class winPlayer : MonoBehaviour
                 }
             }
         }
+
+        //Победа - Выиграл
+        //Проигрыш - Проиграл
         if (isFilledRED == true)
         {
         ScoreWinerRed = _TextScoreR1.REDtext1 + _TextScoreR2.REDtext2 + _TextScoreR3.REDtext3;
@@ -77,13 +80,13 @@ public class winPlayer : MonoBehaviour
             WinPanel.SetActive(true);
             if (ScoreWinerRed > ScoreWinerBlue)
             {
-                TextWinnerRED.text = "Выиграл";
-                TextWinnerBLUE.text = "Проиграл";
+                TextWinnerRED.text = "Победа";
+                TextWinnerBLUE.text = "Проигрыш";
             }
             else
             {
-                TextWinnerRED.text = "Проиграл";
-                TextWinnerBLUE.text = "Выиграл";
+                TextWinnerRED.text = "Проигрыш";
+                TextWinnerBLUE.text = "Победа";
             }
             ScoreRED.text = ScoreWinerRed.ToString();
             ScoreBLUE.text = ScoreWinerBlue.ToString();
@@ -95,13 +98,13 @@ public class winPlayer : MonoBehaviour
             WinPanel.SetActive(true);
             if (ScoreWinerBlue > ScoreWinerRed)
             {
-                TextWinnerBLUE.text = "Выиграл";
-                TextWinnerRED.text = "Проиграл";
+                TextWinnerBLUE.text = "Победа";
+                TextWinnerRED.text = "Проигрыш";
             }
             else
             {
-                TextWinnerBLUE.text = "Проиграл";
-                TextWinnerRED.text = "Выиграл";
+                TextWinnerBLUE.text = "Проигрыш";
+                TextWinnerRED.text = "Победа";
             }
             ScoreBLUE.text = ScoreWinerBlue.ToString();
             ScoreRED.text = ScoreWinerRed.ToString();

@@ -1,11 +1,15 @@
-using System.Collections;
 using UnityEngine;
+using System.Security.Cryptography;
+using System;
 
 
 public class GameBones : MonoBehaviour
 {
     public static int MasivRandomBonesPlayer = -1;
-    int MasivRandomBonesPlayerOFF;
+    private int PanelPlayer;
+    private int MasivRandomBonesPlayerOFFRed;
+    private int MasivRandomBonesPlayerOFFBlue;
+
     public GameObject Button;
 
     private bool randomON = true;
@@ -15,52 +19,62 @@ public class GameBones : MonoBehaviour
     public GameObject[] PanelStart;
     public GameObject[] RandomBonesPlayer;
 
+    public GameObject[] RandomBonesPlayerRed;
+    public GameObject[] RandomBonesPlayerBlue;
+
 
     private void Start()
     {
-        //StartCoroutine(PanelRandom());
         PanelRandom();
     }
 
-/*    private void Update()
-    {
-        Reset = GamePanelButtonRed.ResetRandomBones;
-        if (Reset == 1)
-        {
-            ResetBones();
-        }
-    }*/
-
-/*    private IEnumerator PanelRandom()
-    {
-        PanelStartRandom = Random.Range(0, 2);
-
-        PanelStart[PanelStartRandom].SetActive(true);
-
-        yield return new WaitForSeconds(3);
-        randomON = true;
-        PanelStart[0].SetActive(false);
-        PanelStart[1].SetActive(false);
-    }*/
-
     private void PanelRandom()
     {
-        PanelStartRandom = Random.Range(0, 2);
+        PanelStartRandom = GenerateRandomDigitPanel();
+        PanelPlayer = PanelStartRandom;
         PanelStart[PanelStartRandom].SetActive(true);
         randomON = true;
+    }
+
+    public int GenerateRandomDigitPanel()
+    {
+        byte[] randomBytes1 = new byte[1];
+        using (var CSP1 = new RNGCryptoServiceProvider())
+        {
+            CSP1.GetBytes(randomBytes1);
+        }
+        return Convert.ToInt32(randomBytes1[0]) % 2;
+    }
+
+    public int GenerateRandomDigitBones()
+    {
+        byte[] randomBytes2 = new byte[1];
+        using (var CSP2 = new RNGCryptoServiceProvider())
+        {
+            CSP2.GetBytes(randomBytes2);
+        }
+        return Convert.ToInt32(randomBytes2[0]) % 6;
     }
 
     private void RandomButtonBones()
     {
+
         if (randomON == true)
         {
-            RandomBonesPlayer[MasivRandomBonesPlayerOFF].SetActive(false);
+            MasivRandomBonesPlayer = GenerateRandomDigitBones();
 
-            MasivRandomBonesPlayer = Random.Range(0, 6);
-
-            MasivRandomBonesPlayerOFF = MasivRandomBonesPlayer;
-
-            RandomBonesPlayer[MasivRandomBonesPlayer].SetActive(true);
+            if (PanelPlayer == 0)
+            {
+                MasivRandomBonesPlayerOFFRed = MasivRandomBonesPlayer;
+                RandomBonesPlayerRed[MasivRandomBonesPlayer].SetActive(true);
+                PanelPlayer = 1;
+            }
+            else if (PanelPlayer == 1)
+            {
+                MasivRandomBonesPlayerOFFBlue = MasivRandomBonesPlayer;
+                RandomBonesPlayerBlue[MasivRandomBonesPlayer].SetActive(true);
+                PanelPlayer = 0;
+            }
             randomON = false;
             Button.SetActive(false);
             PanelStart[0].SetActive(false);
@@ -70,7 +84,8 @@ public class GameBones : MonoBehaviour
 
     public void ResetBones()
     {
-        RandomBonesPlayer[MasivRandomBonesPlayer].SetActive(false);
+        RandomBonesPlayerRed[MasivRandomBonesPlayerOFFRed].SetActive(false);
+        RandomBonesPlayerBlue[MasivRandomBonesPlayerOFFBlue].SetActive(false);
         randomON = true;
         Button.SetActive(true);
         MasivRandomBonesPlayer = -1;
