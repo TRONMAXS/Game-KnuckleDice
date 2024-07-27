@@ -15,6 +15,6 @@
 
 <h3>📫 Связаться со мной:</h3>
 <ul>
-    <li><a href="mail:popik.maxim@gmail.com">Мой Email</a></li>
+    <li>popik.maxim@gmail.com</a></li>
 </ul>
 
