@@ -1,17 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GamePanelButtonRed : MonoBehaviour
+public class BOTGamePanelButtonRed : MonoBehaviour
 {
-    public Button ButtonRed1;
-    public Button ButtonRed2;
-    public Button ButtonRed3;
-    public Button ButtonRed4;
-    public Button ButtonRed5;
-    public Button ButtonRed6;
-    public Button ButtonRed7;
-    public Button ButtonRed8;
-    public Button ButtonRed9;
 
     public Button ButtonBlue1;
     public Button ButtonBlue2;
@@ -51,7 +42,7 @@ public class GamePanelButtonRed : MonoBehaviour
     private winPlayer _actionCheckingWinning;
 
     public GameObject Resetaction;
-    private GameBones _actionResetBones;
+    private BOTGameBones _actionResetBones;
 
     public GameObject[] PanelPlayerPlay01;
 
@@ -60,20 +51,9 @@ public class GamePanelButtonRed : MonoBehaviour
         _actionScore = ScorePlayer.GetComponent<ScorePlayer>();
         _actionDeleteBones = ScorePlayer1.GetComponent<ScorePlayer>();
 
-        _actionCheckingWinning  = ScorePlayerWIN.GetComponent<winPlayer>();
+        _actionCheckingWinning = ScorePlayerWIN.GetComponent<winPlayer>();
 
-        _actionResetBones = Resetaction.GetComponent<GameBones>();
-
-
-        ButtonRed1.onClick.AddListener(OnButtonRed0Clicked);
-        ButtonRed2.onClick.AddListener(OnButtonRed1Clicked);
-        ButtonRed3.onClick.AddListener(OnButtonRed2Clicked);
-        ButtonRed4.onClick.AddListener(OnButtonRed3Clicked);
-        ButtonRed5.onClick.AddListener(OnButtonRed4Clicked);
-        ButtonRed6.onClick.AddListener(OnButtonRed5Clicked);
-        ButtonRed7.onClick.AddListener(OnButtonRed6Clicked);
-        ButtonRed8.onClick.AddListener(OnButtonRed7Clicked);
-        ButtonRed9.onClick.AddListener(OnButtonRed8Clicked);
+        _actionResetBones = Resetaction.GetComponent<BOTGameBones>();
 
         ButtonBlue1.onClick.AddListener(OnButtonBlue0Clicked);
         ButtonBlue2.onClick.AddListener(OnButtonBlue1Clicked);
@@ -84,7 +64,6 @@ public class GamePanelButtonRed : MonoBehaviour
         ButtonBlue7.onClick.AddListener(OnButtonBlue6Clicked);
         ButtonBlue8.onClick.AddListener(OnButtonBlue7Clicked);
         ButtonBlue9.onClick.AddListener(OnButtonBlue8Clicked);
-
 
         quaternionBones[0] = Quaternion.Euler(-180f, 0f, 0f);
         quaternionBones[1] = Quaternion.Euler(-90f, 0f, 0f);
@@ -117,12 +96,13 @@ public class GamePanelButtonRed : MonoBehaviour
         vector2BonesBlue[7] = new Vector2(179, 314);
         vector2BonesBlue[8] = new Vector2(179, 468);
 
-        PanelPlayer = GameBones.PanelStartRandom;
+        PanelPlayer = BOTGameBones.PanelStartRandom;
     }
 
     private void Update()
     {
-        MasivRandomBones = GameBones.MasivRandomBonesPlayer;
+        MasivRandomBones = BOTGameBones.MasivRandomBonesPlayer;
+        BotRed0();
     }
 
     private void ResetBonesStart()
@@ -130,7 +110,24 @@ public class GamePanelButtonRed : MonoBehaviour
         _actionResetBones.ResetBones();
     }
 
-    private void OnButtonRed0Clicked()
+    private void BotRed0()
+    {
+        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[0, 0] <= 0)
+        {
+            PanelPlayer = 1;
+            InstantiateBonesRED[0, 0] = MasivRandomBones + 1;
+            ResetBonesStart();
+            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
+            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[0], quaternionBones[MasivRandomBones]);
+            bonesRed.name = "R-" + (MasivRandomBones + 1) + "0";
+            gameObjectsInstantiateRED[0, 0] = bonesRed;
+            _actionDeleteBones.DeleteBones(InstantiateBonesRED[0, 0], 0, "RED");
+            _actionScore.Score("CNR1");
+            _actionCheckingWinning.CheckingWinning();
+        }
+    }
+
+    /*private void OnButtonRed0Clicked()
     {
         if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[0, 0] <= 0)
         {
@@ -283,7 +280,7 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionScore.Score("CNR3");
             _actionCheckingWinning.CheckingWinning();
         }
-    }
+    }*/
     /// Red
     /// ///////////////////////////////////////////////////////////////////////////////////////
     /// Blue
@@ -386,7 +383,7 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[2, 1], 1, "BLUE");
             _actionScore.Score("CNB2");
             _actionCheckingWinning.CheckingWinning();
-            
+
 
         }
     }
