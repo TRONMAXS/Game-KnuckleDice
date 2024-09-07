@@ -8,8 +8,8 @@
 
 <h3>📥 Где скачать:</h3>
 <ul>
-    <li>Игра есть на <a href="https://github.com/TRONMAXS/Game-KnuckleDice/releases/tag/Release">GitHub</a></li>
-    <li>На сайте <a href="https://tronmax.itch.io/knucklebones">itch.io</a></li>
+    <li><a href="https://github.com/TRONMAXS/Game-KnuckleDice/releases/tag/Release">GitHub</a></li>
+    <li><a href="https://tronmax.itch.io/knucklebones">itch.io</a></li>
 </ul>
 
 <h2>👤 Привет, я Максим!</h2>
