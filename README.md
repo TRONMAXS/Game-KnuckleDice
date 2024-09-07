@@ -8,7 +8,7 @@
 
 <h3>📥 Где скачать:</h3>
 <ul>
-    <li>Игра есть на <a href="https://tronmax.itch.io/knucklebones">GitHub</a></li>
+    <li>Игра есть на <a href="https://github.com/TRONMAXS/Game-KnuckleDice/releases/tag/Release">GitHub</a></li>
     <li>На сайте <a href="https://tronmax.itch.io/knucklebones">itch.io</a></li>
 </ul>
 
