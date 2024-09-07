@@ -9,7 +9,7 @@
 <h3>📥 Где скачать:</h3>
 <ul>
     <li>Игра есть на GitHub</li>
-    <li>На сайте itch.io ---<a href="https://tronmax.itch.io/knucklebones"> KnuckleBones</a></li>
+    <li>На сайте itch.io --- <a href="https://tronmax.itch.io/knucklebones">KnuckleBones</a></li>
 </ul>
 
 <h2>👤 Привет, я Максим!</h2>
