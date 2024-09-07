@@ -6,6 +6,12 @@
     <li>Режим игры сетевой multiplayer </li>
 </ul>
 
+<h3>📥 Где скачать:</h3>
+<ul>
+    <li>Игра есть на GitHub</li>
+    <li>На сайте "itch.io" <a href="[https://github.com/TRONMAXS/Game-KnuckleDice/tree/master](https://tronmax.itch.io/knucklebones)">KnuckleBones</a></li>
+</ul>
+
 <h2>👤 Привет, я Максим!</h2>
 
 <h3>🌱 Я изучаю:</h3>
