@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,31 +30,48 @@ public class BOTGamePanelButtonRed : MonoBehaviour
     public GameObject[,] gameObjectsInstantiateBLUE = new GameObject[3, 3];
 
     public int MasivRandomBones;
-    public int PanelPlayer;
+    public static int PanelPlayer;
+    public string СolumnName;
+
+    public int IFvectorBones;
+    public string IFNameScore;
+    public int IFColumnName;
+    public int IFi;
+    public int IFj;
+
+/*    public int SetPositionArrayBotX;
+    public int SetPositionArrayBotY;*/
+
+
 
     public static int ResetRandomBones = 0;
 
     public GameObject ScorePlayer;
-    private ScorePlayer _actionScore;
+    private BOTScorePlayer _actionScore;
     public GameObject ScorePlayer1;
-    private ScorePlayer _actionDeleteBones;
+    private BOTScorePlayer _actionDeleteBones;
 
     public GameObject ScorePlayerWIN;
-    private winPlayer _actionCheckingWinning;
+    private BOTwinPlayer _actionCheckingWinning;
 
-    public GameObject Resetaction;
+    public GameObject ResetAction;
     private BOTGameBones _actionResetBones;
+
+    public GameObject Bones;
+    private BOTGameBones _actionBones;
 
     public GameObject[] PanelPlayerPlay01;
 
     private void Start()
     {
-        _actionScore = ScorePlayer.GetComponent<ScorePlayer>();
-        _actionDeleteBones = ScorePlayer1.GetComponent<ScorePlayer>();
+        _actionScore = ScorePlayer.GetComponent<BOTScorePlayer>();
+        _actionDeleteBones = ScorePlayer1.GetComponent<BOTScorePlayer>();
 
-        _actionCheckingWinning = ScorePlayerWIN.GetComponent<winPlayer>();
+        _actionCheckingWinning = ScorePlayerWIN.GetComponent<BOTwinPlayer>();
 
-        _actionResetBones = Resetaction.GetComponent<BOTGameBones>();
+        _actionResetBones = ResetAction.GetComponent<BOTGameBones>();
+        _actionBones = Bones.GetComponent<BOTGameBones>();
+
 
         ButtonBlue1.onClick.AddListener(OnButtonBlue0Clicked);
         ButtonBlue2.onClick.AddListener(OnButtonBlue1Clicked);
@@ -97,12 +115,10 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         vector2BonesBlue[8] = new Vector2(179, 468);
 
         PanelPlayer = BOTGameBones.PanelStartRandom;
-    }
-
+    }    
     private void Update()
     {
         MasivRandomBones = BOTGameBones.MasivRandomBonesPlayer;
-        BotRed0();
     }
 
     private void ResetBonesStart()
@@ -110,177 +126,281 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         _actionResetBones.ResetBones();
     }
 
-    private void BotRed0()
+    public void CheckArraysInvoke()
     {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[0, 0] <= 0)
+        Invoke("CheckArraysBotBlue", 2f);
+    }
+
+    public void CheckArraysBotBlue()
+    {
+        if (MasivRandomBones > -1)
         {
-            PanelPlayer = 1;
-            InstantiateBonesRED[0, 0] = MasivRandomBones + 1;
-            ResetBonesStart();
-            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[0], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + (MasivRandomBones + 1) + "0";
-            gameObjectsInstantiateRED[0, 0] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[0, 0], 0, "RED");
-            _actionScore.Score("CNR1");
-            _actionCheckingWinning.CheckingWinning();
+            Debug.Log("CheckArraysBotBlue --- MasivRandomBones ---" + MasivRandomBones);
+            //все равны
+            if (InstantiateBonesBLUE[0, 0] == InstantiateBonesBLUE[1, 0] & InstantiateBonesBLUE[0, 0] == InstantiateBonesBLUE[2, 0])
+            {
+                if (InstantiateBonesBLUE[0, 0] == MasivRandomBones & InstantiateBonesBLUE[1, 0] == MasivRandomBones & InstantiateBonesBLUE[2, 0] == MasivRandomBones)
+                {
+                    Debug.Log("все равны1---" + (InstantiateBonesBLUE[0, 0] + InstantiateBonesBLUE[1, 0] + InstantiateBonesBLUE[2, 0]) * 3);
+                    //все равны 1 столбец
+                    return;
+                }
+            }
+            if (InstantiateBonesBLUE[0, 1] == InstantiateBonesBLUE[1, 1] & InstantiateBonesBLUE[0, 1] == InstantiateBonesBLUE[2, 1])
+            {
+                if (InstantiateBonesBLUE[0, 1] == MasivRandomBones & InstantiateBonesBLUE[1, 1] == MasivRandomBones & InstantiateBonesBLUE[2, 1] == MasivRandomBones)
+                {
+                    Debug.Log("все равны2---" + (InstantiateBonesBLUE[0, 1] + InstantiateBonesBLUE[1, 1] + InstantiateBonesBLUE[2, 1]) * 3);
+                    //все равны 2 столбец
+                    return;
+                }
+            }
+            if (InstantiateBonesBLUE[0, 2] == InstantiateBonesBLUE[1, 2] & InstantiateBonesBLUE[0, 2] == InstantiateBonesBLUE[2, 2])
+            {
+                if (InstantiateBonesBLUE[0, 2] == MasivRandomBones & InstantiateBonesBLUE[1, 2] == MasivRandomBones & InstantiateBonesBLUE[2, 2] == MasivRandomBones)
+                {
+                    Debug.Log("все равны3---" + (InstantiateBonesBLUE[0, 2] + InstantiateBonesBLUE[1, 2] + InstantiateBonesBLUE[2, 2]) * 3);
+                    //все равны 3 столбец
+                    return;
+                }
+            }
+            //все равны
+            //
+            //равны 0 и 1
+            if (InstantiateBonesBLUE[0, 0] == InstantiateBonesBLUE[1, 0] & InstantiateBonesBLUE[1, 0] != InstantiateBonesBLUE[2, 0])
+            {
+                if (InstantiateBonesBLUE[0, 0] == MasivRandomBones & InstantiateBonesBLUE[1, 0] == MasivRandomBones & InstantiateBonesBLUE[2, 0] != MasivRandomBones)
+                {
+                    Debug.Log("равны 0 и 1---" + ((InstantiateBonesBLUE[0, 0] + InstantiateBonesBLUE[1, 0]) * 2) + InstantiateBonesBLUE[2, 0]);
+                    //равны 0 и 1  1 столбец
+                    return;
+                }
+            }
+            if (InstantiateBonesBLUE[0, 1] == InstantiateBonesBLUE[1, 1] & InstantiateBonesBLUE[0, 1] != InstantiateBonesBLUE[2, 1])
+            {
+                if (InstantiateBonesBLUE[0, 1] == MasivRandomBones & InstantiateBonesBLUE[1, 1] == MasivRandomBones & InstantiateBonesBLUE[2, 1] != MasivRandomBones)
+                {
+                    Debug.Log("равны 0 и 1---" + ((InstantiateBonesBLUE[0, 1] + InstantiateBonesBLUE[1, 1]) * 2) + InstantiateBonesBLUE[2, 1]);
+                    //равны 0 и 1  2 столбец
+                    return;
+                }
+            }
+            if (InstantiateBonesBLUE[0, 2] == InstantiateBonesBLUE[1, 2] & InstantiateBonesBLUE[0, 2] != InstantiateBonesBLUE[2, 2])
+            {
+                if (InstantiateBonesBLUE[0, 2] == MasivRandomBones & InstantiateBonesBLUE[1, 2] == MasivRandomBones & InstantiateBonesBLUE[2, 2] != MasivRandomBones)
+                {
+                    Debug.Log("равны 0 и 1---" + ((InstantiateBonesBLUE[0, 2] + InstantiateBonesBLUE[1, 2]) * 2) + InstantiateBonesBLUE[2, 2]);
+                    //равны 0 и 1  3 столбец
+                    return;
+                }
+            }
+            //равны 0 и 1
+            //
+            //равны 1 и 2
+            if (InstantiateBonesBLUE[1, 0] == InstantiateBonesBLUE[2, 0] & InstantiateBonesBLUE[1, 0] != InstantiateBonesBLUE[0, 0])
+            {
+                if (InstantiateBonesBLUE[1, 0] == MasivRandomBones & InstantiateBonesBLUE[2, 0] == MasivRandomBones & InstantiateBonesBLUE[0, 0] != MasivRandomBones)
+                {
+                    Debug.Log("равны 1 и 2---" + ((InstantiateBonesBLUE[1, 0] + InstantiateBonesBLUE[2, 0]) * 2) + InstantiateBonesBLUE[0, 0]);
+                    //равны 1 и 2  1 столбец
+                    return;
+                }
+            }
+            if (InstantiateBonesBLUE[1, 1] == InstantiateBonesBLUE[2, 1] & InstantiateBonesBLUE[1, 1] != InstantiateBonesBLUE[0, 1])
+            {
+                if (InstantiateBonesBLUE[1, 1] == MasivRandomBones & InstantiateBonesBLUE[2, 1] == MasivRandomBones & InstantiateBonesBLUE[0, 1] != MasivRandomBones)
+                {
+                    Debug.Log("равны 1 и 2---" + ((InstantiateBonesBLUE[1, 1] + InstantiateBonesBLUE[2, 1]) * 2) + InstantiateBonesBLUE[0, 1]);
+                    //равны 1 и 2  2 столбец
+                    return;
+                }
+            }
+            if (InstantiateBonesBLUE[1, 2] == InstantiateBonesBLUE[2, 2] & InstantiateBonesBLUE[1, 2] != InstantiateBonesBLUE[0, 2])
+            {
+                if (InstantiateBonesBLUE[1, 2] == MasivRandomBones & InstantiateBonesBLUE[2, 2] == MasivRandomBones & InstantiateBonesBLUE[0, 2] != MasivRandomBones)
+                {
+                    Debug.Log("равны 1 и 2---" + ((InstantiateBonesBLUE[1, 2] + InstantiateBonesBLUE[2, 2]) * 2) + InstantiateBonesBLUE[0, 2]);
+                    //равны 1 и 2  3 столбец
+                    return;
+                }
+            }
+            //равны 1 и 2
+            //
+            //равны 0 и 2
+            if (InstantiateBonesBLUE[0, 0] == InstantiateBonesBLUE[2, 0] & InstantiateBonesBLUE[0, 0] != InstantiateBonesBLUE[1, 0])
+            {
+                if (InstantiateBonesBLUE[0, 0] == MasivRandomBones & InstantiateBonesBLUE[2, 0] == MasivRandomBones & InstantiateBonesBLUE[1, 0] != MasivRandomBones)
+                {
+                    Debug.Log("равны 0 и 2---" + ((InstantiateBonesBLUE[0, 0] + InstantiateBonesBLUE[2, 0]) * 2) + InstantiateBonesBLUE[1, 0]);
+                    //равны 0 и 2  1 столбец
+                    return;
+                }
+            }
+            if (InstantiateBonesBLUE[0, 1] == InstantiateBonesBLUE[2, 1] & InstantiateBonesBLUE[1, 1] != InstantiateBonesBLUE[1, 1])
+            {
+                if (InstantiateBonesBLUE[0, 1] == MasivRandomBones & InstantiateBonesBLUE[2, 1] == MasivRandomBones & InstantiateBonesBLUE[1, 1] != MasivRandomBones)
+                {
+                    Debug.Log("равны 0 и 2---" + ((InstantiateBonesBLUE[0, 1] + InstantiateBonesBLUE[2, 1]) * 2) + InstantiateBonesBLUE[1, 1]);
+                    //равны 0 и 2  2 столбец
+                    return;
+                }
+            }
+            if (InstantiateBonesBLUE[0, 2] == InstantiateBonesBLUE[2, 2] & InstantiateBonesBLUE[1, 2] != InstantiateBonesBLUE[1, 2])
+            {
+                if (InstantiateBonesBLUE[0, 2] == MasivRandomBones & InstantiateBonesBLUE[2, 2] == MasivRandomBones & InstantiateBonesBLUE[1, 2] != MasivRandomBones)
+                {
+                    Debug.Log("равны 0 и 2---" + ((InstantiateBonesBLUE[0, 2] + InstantiateBonesBLUE[2, 2]) * 2) + InstantiateBonesBLUE[1, 2]);
+                    //равны 0 и 2  3 столбец
+                    return;
+                }
+            }
+            //равны 0 и 2
+            //
+            //все не равны
+            if (InstantiateBonesBLUE[0, 0] != InstantiateBonesBLUE[1, 0] & InstantiateBonesBLUE[0, 0] != InstantiateBonesBLUE[2, 0] & InstantiateBonesBLUE[1, 0] != InstantiateBonesBLUE[2, 0])
+            {
+                Debug.Log("все не равны1---" + InstantiateBonesBLUE[0, 0] + InstantiateBonesBLUE[1, 0] + InstantiateBonesBLUE[2, 0]);
+                //все не равны  1 столбец
+                return;
+            }
+            if (InstantiateBonesBLUE[0, 1] != InstantiateBonesBLUE[1, 1] & InstantiateBonesBLUE[0, 1] != InstantiateBonesBLUE[2, 1] & InstantiateBonesBLUE[1, 1] != InstantiateBonesBLUE[2, 1])
+            {
+                Debug.Log("все не равны2---" + InstantiateBonesBLUE[0, 1] + InstantiateBonesBLUE[1, 1] + InstantiateBonesBLUE[2, 1]);
+                //все не равны  2 столбец
+                return;
+            }
+            if (InstantiateBonesBLUE[0, 2] != InstantiateBonesBLUE[1, 2] & InstantiateBonesBLUE[0, 2] != InstantiateBonesBLUE[2, 2] & InstantiateBonesBLUE[1, 2] != InstantiateBonesBLUE[2, 2])
+            {
+                Debug.Log("все не равны3---" + InstantiateBonesBLUE[0, 2] + InstantiateBonesBLUE[1, 2] + InstantiateBonesBLUE[2, 2]);
+                //все не равны  3 столбец
+                return;
+            }
+            //все не равны
+            if()
+            {
+                Debug.Log("ни чё нету");
+                //bool found = false;
+                for (int i = 0; i < 3; i++)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        if (InstantiateBonesRED[i, j] == 0)
+                        {
+                            IFi = i;
+                            IFj = j;
+                            IFColumnName = j;
+                            IFNameScore = $"CNR{j + 1}";
+                            Debug.Log($"if{j} --- CNR{j}");
+                            //found = true;
+                            //IFvector();
+                            return;
+                            //break;
+                        }
+                    }
+/*                    if (found)
+                    {
+                        found = false;
+                        break; 
+                    }*/
+                }
+                // BotRed(IFi, IFj, IFNameScore, IFColumnName);
+                IFvector();
+            }
+        }
+
+        else if (MasivRandomBones < 0)
+        {
+            Debug.Log("MasivRandomBones < 0---" + MasivRandomBones);
         }
     }
 
-    /*private void OnButtonRed0Clicked()
+    public void IFvector()
     {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[0, 0] <= 0)
+        if (InstantiateBonesRED[IFi, IFj] == InstantiateBonesRED[0, 0] && InstantiateBonesRED[0, 0] == 0)
         {
-            PanelPlayer = 1;
-            InstantiateBonesRED[0, 0] = MasivRandomBones + 1;
-            ResetBonesStart();
-            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[0], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + (MasivRandomBones + 1) + "0";
-            gameObjectsInstantiateRED[0, 0] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[0, 0], 0, "RED");
-            _actionScore.Score("CNR1");
-            _actionCheckingWinning.CheckingWinning();
+            IFvectorBones = 0;
+            Debug.Log("IFvector(0);");
+            Debug.Log("InstantiateBonesRED[IFi, IFj]---"+ InstantiateBonesRED[IFi, IFj]);
+            BotRed(IFi, IFj, IFNameScore, IFColumnName);
+            return;
+        }
+        if (InstantiateBonesRED[IFi, IFj] == InstantiateBonesRED[1, 0] && InstantiateBonesRED[1, 0] == 0)
+        {
+            IFvectorBones = 1;
+            Debug.Log("IFvector(1);");
+            BotRed(IFi, IFj, IFNameScore, IFColumnName);
+            return;
+        }
+        if (InstantiateBonesRED[IFi, IFj] == InstantiateBonesRED[2, 0] && InstantiateBonesRED[2, 0] == 0)
+        {
+            IFvectorBones = 2;
+            Debug.Log("IFvector(2);");
+            BotRed(IFi, IFj, IFNameScore, IFColumnName);
+            return;
+        }
+        if (InstantiateBonesRED[IFi, IFj] == InstantiateBonesRED[0, 1] && InstantiateBonesRED[0, 1] == 0)
+        {
+            IFvectorBones = 3;
+            Debug.Log("IFvector(3);");
+            BotRed(IFi, IFj, IFNameScore, IFColumnName);
+            return;
+        }
+        if (InstantiateBonesRED[IFi, IFj] == InstantiateBonesRED[1, 1] && InstantiateBonesRED[1, 1] == 0)
+        {
+            IFvectorBones = 4;
+            Debug.Log("IFvector(4);");
+            BotRed(IFi, IFj, IFNameScore, IFColumnName);
+            return;
+        }
+        if (InstantiateBonesRED[IFi, IFj] == InstantiateBonesRED[2, 1] && InstantiateBonesRED[2, 1] == 0)
+        {
+            IFvectorBones = 5;
+            Debug.Log("IFvector(5);");
+            BotRed(IFi, IFj, IFNameScore, IFColumnName);
+            return;
+        }
+        if (InstantiateBonesRED[IFi, IFj] == InstantiateBonesRED[0, 2] && InstantiateBonesRED[0, 2] == 0)
+        {
+            IFvectorBones = 6;
+            Debug.Log("IFvector(6);");
+            BotRed(IFi, IFj, IFNameScore, IFColumnName);
+            return;
+        }
+        if (InstantiateBonesRED[IFi, IFj] == InstantiateBonesRED[1, 2] && InstantiateBonesRED[1, 2] == 0)
+        {
+            IFvectorBones = 7;
+            Debug.Log("IFvector(7);");
+            BotRed(IFi, IFj, IFNameScore, IFColumnName);
+            return;
+        }
+        if (InstantiateBonesRED[IFi, IFj] == InstantiateBonesRED[2, 2] && InstantiateBonesRED[2, 2] == 0)
+        {
+            IFvectorBones = 8;
+            Debug.Log("IFvector(8);");
+            BotRed(IFi, IFj, IFNameScore, IFColumnName);
+            return;
         }
     }
 
-    private void OnButtonRed1Clicked()
+    public void BotRed(int SetPositionArrayBotX, int SetPositionArrayBotY, string NameScore, int ColumnName)
     {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[1, 0] <= 0)
+        IFvector();
+        if (PanelPlayer == 0 & MasivRandomBones >= 0 /*& InstantiateBonesRED[SetPositionArrayBotX, SetPositionArrayBotY] <= 0*/)
         {
             PanelPlayer = 1;
-            InstantiateBonesRED[1, 0] = MasivRandomBones + 1;
+            InstantiateBonesRED[SetPositionArrayBotX, SetPositionArrayBotY] = MasivRandomBones + 1;
             ResetBonesStart();
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[1], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + InstantiateBonesRED[1, 0] + "0";
-            gameObjectsInstantiateRED[1, 0] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[1, 0], 0, "RED");
-            _actionScore.Score("CNR1");
+            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[IFvectorBones], quaternionBones[MasivRandomBones]);
+            bonesRed.name = "R-" + (MasivRandomBones + 1) + ColumnName;
+            gameObjectsInstantiateRED[SetPositionArrayBotX, SetPositionArrayBotY] = bonesRed;
+            _actionDeleteBones.DeleteBones(InstantiateBonesRED[SetPositionArrayBotX, SetPositionArrayBotY], ColumnName, "RED");
+            _actionScore.Score(NameScore);
             _actionCheckingWinning.CheckingWinning();
-        }
-
-    }
-
-    private void OnButtonRed2Clicked()
-    {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[2, 0] <= 0)
-        {
-            PanelPlayer = 1;
-            InstantiateBonesRED[2, 0] = MasivRandomBones + 1;
-            ResetBonesStart();
-            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[2], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + InstantiateBonesRED[2, 0] + "0";
-            gameObjectsInstantiateRED[2, 0] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[2, 0], 0, "RED");
-            _actionScore.Score("CNR1");
-            _actionCheckingWinning.CheckingWinning();
-        }
-
-    }
-
-    private void OnButtonRed3Clicked()
-    {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[0, 1] <= 0)
-        {
-            PanelPlayer = 1;
-            InstantiateBonesRED[0, 1] = MasivRandomBones + 1;
-            ResetBonesStart();
-            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[3], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + InstantiateBonesRED[0, 1] + "1";
-            gameObjectsInstantiateRED[0, 1] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[0, 1], 1, "RED");
-            _actionScore.Score("CNR2");
-            _actionCheckingWinning.CheckingWinning();
+            Debug.Log(SetPositionArrayBotX+"---"+SetPositionArrayBotY +"---InstantiateBonesRED[SetPositionArrayBotX, SetPositionArrayBotY]---"+InstantiateBonesRED[SetPositionArrayBotX, SetPositionArrayBotY]);
         }
     }
 
-    private void OnButtonRed4Clicked()
-    {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[1, 1] <= 0)
-        {
-            PanelPlayer = 1;
-            InstantiateBonesRED[1, 1] = MasivRandomBones + 1;
-            ResetBonesStart();
-            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[4], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + InstantiateBonesRED[1, 1] + "1";
-            gameObjectsInstantiateRED[1, 1] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[1, 1], 1, "RED");
-            _actionScore.Score("CNR2");
-            _actionCheckingWinning.CheckingWinning();
-        }
-    }
-
-    private void OnButtonRed5Clicked()
-    {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[2, 1] <= 0)
-        {
-            PanelPlayer = 1;
-            InstantiateBonesRED[2, 1] = MasivRandomBones + 1;
-            ResetBonesStart();
-            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[5], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + InstantiateBonesRED[2, 1] + "1";
-            gameObjectsInstantiateRED[2, 1] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[2, 1], 1, "RED");
-            _actionScore.Score("CNR2");
-            _actionCheckingWinning.CheckingWinning();
-        }
-    }
-
-    private void OnButtonRed6Clicked()
-    {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[0, 2] <= 0)
-        {
-            PanelPlayer = 1;
-            InstantiateBonesRED[0, 2] = MasivRandomBones + 1;
-            ResetBonesStart();
-            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[6], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + InstantiateBonesRED[0, 2] + "2";
-            gameObjectsInstantiateRED[0, 2] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[0, 2], 2, "RED");
-            _actionScore.Score("CNR3");
-            _actionCheckingWinning.CheckingWinning();
-        }
-    }
-
-    private void OnButtonRed7Clicked()
-    {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[1, 2] <= 0)
-        {
-            PanelPlayer = 1;
-            InstantiateBonesRED[1, 2] = MasivRandomBones + 1;
-            ResetBonesStart();
-            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[7], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + InstantiateBonesRED[1, 2] + "2";
-            gameObjectsInstantiateRED[1, 2] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[1, 2], 2, "RED");
-            _actionScore.Score("CNR3");
-            _actionCheckingWinning.CheckingWinning();
-        }
-    }
-
-    private void OnButtonRed8Clicked()
-    {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[2, 2] <= 0)
-        {
-            PanelPlayer = 1;
-            InstantiateBonesRED[2, 2] = MasivRandomBones + 1;
-            ResetBonesStart();
-            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[8], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + InstantiateBonesRED[2, 2] + "2";
-            gameObjectsInstantiateRED[2, 2] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[2, 2], 2, "RED");
-            _actionScore.Score("CNR3");
-            _actionCheckingWinning.CheckingWinning();
-        }
-    }*/
     /// Red
     /// ///////////////////////////////////////////////////////////////////////////////////////
     /// Blue
@@ -299,6 +419,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[0, 0], 0, "BLUE");
             _actionScore.Score("CNB1");
             _actionCheckingWinning.CheckingWinning();
+            _actionBones.RandomButtonBones();
         }
     }
 

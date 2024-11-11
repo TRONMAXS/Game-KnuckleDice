@@ -4848,7 +4848,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c902000d159bc83499912f9884bb163d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PanelPlayer: 0
+  MasivRandomBonesBOTOFFRed: 0
+  MasivRandomBonesPlayerOFFBlue: 0
   Button: {fileID: 1298647850}
+  randomON: 1
   PanelStart:
   - {fileID: 1276746903}
   - {fileID: 1294612788}
@@ -4866,6 +4870,7 @@ MonoBehaviour:
   - {fileID: 1527091566}
   - {fileID: 1980825483}
   - {fileID: 552397069}
+  BotPlay: {fileID: 1124031140}
 --- !u!1 &923328381
 GameObject:
   m_ObjectHideFlags: 0
@@ -5780,10 +5785,14 @@ MonoBehaviour:
   BonesBlue: {fileID: 8611441520705628849, guid: dc7cc3cf327d17f489ef509bf66807ea, type: 3}
   MasivRandomBones: 0
   PanelPlayer: 0
+  "\u0421olumnName": 
+  SetPositionArrayBotX: 0
+  SetPositionArrayBotY: 0
   ScorePlayer: {fileID: 1300118940}
   ScorePlayer1: {fileID: 1300118940}
   ScorePlayerWIN: {fileID: 2032553532}
-  Resetaction: {fileID: 895589760}
+  ResetAction: {fileID: 895589760}
+  Bones: {fileID: 895589760}
   PanelPlayerPlay01:
   - {fileID: 1276746903}
   - {fileID: 1294612788}
@@ -6952,8 +6961,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 895589764}
-        m_TargetAssemblyTypeName: GameBones, Assembly-CSharp
+      - m_Target: {fileID: 895589765}
+        m_TargetAssemblyTypeName: BOTGameBones, Assembly-CSharp
         m_MethodName: RandomButtonBones
         m_Mode: 1
         m_Arguments:
@@ -9899,6 +9908,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2032553534}
   - component: {fileID: 2032553533}
+  - component: {fileID: 2032553535}
   m_Layer: 0
   m_Name: CheckingWinning
   m_TagString: Untagged
@@ -9913,7 +9923,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2032553532}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c040d4fba41404c4880c5ddcd6a0480f, type: 3}
   m_Name: 
@@ -9948,6 +9958,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2032553535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032553532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c6f7d8fc77f894e8a0d2d5d7962080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WinPanel: {fileID: 636510479}
+  TextWinnerRED: {fileID: 1184074710}
+  TextWinnerBLUE: {fileID: 1589973383}
+  ScoreRED: {fileID: 686285413}
+  ScoreBLUE: {fileID: 264226276}
+  InstantiateMSRED: {fileID: 1124031140}
+  InstantiateMSBLUE: {fileID: 1124031140}
+  TextScoreRED1: {fileID: 1300118940}
+  TextScoreRED2: {fileID: 1300118940}
+  TextScoreRED3: {fileID: 1300118940}
+  TextScoreBLUE1: {fileID: 1300118940}
+  TextScoreBLUE2: {fileID: 1300118940}
+  TextScoreBLUE3: {fileID: 1300118940}
+  ScoreWinerRed: 0
+  ScoreWinerBlue: 0
 --- !u!4 &2048679676 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7713442038950376759, guid: 8c851d438fe67f24a9d9edc2fc7af713, type: 3}

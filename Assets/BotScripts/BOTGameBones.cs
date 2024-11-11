@@ -5,13 +5,12 @@ using System;
 public class BOTGameBones : MonoBehaviour
 {
     public static int MasivRandomBonesPlayer = -1;
-    private int PanelPlayer;
-    private int MasivRandomBonesBOTOFFRed;
-    private int MasivRandomBonesPlayerOFFBlue;
+    public int PanelPlayer;
+    public int MasivRandomBonesBOTOFFRed;
+    public int MasivRandomBonesPlayerOFFBlue;
 
     public GameObject Button;
-
-    private bool randomON = true;
+    public bool randomON = true;
 
     public static int PanelStartRandom;
 
@@ -19,6 +18,9 @@ public class BOTGameBones : MonoBehaviour
 
     public GameObject[] RandomBonesBOTRed;
     public GameObject[] RandomBonesPlayerBlue;
+
+    public GameObject BotPlay;
+    private BOTGamePanelButtonRed _actionBotPlay;
 
     public int GenerateRandomDigitPanel()
     {
@@ -42,6 +44,8 @@ public class BOTGameBones : MonoBehaviour
 
     private void Start()
     {
+        _actionBotPlay = BotPlay.GetComponent<BOTGamePanelButtonRed>();
+
         PanelRandom();
     }
 
@@ -51,25 +55,25 @@ public class BOTGameBones : MonoBehaviour
         PanelPlayer = PanelStartRandom;
         PanelStart[PanelStartRandom].SetActive(true);
         randomON = true;
-        Debug.Log(PanelPlayer + "---PanelPlayer");
         if (PanelPlayer == 0)
         {
             RandomButtonBones();
         }
+        Debug.Log(PanelPlayer + "---PanelPlayer");
     }
 
-
-    private void RandomButtonBones()
+    public void RandomButtonBones()
     {
         if (randomON == true)
         {
             MasivRandomBonesPlayer = GenerateRandomDigitBones();
 
-            if (PanelPlayer == 0)
+            if (PanelPlayer == 0 /*| BOTGamePanelButtonRed.PanelPlayer == 0*/)
             {
                 MasivRandomBonesBOTOFFRed = MasivRandomBonesPlayer;
                 RandomBonesBOTRed[MasivRandomBonesPlayer].SetActive(true);
                 PanelPlayer = 1;
+                _actionBotPlay.CheckArraysInvoke();
             }
             else if (PanelPlayer == 1)
             {
@@ -82,6 +86,8 @@ public class BOTGameBones : MonoBehaviour
             PanelStart[0].SetActive(false);
             PanelStart[1].SetActive(false);
         }
+        Debug.Log(MasivRandomBonesPlayer + "---MasivRandomBonesPlayer");
+
     }
 
     public void ResetBones()
