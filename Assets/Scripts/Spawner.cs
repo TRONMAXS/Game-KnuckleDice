@@ -3,11 +3,13 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject BonesRB;
+    private GameObject ObjectBonesRB;
 
     public float timeStart;
     public int timeMax;
     public int randMinStart;
     public int randMax;
+    private float timeDell = 2f;
 
     public static int direction;
 
@@ -32,8 +34,9 @@ public class Spawner : MonoBehaviour
 
             if (timeStart >= timeMax)
             {
-                Instantiate(BonesRB, vectorY, Quaternion.identity);
+                ObjectBonesRB = Instantiate(BonesRB, vectorY, Quaternion.identity);
                 timeStart = rand;
+                Destroy(ObjectBonesRB, timeDell);
             }
         }
 
@@ -44,8 +47,9 @@ public class Spawner : MonoBehaviour
 
             if (timeStart >= timeMax)
             {
-                Instantiate(BonesRB, vectorY, Quaternion.identity);
+                ObjectBonesRB = Instantiate(BonesRB, vectorY, Quaternion.identity);
                 timeStart = rand;
+                Destroy(ObjectBonesRB, timeDell);
             }
         }
     }

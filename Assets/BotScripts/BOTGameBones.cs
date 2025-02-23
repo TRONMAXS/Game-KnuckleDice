@@ -19,10 +19,13 @@ public class BOTGameBones : MonoBehaviour
     public GameObject[] RandomBonesBOTRed;
     public GameObject[] RandomBonesPlayerBlue;
 
-    public GameObject BotPlay;
+    public GameObject BOTGamePanelButtonRed;
     private BOTGamePanelButtonRed _actionBotPlay;
 
-    public int GenerateRandomDigitPanel()
+  //  public GameObject StartBotPlay;
+    private BOTGamePanelButtonRed _actionStartBotPlay;
+
+    private int GenerateRandomDigitPanel()
     {
         byte[] randomBytes1 = new byte[1];
         using (var CSP1 = new RNGCryptoServiceProvider())
@@ -32,7 +35,7 @@ public class BOTGameBones : MonoBehaviour
         return Convert.ToInt32(randomBytes1[0]) % 2;
     }
 
-    public int GenerateRandomDigitBones()
+    private int GenerateRandomDigitBones()
     {
         byte[] randomBytes2 = new byte[1];
         using (var CSP2 = new RNGCryptoServiceProvider())
@@ -44,22 +47,25 @@ public class BOTGameBones : MonoBehaviour
 
     private void Start()
     {
-        _actionBotPlay = BotPlay.GetComponent<BOTGamePanelButtonRed>();
+        _actionBotPlay = BOTGamePanelButtonRed.GetComponent<BOTGamePanelButtonRed>();
+        _actionStartBotPlay = BOTGamePanelButtonRed.GetComponent<BOTGamePanelButtonRed>();
 
-        PanelRandom();
+        StartRandomPanel();
     }
 
-    private void PanelRandom()
+    private void StartRandomPanel()
     {
         PanelStartRandom = GenerateRandomDigitPanel();
         PanelPlayer = PanelStartRandom;
         PanelStart[PanelStartRandom].SetActive(true);
         randomON = true;
+        Debug.Log(PanelPlayer + "---PanelPlayer");
         if (PanelPlayer == 0)
         {
             RandomButtonBones();
+            _actionStartBotPlay.StartBotPlay();
+
         }
-        Debug.Log(PanelPlayer + "---PanelPlayer");
     }
 
     public void RandomButtonBones()
@@ -86,8 +92,7 @@ public class BOTGameBones : MonoBehaviour
             PanelStart[0].SetActive(false);
             PanelStart[1].SetActive(false);
         }
-        Debug.Log(MasivRandomBonesPlayer + "---MasivRandomBonesPlayer");
-
+        Debug.Log(MasivRandomBonesPlayer + "---MasivRandomBonesPlayer");      
     }
 
     public void ResetBones()

@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,8 +22,24 @@ public class BOTGamePanelButtonRed : MonoBehaviour
     private Vector2[] vector2BonesRed;
     private Vector2[] vector2BonesBlue;
 
-    public int[,] InstantiateBonesRED = new int[3, 3];
-    public int[,] InstantiateBonesBLUE = new int[3, 3];
+    /*public int[,] InstantiateBonesRED = new int[3, 3];
+    public int[,] InstantiateBonesBLUE = new int[3, 3];*/
+
+    /*public int[,] InstantiateBonesRED =  { { 10, 10, 10 },
+                                           { 10, 10, 10 },
+                                           { 10, 10, 10 } };
+
+    public int[,] InstantiateBonesBLUE = { { 10, 10, 10 },
+                                           { 10, 10, 10 },
+                                           { 10, 10, 10 } };*/
+
+    public int[,] InstantiateBonesRED =  { { 0, 0, 0 },
+                                           { 0, 0, 0 },
+                                           { 0, 0, 0 } };
+
+    public int[,] InstantiateBonesBLUE = { { 0, 0, 0 },
+                                           { 0, 0, 0 },
+                                           { 0, 0, 0 } };
 
     public GameObject[,] gameObjectsInstantiateRED = new GameObject[3, 3];
     public GameObject[,] gameObjectsInstantiateBLUE = new GameObject[3, 3];
@@ -41,8 +56,6 @@ public class BOTGamePanelButtonRed : MonoBehaviour
 
 /*    public int SetPositionArrayBotX;
     public int SetPositionArrayBotY;*/
-
-
 
     public static int ResetRandomBones = 0;
 
@@ -115,10 +128,17 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         vector2BonesBlue[8] = new Vector2(179, 468);
 
         PanelPlayer = BOTGameBones.PanelStartRandom;
-    }    
+
+       
+    }
     private void Update()
     {
         MasivRandomBones = BOTGameBones.MasivRandomBonesPlayer;
+    }
+
+    public void GameLeave()
+    {
+        ResetBonesStart();
     }
 
     private void ResetBonesStart()
@@ -259,6 +279,14 @@ public class BOTGamePanelButtonRed : MonoBehaviour
             //все не равны
             if (InstantiateBonesBLUE[0, 0] != InstantiateBonesBLUE[1, 0] & InstantiateBonesBLUE[0, 0] != InstantiateBonesBLUE[2, 0] & InstantiateBonesBLUE[1, 0] != InstantiateBonesBLUE[2, 0])
             {
+                /*IFi = i;
+                IFj = j;
+                IFColumnName = j;
+                IFNameScore = $"CNR{j + 1}";
+                Debug.Log($"if{j} --- CNR{j}");
+
+                BotRed(IFi, IFj, IFNameScore, IFColumnName);
+                IFvector();*/
                 Debug.Log("все не равны1---" + InstantiateBonesBLUE[0, 0] + InstantiateBonesBLUE[1, 0] + InstantiateBonesBLUE[2, 0]);
                 //все не равны  1 столбец
                 return;
@@ -276,10 +304,10 @@ public class BOTGamePanelButtonRed : MonoBehaviour
                 return;
             }
             //все не равны
-            if()
+            else
             {
                 Debug.Log("ни чё нету");
-                //bool found = false;
+                bool found = false;
                 for (int i = 0; i < 3; i++)
                 {
                     for (int j = 0; j < 3; j++)
@@ -291,27 +319,40 @@ public class BOTGamePanelButtonRed : MonoBehaviour
                             IFColumnName = j;
                             IFNameScore = $"CNR{j + 1}";
                             Debug.Log($"if{j} --- CNR{j}");
-                            //found = true;
-                            //IFvector();
-                            return;
-                            //break;
+                            found = true;
+                            IFvector();
+                            Debug.Log("for-for-if CheckArraysBotBlue");
+                            //return;
+                            break;
                         }
                     }
-/*                    if (found)
+                    if (found)
                     {
+                        Debug.Log("found CheckArraysBotBlue");
                         found = false;
                         break; 
-                    }*/
+                    }
                 }
-                // BotRed(IFi, IFj, IFNameScore, IFColumnName);
+                Debug.Log("BotRed()-IFvector() CheckArraysBotBlue");
+                BotRed(IFi, IFj, IFNameScore, IFColumnName);
                 IFvector();
             }
+            Debug.Log("конец CheckArraysBotBlue");
         }
-
+    
         else if (MasivRandomBones < 0)
         {
-            Debug.Log("MasivRandomBones < 0---" + MasivRandomBones);
+            Debug.Log("MasivRandomBones < 0 --- " + MasivRandomBones);
         }
+    } 
+
+    public void StartBotPlay()
+    {
+        PanelPlayer = 1;
+        int RandPlaceBotPlay = Random.Range(0, 9);
+        //IFvector();
+        Debug.Log("StartBotPlay-RandPlaceBotPlay-" + RandPlaceBotPlay);
+
     }
 
     public void IFvector()
@@ -320,64 +361,64 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         {
             IFvectorBones = 0;
             Debug.Log("IFvector(0);");
-            Debug.Log("InstantiateBonesRED[IFi, IFj]---"+ InstantiateBonesRED[IFi, IFj]);
-            BotRed(IFi, IFj, IFNameScore, IFColumnName);
+            Debug.Log("InstantiateBonesRED[" + IFi + "," + IFj + "]---"+ InstantiateBonesRED[IFi, IFj]);
+            //BotRed(IFi, IFj, IFNameScore, IFColumnName);
             return;
         }
         if (InstantiateBonesRED[IFi, IFj] == InstantiateBonesRED[1, 0] && InstantiateBonesRED[1, 0] == 0)
         {
             IFvectorBones = 1;
             Debug.Log("IFvector(1);");
-            BotRed(IFi, IFj, IFNameScore, IFColumnName);
+           //BotRed(IFi, IFj, IFNameScore, IFColumnName);
             return;
         }
         if (InstantiateBonesRED[IFi, IFj] == InstantiateBonesRED[2, 0] && InstantiateBonesRED[2, 0] == 0)
         {
             IFvectorBones = 2;
             Debug.Log("IFvector(2);");
-            BotRed(IFi, IFj, IFNameScore, IFColumnName);
+          //  BotRed(IFi, IFj, IFNameScore, IFColumnName);
             return;
         }
         if (InstantiateBonesRED[IFi, IFj] == InstantiateBonesRED[0, 1] && InstantiateBonesRED[0, 1] == 0)
         {
             IFvectorBones = 3;
             Debug.Log("IFvector(3);");
-            BotRed(IFi, IFj, IFNameScore, IFColumnName);
+           // BotRed(IFi, IFj, IFNameScore, IFColumnName);
             return;
         }
         if (InstantiateBonesRED[IFi, IFj] == InstantiateBonesRED[1, 1] && InstantiateBonesRED[1, 1] == 0)
         {
             IFvectorBones = 4;
             Debug.Log("IFvector(4);");
-            BotRed(IFi, IFj, IFNameScore, IFColumnName);
+            //BotRed(IFi, IFj, IFNameScore, IFColumnName);
             return;
         }
         if (InstantiateBonesRED[IFi, IFj] == InstantiateBonesRED[2, 1] && InstantiateBonesRED[2, 1] == 0)
         {
             IFvectorBones = 5;
             Debug.Log("IFvector(5);");
-            BotRed(IFi, IFj, IFNameScore, IFColumnName);
+          //  BotRed(IFi, IFj, IFNameScore, IFColumnName);
             return;
         }
         if (InstantiateBonesRED[IFi, IFj] == InstantiateBonesRED[0, 2] && InstantiateBonesRED[0, 2] == 0)
         {
             IFvectorBones = 6;
             Debug.Log("IFvector(6);");
-            BotRed(IFi, IFj, IFNameScore, IFColumnName);
+           // BotRed(IFi, IFj, IFNameScore, IFColumnName);
             return;
         }
         if (InstantiateBonesRED[IFi, IFj] == InstantiateBonesRED[1, 2] && InstantiateBonesRED[1, 2] == 0)
         {
             IFvectorBones = 7;
             Debug.Log("IFvector(7);");
-            BotRed(IFi, IFj, IFNameScore, IFColumnName);
+            //BotRed(IFi, IFj, IFNameScore, IFColumnName);
             return;
         }
         if (InstantiateBonesRED[IFi, IFj] == InstantiateBonesRED[2, 2] && InstantiateBonesRED[2, 2] == 0)
         {
             IFvectorBones = 8;
             Debug.Log("IFvector(8);");
-            BotRed(IFi, IFj, IFNameScore, IFColumnName);
+           // BotRed(IFi, IFj, IFNameScore, IFColumnName);
             return;
         }
     }
@@ -428,8 +469,8 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[1, 0] <= 0)
         {
             PanelPlayer = 0;
-            ResetBonesStart();
             InstantiateBonesBLUE[1, 0] = MasivRandomBones + 1;
+            ResetBonesStart();
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
             bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[1], quaternionBones[MasivRandomBones]);
             bonesBlue.name = "B-" + InstantiateBonesBLUE[1, 0] + "0";
@@ -437,8 +478,10 @@ public class BOTGamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[1, 0], 0, "BLUE");
             _actionScore.Score("CNB1");
             _actionCheckingWinning.CheckingWinning();
+            _actionBones.RandomButtonBones();
         }
     }
+
     private void OnButtonBlue2Clicked()
     {
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[2, 0] <= 0)
@@ -453,6 +496,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[2, 0], 0, "BLUE");
             _actionScore.Score("CNB1");
             _actionCheckingWinning.CheckingWinning();
+            _actionBones.RandomButtonBones();
         }
     }
 
@@ -470,6 +514,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[0, 1], 1, "BLUE");
             _actionScore.Score("CNB2");
             _actionCheckingWinning.CheckingWinning();
+            _actionBones.RandomButtonBones();
         }
     }
 
@@ -487,6 +532,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[1, 1], 1, "BLUE");
             _actionScore.Score("CNB2");
             _actionCheckingWinning.CheckingWinning();
+            _actionBones.RandomButtonBones();
         }
     }
 
@@ -504,8 +550,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[2, 1], 1, "BLUE");
             _actionScore.Score("CNB2");
             _actionCheckingWinning.CheckingWinning();
-
-
+            _actionBones.RandomButtonBones();
         }
     }
 
@@ -523,6 +568,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[0, 2], 2, "BLUE");
             _actionScore.Score("CNB3");
             _actionCheckingWinning.CheckingWinning();
+            _actionBones.RandomButtonBones();
         }
     }
 
@@ -540,6 +586,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[1, 2], 2, "BLUE");
             _actionScore.Score("CNB3");
             _actionCheckingWinning.CheckingWinning();
+            _actionBones.RandomButtonBones();
         }
     }
 
@@ -557,6 +604,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[2, 2], 2, "BLUE");
             _actionScore.Score("CNB3");
             _actionCheckingWinning.CheckingWinning();
+            _actionBones.RandomButtonBones();
         }
     }
 }

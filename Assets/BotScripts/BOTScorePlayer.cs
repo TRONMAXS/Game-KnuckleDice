@@ -6,6 +6,8 @@ public class BOTScorePlayer : MonoBehaviour
     public static int[,] BonesRED = new int[3, 3];
     public static int[,] BonesBLUE = new int[3, 3];
 
+    public int[] NumsBones = { 0, 1, 2, 3, 4, 5 };
+
     public int[,] arrayRED = new int[3, 3];
     public int[,] arrayBLUE = new int[3, 3];
     public Text textScoreR1;
@@ -57,6 +59,41 @@ public class BOTScorePlayer : MonoBehaviour
             for (int j = 0; j < arrayBLUE.GetLength(1); j++)
             {
                 arrayBLUE[i, j] = _arrayB.InstantiateBonesBLUE[i, j];
+            }
+        }
+    }
+
+    public void MoveBones(int j, string array)
+    {
+
+        if (array == "RED")
+        {
+            for (int i = 0; i < arrayBLUE.GetLength(0); i++)
+            {
+                /*if (arrayBLUE[i, j] == numberToFind)
+                {
+                    Destroy(_arrayGameObjectB.gameObjectsInstantiateBLUE[i, j]);
+                    _arrayB.InstantiateBonesBLUE[i, j] = 0;
+                    _arrayGameObjectB.gameObjectsInstantiateBLUE[i, j] = null;
+                    Score("CNB" + (j + 1));
+                }*/
+            }
+        }
+        else if (array == "BLUE")
+        {
+            for (int i = 0; i < arrayBLUE.GetLength(0); i++)
+            {
+                if (arrayBLUE[2, j] < 10)
+                {
+                    Debug.Log("if (arrayBLUE[2, j] < 10)");
+
+
+                    /* Destroy(_arrayGameObjectR.gameObjectsInstantiateRED[i, j]);
+                     _arrayR.InstantiateBonesRED[i, j] = 0;
+                     _arrayGameObjectR.gameObjectsInstantiateRED[i, j] = null;
+                     Score("CNR" + (j + 1));*/
+
+                }
             }
         }
     }

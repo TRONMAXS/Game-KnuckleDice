@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class winPlayer : MonoBehaviour
+public class WinPlayer : MonoBehaviour
 {
     public GameObject WinPanel;
 
@@ -71,8 +71,6 @@ public class winPlayer : MonoBehaviour
             }
         }
 
-        //Победа - Выиграл
-        //Проигрыш - Проиграл
         if (isFilledRED == true)
         {
         ScoreWinerRed = _TextScoreR1.REDtext1 + _TextScoreR2.REDtext2 + _TextScoreR3.REDtext3;

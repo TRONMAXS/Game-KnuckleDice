@@ -64,15 +64,13 @@ public class BOTwinPlayer : MonoBehaviour
         {
             for (int j = 0; j < _arrayR.InstantiateBonesBLUE.GetLength(1) && isFilledBLUE; j++)
             {
-                if (_arrayR.InstantiateBonesBLUE[i, j] == 0)
+                if (_arrayB.InstantiateBonesBLUE[i, j] == 0)
                 {
                     isFilledBLUE = false;
                 }
             }
         }
 
-        //Победа - Выиграл
-        //Проигрыш - Проиграл
         if (isFilledRED == true)
         {
             ScoreWinerRed = _TextScoreR1.REDtext1 + _TextScoreR2.REDtext2 + _TextScoreR3.REDtext3;

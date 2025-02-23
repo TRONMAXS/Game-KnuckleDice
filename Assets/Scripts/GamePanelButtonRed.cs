@@ -48,7 +48,7 @@ public class GamePanelButtonRed : MonoBehaviour
     private ScorePlayer _actionDeleteBones;
 
     public GameObject ScorePlayerWIN;
-    private winPlayer _actionCheckingWinning;
+    private WinPlayer _actionCheckingWinning;
 
     public GameObject Resetaction;
     private GameBones _actionResetBones;
@@ -60,7 +60,7 @@ public class GamePanelButtonRed : MonoBehaviour
         _actionScore = ScorePlayer.GetComponent<ScorePlayer>();
         _actionDeleteBones = ScorePlayer1.GetComponent<ScorePlayer>();
 
-        _actionCheckingWinning  = ScorePlayerWIN.GetComponent<winPlayer>();
+        _actionCheckingWinning  = ScorePlayerWIN.GetComponent<WinPlayer>();
 
         _actionResetBones = Resetaction.GetComponent<GameBones>();
 

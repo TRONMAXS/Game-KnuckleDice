@@ -4870,7 +4870,7 @@ MonoBehaviour:
   - {fileID: 1527091566}
   - {fileID: 1980825483}
   - {fileID: 552397069}
-  BotPlay: {fileID: 1124031140}
+  BOTGamePanelButtonRed: {fileID: 1124031140}
 --- !u!1 &923328381
 GameObject:
   m_ObjectHideFlags: 0
@@ -5784,10 +5784,12 @@ MonoBehaviour:
   BonesRed: {fileID: 9210855777731689666, guid: d1875f621d4aa5f43ba3257c494aacea, type: 3}
   BonesBlue: {fileID: 8611441520705628849, guid: dc7cc3cf327d17f489ef509bf66807ea, type: 3}
   MasivRandomBones: 0
-  PanelPlayer: 0
   "\u0421olumnName": 
-  SetPositionArrayBotX: 0
-  SetPositionArrayBotY: 0
+  IFvectorBones: 0
+  IFNameScore: 
+  IFColumnName: 0
+  IFi: 0
+  IFj: 0
   ScorePlayer: {fileID: 1300118940}
   ScorePlayer1: {fileID: 1300118940}
   ScorePlayerWIN: {fileID: 2032553532}
@@ -9015,6 +9017,18 @@ MonoBehaviour:
       - m_Target: {fileID: 613443560}
         m_TargetAssemblyTypeName: GameLeave, Assembly-CSharp
         m_MethodName: Leave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1124031145}
+        m_TargetAssemblyTypeName: BOTGamePanelButtonRed, Assembly-CSharp
+        m_MethodName: GameLeave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
