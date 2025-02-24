@@ -4851,8 +4851,9 @@ MonoBehaviour:
   PanelPlayer: 0
   MasivRandomBonesBOTOFFRed: 0
   MasivRandomBonesPlayerOFFBlue: 0
-  Button: {fileID: 1298647850}
   randomON: 1
+  Button: {fileID: 1298647850}
+  BOTGamePanelButtonRed: {fileID: 1124031140}
   PanelStart:
   - {fileID: 1276746903}
   - {fileID: 1294612788}
@@ -4870,7 +4871,6 @@ MonoBehaviour:
   - {fileID: 1527091566}
   - {fileID: 1980825483}
   - {fileID: 552397069}
-  BOTGamePanelButtonRed: {fileID: 1124031140}
 --- !u!1 &923328381
 GameObject:
   m_ObjectHideFlags: 0
@@ -6965,7 +6965,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 895589765}
         m_TargetAssemblyTypeName: BOTGameBones, Assembly-CSharp
-        m_MethodName: RandomButtonBones
+        m_MethodName: ButtonPlayer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7105,6 +7105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 483d94dccb35905419db648dff80535b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NumsBones: 000000000100000002000000030000000400000005000000
   textScoreR1: {fileID: 1018365330}
   textScoreR2: {fileID: 295394495}
   textScoreR3: {fileID: 534437804}

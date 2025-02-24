@@ -54,7 +54,7 @@ public class BOTwinPlayer : MonoBehaviour
         {
             for (int j = 0; j < _arrayR.InstantiateBonesRED.GetLength(1) && isFilledRED; j++)
             {
-                if (_arrayR.InstantiateBonesRED[i, j] == 0)
+                if (_arrayR.InstantiateBonesRED[i, j] == 10)
                 {
                     isFilledRED = false;
                 }
@@ -64,7 +64,7 @@ public class BOTwinPlayer : MonoBehaviour
         {
             for (int j = 0; j < _arrayR.InstantiateBonesBLUE.GetLength(1) && isFilledBLUE; j++)
             {
-                if (_arrayB.InstantiateBonesBLUE[i, j] == 0)
+                if (_arrayB.InstantiateBonesBLUE[i, j] == 10)
                 {
                     isFilledBLUE = false;
                 }

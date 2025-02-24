@@ -51,6 +51,10 @@ public class BOTScorePlayer : MonoBehaviour
             for (int j = 0; j < arrayRED.GetLength(1); j++)
             {
                 arrayRED[i, j] = _arrayR.InstantiateBonesRED[i, j];
+                if (arrayRED[i, j] == 10)
+                {
+                    arrayRED[i, j] = 0;
+                }
             }
         }
 
@@ -59,6 +63,10 @@ public class BOTScorePlayer : MonoBehaviour
             for (int j = 0; j < arrayBLUE.GetLength(1); j++)
             {
                 arrayBLUE[i, j] = _arrayB.InstantiateBonesBLUE[i, j];
+                if (arrayBLUE[i, j] == 10)
+                {
+                    arrayBLUE[i, j] = 0;
+                }
             }
         }
     }
@@ -108,7 +116,7 @@ public class BOTScorePlayer : MonoBehaviour
                 if (arrayBLUE[i, j] == numberToFind)
                 {
                     Destroy(_arrayGameObjectB.gameObjectsInstantiateBLUE[i, j]);
-                    _arrayB.InstantiateBonesBLUE[i, j] = 0;
+                    _arrayB.InstantiateBonesBLUE[i, j] = 10;
                     _arrayGameObjectB.gameObjectsInstantiateBLUE[i, j] = null;
                     Score("CNB" + (j + 1));
                 }
@@ -121,7 +129,7 @@ public class BOTScorePlayer : MonoBehaviour
                 if (arrayRED[i, j] == numberToFind)
                 {
                     Destroy(_arrayGameObjectR.gameObjectsInstantiateRED[i, j]);
-                    _arrayR.InstantiateBonesRED[i, j] = 0;
+                    _arrayR.InstantiateBonesRED[i, j] = 10;
                     _arrayGameObjectR.gameObjectsInstantiateRED[i, j] = null;
                     Score("CNR" + (j + 1));
                 }

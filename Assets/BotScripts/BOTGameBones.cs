@@ -4,26 +4,27 @@ using System;
 
 public class BOTGameBones : MonoBehaviour
 {
-    public static int MasivRandomBonesPlayer = -1;
     public int PanelPlayer;
     public int MasivRandomBonesBOTOFFRed;
     public int MasivRandomBonesPlayerOFFBlue;
 
-    public GameObject Button;
-    public bool randomON = true;
-
+    public static int MasivRandomBonesPlayer = -1;
     public static int PanelStartRandom;
+    
+    public bool randomON = true;
+    public static bool StartBot = false;
+
+    public GameObject Button;
+    public GameObject BOTGamePanelButtonRed;
+
 
     public GameObject[] PanelStart;
-
     public GameObject[] RandomBonesBOTRed;
     public GameObject[] RandomBonesPlayerBlue;
 
-    public GameObject BOTGamePanelButtonRed;
     private BOTGamePanelButtonRed _actionBotPlay;
+    //private BOTGamePanelButtonRed _actionStartBotPlay;
 
-  //  public GameObject StartBotPlay;
-    private BOTGamePanelButtonRed _actionStartBotPlay;
 
     private int GenerateRandomDigitPanel()
     {
@@ -48,7 +49,7 @@ public class BOTGameBones : MonoBehaviour
     private void Start()
     {
         _actionBotPlay = BOTGamePanelButtonRed.GetComponent<BOTGamePanelButtonRed>();
-        _actionStartBotPlay = BOTGamePanelButtonRed.GetComponent<BOTGamePanelButtonRed>();
+        //_actionStartBotPlay = BOTGamePanelButtonRed.GetComponent<BOTGamePanelButtonRed>();
 
         StartRandomPanel();
     }
@@ -62,35 +63,56 @@ public class BOTGameBones : MonoBehaviour
         Debug.Log(PanelPlayer + "---PanelPlayer");
         if (PanelPlayer == 0)
         {
-            RandomButtonBones();
-            _actionStartBotPlay.StartBotPlay();
-
+            StartBot = true;
+            RandomButtonBones(0, true);
         }
     }
 
-    public void RandomButtonBones()
+    public void ButtonPlayer()
+    {
+        RandomButtonBones(1, false);
+    }
+
+    public void RandomButtonBones(int PanelPlayer, bool StartBot)
     {
         if (randomON == true)
         {
             MasivRandomBonesPlayer = GenerateRandomDigitBones();
+            MasivRandomBonesBOTOFFRed = MasivRandomBonesPlayer;
+            MasivRandomBonesPlayerOFFBlue = MasivRandomBonesPlayer;
 
-            if (PanelPlayer == 0 /*| BOTGamePanelButtonRed.PanelPlayer == 0*/)
+            if (PanelPlayer == 0 & StartBot == false  /*| BOTGamePanelButtonRed.PanelPlayer == 0*/)
             {
-                MasivRandomBonesBOTOFFRed = MasivRandomBonesPlayer;
+                Debug.Log("PanelPlayer == 0 & StartBot == false");
                 RandomBonesBOTRed[MasivRandomBonesPlayer].SetActive(true);
-                PanelPlayer = 1;
                 _actionBotPlay.CheckArraysInvoke();
+                randomON = false;
+                Button.SetActive(false);
+                PanelStart[0].SetActive(false);
+                PanelStart[1].SetActive(false);
+                return;
             }
-            else if (PanelPlayer == 1)
+            if (PanelPlayer == 0 & StartBot == true)
             {
-                MasivRandomBonesPlayerOFFBlue = MasivRandomBonesPlayer;
-                RandomBonesPlayerBlue[MasivRandomBonesPlayer].SetActive(true);
-                PanelPlayer = 0;
+                Debug.Log("PanelPlayer == 0 & StartBot == true");
+                RandomBonesBOTRed[MasivRandomBonesPlayer].SetActive(true);
+                _actionBotPlay.CheckArraysInvoke();
+                randomON = false;
+                Button.SetActive(false);
+                PanelStart[0].SetActive(false);
+                PanelStart[1].SetActive(false);
+                return;
             }
-            randomON = false;
-            Button.SetActive(false);
-            PanelStart[0].SetActive(false);
-            PanelStart[1].SetActive(false);
+            if (PanelPlayer == 1)
+            {
+                Debug.Log("PanelPlayer == 1");
+                RandomBonesPlayerBlue[MasivRandomBonesPlayer].SetActive(true);
+                randomON = false;
+                Button.SetActive(false);
+                PanelStart[0].SetActive(false);
+                PanelStart[1].SetActive(false);
+                return;
+            }
         }
         Debug.Log(MasivRandomBonesPlayer + "---MasivRandomBonesPlayer");      
     }
