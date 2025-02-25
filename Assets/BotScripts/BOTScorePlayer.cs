@@ -71,20 +71,20 @@ public class BOTScorePlayer : MonoBehaviour
         }
     }
 
-    public void MoveBones(int j, string array)
+    /*public void MoveBones(int j, string array)
     {
 
         if (array == "RED")
         {
             for (int i = 0; i < arrayBLUE.GetLength(0); i++)
             {
-                /*if (arrayBLUE[i, j] == numberToFind)
+                *//*if (arrayBLUE[i, j] == numberToFind)
                 {
                     Destroy(_arrayGameObjectB.gameObjectsInstantiateBLUE[i, j]);
                     _arrayB.InstantiateBonesBLUE[i, j] = 0;
                     _arrayGameObjectB.gameObjectsInstantiateBLUE[i, j] = null;
                     Score("CNB" + (j + 1));
-                }*/
+                }*//*
             }
         }
         else if (array == "BLUE")
@@ -96,15 +96,15 @@ public class BOTScorePlayer : MonoBehaviour
                     Debug.Log("if (arrayBLUE[2, j] < 10)");
 
 
-                    /* Destroy(_arrayGameObjectR.gameObjectsInstantiateRED[i, j]);
+                    *//* Destroy(_arrayGameObjectR.gameObjectsInstantiateRED[i, j]);
                      _arrayR.InstantiateBonesRED[i, j] = 0;
                      _arrayGameObjectR.gameObjectsInstantiateRED[i, j] = null;
-                     Score("CNR" + (j + 1));*/
+                     Score("CNR" + (j + 1));*//*
 
                 }
             }
         }
-    }
+    }*/
 
     public void DeleteBones(int numberToFind, int j, string array)
     {

@@ -56,9 +56,16 @@ public class BOTGamePanelButtonRed : MonoBehaviour
     public int IFColumnName;
     public int IFi;
     public int IFj;
+    public int MoveXBlue;
+    public int MoveYBlue;
+    public int MoveXRed;
+    public int MoveYRed;
+    public int MoveVector2Red;
+    public int MoveVector2Blue;
 
-/*    public int SetPositionArrayBotX;
-    public int SetPositionArrayBotY;*/
+
+    /*    public int SetPositionArrayBotX;
+        public int SetPositionArrayBotY;*/
 
     public static int ResetRandomBones = 0;
 
@@ -132,11 +139,318 @@ public class BOTGamePanelButtonRed : MonoBehaviour
 
         PanelPlayer = BOTGameBones.PanelStartRandom;
 
-       
+
     }
     private void Update()
     {
         MasivRandomBones = BOTGameBones.MasivRandomBonesPlayer;
+    }
+
+    public void BonesMoveDown(string Post, int place)
+    {
+        switch (Post)
+        {
+            case "B1":
+                if (place == 2)
+                {
+                    MoveXBlue = 2;
+                    MoveYBlue = 0;
+                    MoveVector2Blue = 2;
+                }
+                if (place == 1)
+                {
+                    if (InstantiateBonesBLUE[2, 0] == 10)
+                    {
+                        InstantiateBonesBLUE[2, 0] = InstantiateBonesBLUE[1, 0];
+                        InstantiateBonesBLUE[1, 0] = 10;
+                        MoveXBlue = 2;
+                        MoveYBlue = 0;
+                        MoveVector2Blue = 2;
+                    }
+                    else
+                    {
+                        MoveXBlue = 1;
+                        MoveYBlue = 0;
+                        MoveVector2Blue = 1;
+                    }
+                }
+                if (place == 0)
+                {
+                    if (InstantiateBonesBLUE[1, 0] == 10)
+                    {
+                        InstantiateBonesBLUE[1, 0] = InstantiateBonesBLUE[0, 0];
+                        InstantiateBonesBLUE[0, 0] = 10;
+                        MoveXBlue = 1;
+                        MoveYBlue = 0;
+                        MoveVector2Blue = 1;
+                        if (InstantiateBonesBLUE[2, 0] == 10)
+                        {
+                            InstantiateBonesBLUE[2, 0] = InstantiateBonesBLUE[1, 0];
+                            InstantiateBonesBLUE[1, 0] = 10;
+                            MoveXBlue = 2;
+                            MoveYBlue = 0;
+                            MoveVector2Blue = 2;
+                        }
+                    }
+                    else
+                    {
+                        MoveXBlue = 0;
+                        MoveYBlue = 0;
+                        MoveVector2Blue = 0;
+                    }
+                }
+                break;
+            case "B2":
+                if (place == 2)
+                {
+                    MoveXBlue = 2;
+                    MoveYBlue = 1;
+                    MoveVector2Blue = 5;
+                }
+                if (place == 1)
+                {
+                    if (InstantiateBonesBLUE[2, 1] == 10)
+                    {
+                        InstantiateBonesBLUE[2, 1] = InstantiateBonesBLUE[1, 1];
+                        InstantiateBonesBLUE[1, 1] = 10;
+                        MoveXBlue = 2;
+                        MoveYBlue = 1;
+                        MoveVector2Blue = 5;
+                    }
+                    else
+                    {
+                        MoveXBlue = 1;
+                        MoveYBlue = 1;
+                        MoveVector2Blue = 4;
+                    }
+                }
+                if (place == 0)
+                {
+                    if (InstantiateBonesBLUE[1, 1] == 10)
+                    {
+                        InstantiateBonesBLUE[1, 1] = InstantiateBonesBLUE[0, 1];
+                        InstantiateBonesBLUE[0, 1] = 10;
+                        MoveXBlue = 1;
+                        MoveYBlue = 1;
+                        MoveVector2Blue = 4;
+                        if (InstantiateBonesBLUE[2, 1] == 10)
+                        {
+                            InstantiateBonesBLUE[2, 1] = InstantiateBonesBLUE[1, 1];
+                            InstantiateBonesBLUE[1, 1] = 10;
+                            MoveXBlue = 2;
+                            MoveYBlue = 1;
+                            MoveVector2Blue = 5;
+                        }
+                    }
+                    else
+                    {
+                        MoveXBlue = 0;
+                        MoveYBlue = 1;
+                        MoveVector2Blue = 3;
+                    }
+                }
+                break;
+            case "B3":
+                if (place == 2)
+                {
+                    MoveXBlue = 2;
+                    MoveYBlue = 2;
+                    MoveVector2Blue = 8;
+                }
+                if (place == 1)
+                {
+                    if (InstantiateBonesBLUE[2, 2] == 10)
+                    {
+                        InstantiateBonesBLUE[2, 2] = InstantiateBonesBLUE[1, 2];
+                        InstantiateBonesBLUE[1, 2] = 10;
+                        MoveXBlue = 2;
+                        MoveYBlue = 2;
+                        MoveVector2Blue = 8;
+                    }
+                    else
+                    {
+                        MoveXBlue = 1;
+                        MoveYBlue = 2;
+                        MoveVector2Blue = 7;
+                    }
+                }
+                if (place == 0)
+                {
+                    if (InstantiateBonesBLUE[1, 2] == 10)
+                    {
+                        InstantiateBonesBLUE[1, 2] = InstantiateBonesBLUE[0, 2];
+                        InstantiateBonesBLUE[0, 2] = 10;
+                        MoveXBlue = 1;
+                        MoveYBlue = 2;
+                        MoveVector2Blue = 7;
+                        if (InstantiateBonesBLUE[2, 2] == 10)
+                        {
+                            InstantiateBonesBLUE[2, 2] = InstantiateBonesBLUE[1, 2];
+                            InstantiateBonesBLUE[1, 2] = 10;
+                            MoveXBlue = 2;
+                            MoveYBlue = 2;
+                            MoveVector2Blue = 8;
+                        }
+                    }
+                    else
+                    {
+                        MoveXBlue = 0;
+                        MoveYBlue = 2;
+                        MoveVector2Blue = 6;
+                    }
+                }
+                break;
+            case "R1":
+                if (place == 2)
+                {
+                    MoveXBlue = 2;
+                    MoveYBlue = 0;
+                    MoveVector2Blue = 2;
+                }
+                if (place == 1)
+                {
+                    if (InstantiateBonesBLUE[2, 0] == 10)
+                    {
+                        InstantiateBonesBLUE[2, 0] = InstantiateBonesBLUE[1, 0];
+                        InstantiateBonesBLUE[1, 0] = 10;
+                        MoveXBlue = 2;
+                        MoveYBlue = 0;
+                        MoveVector2Blue = 2;
+                    }
+                    else
+                    {
+                        MoveXBlue = 1;
+                        MoveYBlue = 0;
+                        MoveVector2Blue = 1;
+                    }
+                }
+                if (place == 0)
+                {
+                    if (InstantiateBonesBLUE[1, 0] == 10)
+                    {
+                        InstantiateBonesBLUE[1, 0] = InstantiateBonesBLUE[0, 0];
+                        InstantiateBonesBLUE[0, 0] = 10;
+                        MoveXBlue = 1;
+                        MoveYBlue = 0;
+                        MoveVector2Blue = 1;
+                        if (InstantiateBonesBLUE[2, 0] == 10)
+                        {
+                            InstantiateBonesBLUE[2, 0] = InstantiateBonesBLUE[1, 0];
+                            InstantiateBonesBLUE[1, 0] = 10;
+                            MoveXBlue = 2;
+                            MoveYBlue = 0;
+                            MoveVector2Blue = 2;
+                        }
+                    }
+                    else
+                    {
+                        MoveXBlue = 0;
+                        MoveYBlue = 0;
+                        MoveVector2Blue = 0;
+                    }
+                }
+                break;
+            case "R2":
+                if (place == 2)
+                {
+                    MoveXBlue = 2;
+                    MoveYBlue = 1;
+                    MoveVector2Blue = 5;
+                }
+                if (place == 1)
+                {
+                    if (InstantiateBonesBLUE[2, 1] == 10)
+                    {
+                        InstantiateBonesBLUE[2, 1] = InstantiateBonesBLUE[1, 1];
+                        InstantiateBonesBLUE[1, 1] = 10;
+                        MoveXBlue = 2;
+                        MoveYBlue = 1;
+                        MoveVector2Blue = 5;
+                    }
+                    else
+                    {
+                        MoveXBlue = 1;
+                        MoveYBlue = 1;
+                        MoveVector2Blue = 4;
+                    }
+                }
+                if (place == 0)
+                {
+                    if (InstantiateBonesBLUE[1, 1] == 10)
+                    {
+                        InstantiateBonesBLUE[1, 1] = InstantiateBonesBLUE[0, 1];
+                        InstantiateBonesBLUE[0, 1] = 10;
+                        MoveXBlue = 1;
+                        MoveYBlue = 1;
+                        MoveVector2Blue = 4;
+                        if (InstantiateBonesBLUE[2, 1] == 10)
+                        {
+                            InstantiateBonesBLUE[2, 1] = InstantiateBonesBLUE[1, 1];
+                            InstantiateBonesBLUE[1, 1] = 10;
+                            MoveXBlue = 2;
+                            MoveYBlue = 1;
+                            MoveVector2Blue = 5;
+                        }
+                    }
+                    else
+                    {
+                        MoveXBlue = 0;
+                        MoveYBlue = 1;
+                        MoveVector2Blue = 3;
+                    }
+                }
+                break;
+            case "R3":
+                if (place == 2)
+                {
+                    MoveXBlue = 2;
+                    MoveYBlue = 2;
+                    MoveVector2Blue = 8;
+                }
+                if (place == 1)
+                {
+                    if (InstantiateBonesBLUE[2, 2] == 10)
+                    {
+                        InstantiateBonesBLUE[2, 2] = InstantiateBonesBLUE[1, 2];
+                        InstantiateBonesBLUE[1, 2] = 10;
+                        MoveXBlue = 2;
+                        MoveYBlue = 2;
+                        MoveVector2Blue = 8;
+                    }
+                    else
+                    {
+                        MoveXBlue = 1;
+                        MoveYBlue = 2;
+                        MoveVector2Blue = 7;
+                    }
+                }
+                if (place == 0)
+                {
+                    if (InstantiateBonesBLUE[1, 2] == 10)
+                    {
+                        InstantiateBonesBLUE[1, 2] = InstantiateBonesBLUE[0, 2];
+                        InstantiateBonesBLUE[0, 2] = 10;
+                        MoveXBlue = 1;
+                        MoveYBlue = 2;
+                        MoveVector2Blue = 7;
+                        if (InstantiateBonesBLUE[2, 2] == 10)
+                        {
+                            InstantiateBonesBLUE[2, 2] = InstantiateBonesBLUE[1, 2];
+                            InstantiateBonesBLUE[1, 2] = 10;
+                            MoveXBlue = 2;
+                            MoveYBlue = 2;
+                            MoveVector2Blue = 8;
+                        }
+                    }
+                    else
+                    {
+                        MoveXBlue = 0;
+                        MoveYBlue = 2;
+                        MoveVector2Blue = 6;
+                    }
+                }
+                break;
+        }
     }
 
     public void GameLeave()
@@ -166,33 +480,33 @@ public class BOTGamePanelButtonRed : MonoBehaviour
     {
         if (MasivRandomBones > -1)
         {
-            Debug.Log("CheckArraysBotBlue --- MasivRandomBones ---" + MasivRandomBones);
+            //Debug.Log("CheckArraysBotBlue --- MasivRandomBones ---" + MasivRandomBones);
             //все равны
             if (InstantiateBonesBLUE[0, 0] == InstantiateBonesBLUE[1, 0] & InstantiateBonesBLUE[0, 0] == InstantiateBonesBLUE[2, 0])
             {
                 if (InstantiateBonesBLUE[0, 0] == MasivRandomBones & InstantiateBonesBLUE[1, 0] == MasivRandomBones & InstantiateBonesBLUE[2, 0] == MasivRandomBones)
                 {
-                    Debug.Log("все равны1---" + (InstantiateBonesBLUE[0, 0] + InstantiateBonesBLUE[1, 0] + InstantiateBonesBLUE[2, 0]) * 3);
+                    //Debug.Log("все равны1---" + (InstantiateBonesBLUE[0, 0] + InstantiateBonesBLUE[1, 0] + InstantiateBonesBLUE[2, 0]) * 3);
                     //все равны 1 столбец
-                    return;
+                    //return;
                 }
             }
             if (InstantiateBonesBLUE[0, 1] == InstantiateBonesBLUE[1, 1] & InstantiateBonesBLUE[0, 1] == InstantiateBonesBLUE[2, 1])
             {
                 if (InstantiateBonesBLUE[0, 1] == MasivRandomBones & InstantiateBonesBLUE[1, 1] == MasivRandomBones & InstantiateBonesBLUE[2, 1] == MasivRandomBones)
                 {
-                    Debug.Log("все равны2---" + (InstantiateBonesBLUE[0, 1] + InstantiateBonesBLUE[1, 1] + InstantiateBonesBLUE[2, 1]) * 3);
+                    //Debug.Log("все равны2---" + (InstantiateBonesBLUE[0, 1] + InstantiateBonesBLUE[1, 1] + InstantiateBonesBLUE[2, 1]) * 3);
                     //все равны 2 столбец
-                    return;
+                    //return;
                 }
             }
             if (InstantiateBonesBLUE[0, 2] == InstantiateBonesBLUE[1, 2] & InstantiateBonesBLUE[0, 2] == InstantiateBonesBLUE[2, 2])
             {
                 if (InstantiateBonesBLUE[0, 2] == MasivRandomBones & InstantiateBonesBLUE[1, 2] == MasivRandomBones & InstantiateBonesBLUE[2, 2] == MasivRandomBones)
                 {
-                    Debug.Log("все равны3---" + (InstantiateBonesBLUE[0, 2] + InstantiateBonesBLUE[1, 2] + InstantiateBonesBLUE[2, 2]) * 3);
+                    //Debug.Log("все равны3---" + (InstantiateBonesBLUE[0, 2] + InstantiateBonesBLUE[1, 2] + InstantiateBonesBLUE[2, 2]) * 3);
                     //все равны 3 столбец
-                    return;
+                    //return;
                 }
             }
             //все равны
@@ -202,27 +516,27 @@ public class BOTGamePanelButtonRed : MonoBehaviour
             {
                 if (InstantiateBonesBLUE[0, 0] == MasivRandomBones & InstantiateBonesBLUE[1, 0] == MasivRandomBones & InstantiateBonesBLUE[2, 0] != MasivRandomBones)
                 {
-                    Debug.Log("равны 0 и 1---" + ((InstantiateBonesBLUE[0, 0] + InstantiateBonesBLUE[1, 0]) * 2) + InstantiateBonesBLUE[2, 0]);
+                    //Debug.Log("равны 0 и 1---" + ((InstantiateBonesBLUE[0, 0] + InstantiateBonesBLUE[1, 0]) * 2) + InstantiateBonesBLUE[2, 0]);
                     //равны 0 и 1  1 столбец
-                    return;
+                    //return;
                 }
             }
             if (InstantiateBonesBLUE[0, 1] == InstantiateBonesBLUE[1, 1] & InstantiateBonesBLUE[0, 1] != InstantiateBonesBLUE[2, 1])
             {
                 if (InstantiateBonesBLUE[0, 1] == MasivRandomBones & InstantiateBonesBLUE[1, 1] == MasivRandomBones & InstantiateBonesBLUE[2, 1] != MasivRandomBones)
                 {
-                    Debug.Log("равны 0 и 1---" + ((InstantiateBonesBLUE[0, 1] + InstantiateBonesBLUE[1, 1]) * 2) + InstantiateBonesBLUE[2, 1]);
+                    //Debug.Log("равны 0 и 1---" + ((InstantiateBonesBLUE[0, 1] + InstantiateBonesBLUE[1, 1]) * 2) + InstantiateBonesBLUE[2, 1]);
                     //равны 0 и 1  2 столбец
-                    return;
+                    //return;
                 }
             }
             if (InstantiateBonesBLUE[0, 2] == InstantiateBonesBLUE[1, 2] & InstantiateBonesBLUE[0, 2] != InstantiateBonesBLUE[2, 2])
             {
                 if (InstantiateBonesBLUE[0, 2] == MasivRandomBones & InstantiateBonesBLUE[1, 2] == MasivRandomBones & InstantiateBonesBLUE[2, 2] != MasivRandomBones)
                 {
-                    Debug.Log("равны 0 и 1---" + ((InstantiateBonesBLUE[0, 2] + InstantiateBonesBLUE[1, 2]) * 2) + InstantiateBonesBLUE[2, 2]);
+                    //Debug.Log("равны 0 и 1---" + ((InstantiateBonesBLUE[0, 2] + InstantiateBonesBLUE[1, 2]) * 2) + InstantiateBonesBLUE[2, 2]);
                     //равны 0 и 1  3 столбец
-                    return;
+                    //return;
                 }
             }
             //равны 0 и 1
@@ -232,27 +546,27 @@ public class BOTGamePanelButtonRed : MonoBehaviour
             {
                 if (InstantiateBonesBLUE[1, 0] == MasivRandomBones & InstantiateBonesBLUE[2, 0] == MasivRandomBones & InstantiateBonesBLUE[0, 0] != MasivRandomBones)
                 {
-                    Debug.Log("равны 1 и 2---" + ((InstantiateBonesBLUE[1, 0] + InstantiateBonesBLUE[2, 0]) * 2) + InstantiateBonesBLUE[0, 0]);
+                    //Debug.Log("равны 1 и 2---" + ((InstantiateBonesBLUE[1, 0] + InstantiateBonesBLUE[2, 0]) * 2) + InstantiateBonesBLUE[0, 0]);
                     //равны 1 и 2  1 столбец
-                    return;
+                    //return;
                 }
             }
             if (InstantiateBonesBLUE[1, 1] == InstantiateBonesBLUE[2, 1] & InstantiateBonesBLUE[1, 1] != InstantiateBonesBLUE[0, 1])
             {
                 if (InstantiateBonesBLUE[1, 1] == MasivRandomBones & InstantiateBonesBLUE[2, 1] == MasivRandomBones & InstantiateBonesBLUE[0, 1] != MasivRandomBones)
                 {
-                    Debug.Log("равны 1 и 2---" + ((InstantiateBonesBLUE[1, 1] + InstantiateBonesBLUE[2, 1]) * 2) + InstantiateBonesBLUE[0, 1]);
+                    //Debug.Log("равны 1 и 2---" + ((InstantiateBonesBLUE[1, 1] + InstantiateBonesBLUE[2, 1]) * 2) + InstantiateBonesBLUE[0, 1]);
                     //равны 1 и 2  2 столбец
-                    return;
+                    //return;
                 }
             }
             if (InstantiateBonesBLUE[1, 2] == InstantiateBonesBLUE[2, 2] & InstantiateBonesBLUE[1, 2] != InstantiateBonesBLUE[0, 2])
             {
                 if (InstantiateBonesBLUE[1, 2] == MasivRandomBones & InstantiateBonesBLUE[2, 2] == MasivRandomBones & InstantiateBonesBLUE[0, 2] != MasivRandomBones)
                 {
-                    Debug.Log("равны 1 и 2---" + ((InstantiateBonesBLUE[1, 2] + InstantiateBonesBLUE[2, 2]) * 2) + InstantiateBonesBLUE[0, 2]);
+                    //Debug.Log("равны 1 и 2---" + ((InstantiateBonesBLUE[1, 2] + InstantiateBonesBLUE[2, 2]) * 2) + InstantiateBonesBLUE[0, 2]);
                     //равны 1 и 2  3 столбец
-                    return;
+                    //return;
                 }
             }
             //равны 1 и 2
@@ -262,27 +576,27 @@ public class BOTGamePanelButtonRed : MonoBehaviour
             {
                 if (InstantiateBonesBLUE[0, 0] == MasivRandomBones & InstantiateBonesBLUE[2, 0] == MasivRandomBones & InstantiateBonesBLUE[1, 0] != MasivRandomBones)
                 {
-                    Debug.Log("равны 0 и 2---" + ((InstantiateBonesBLUE[0, 0] + InstantiateBonesBLUE[2, 0]) * 2) + InstantiateBonesBLUE[1, 0]);
+                    //Debug.Log("равны 0 и 2---" + ((InstantiateBonesBLUE[0, 0] + InstantiateBonesBLUE[2, 0]) * 2) + InstantiateBonesBLUE[1, 0]);
                     //равны 0 и 2  1 столбец
-                    return;
+                    //return;
                 }
             }
             if (InstantiateBonesBLUE[0, 1] == InstantiateBonesBLUE[2, 1] & InstantiateBonesBLUE[1, 1] != InstantiateBonesBLUE[1, 1])
             {
                 if (InstantiateBonesBLUE[0, 1] == MasivRandomBones & InstantiateBonesBLUE[2, 1] == MasivRandomBones & InstantiateBonesBLUE[1, 1] != MasivRandomBones)
                 {
-                    Debug.Log("равны 0 и 2---" + ((InstantiateBonesBLUE[0, 1] + InstantiateBonesBLUE[2, 1]) * 2) + InstantiateBonesBLUE[1, 1]);
+                    //Debug.Log("равны 0 и 2---" + ((InstantiateBonesBLUE[0, 1] + InstantiateBonesBLUE[2, 1]) * 2) + InstantiateBonesBLUE[1, 1]);
                     //равны 0 и 2  2 столбец
-                    return;
+                    //return;
                 }
             }
             if (InstantiateBonesBLUE[0, 2] == InstantiateBonesBLUE[2, 2] & InstantiateBonesBLUE[1, 2] != InstantiateBonesBLUE[1, 2])
             {
                 if (InstantiateBonesBLUE[0, 2] == MasivRandomBones & InstantiateBonesBLUE[2, 2] == MasivRandomBones & InstantiateBonesBLUE[1, 2] != MasivRandomBones)
                 {
-                    Debug.Log("равны 0 и 2---" + ((InstantiateBonesBLUE[0, 2] + InstantiateBonesBLUE[2, 2]) * 2) + InstantiateBonesBLUE[1, 2]);
+                    //Debug.Log("равны 0 и 2---" + ((InstantiateBonesBLUE[0, 2] + InstantiateBonesBLUE[2, 2]) * 2) + InstantiateBonesBLUE[1, 2]);
                     //равны 0 и 2  3 столбец
-                    return;
+                    //return;
                 }
             }
             //равны 0 и 2
@@ -298,26 +612,26 @@ public class BOTGamePanelButtonRed : MonoBehaviour
 
                 BotRed(IFi, IFj, IFNameScore, IFColumnName);
                 IFvector();*/
-                Debug.Log("все не равны1---" + InstantiateBonesBLUE[0, 0] + InstantiateBonesBLUE[1, 0] + InstantiateBonesBLUE[2, 0]);
+                //Debug.Log("все не равны1---" + InstantiateBonesBLUE[0, 0] + InstantiateBonesBLUE[1, 0] + InstantiateBonesBLUE[2, 0]);
                 //все не равны  1 столбец
-                return;
+                //return;
             }
             if (InstantiateBonesBLUE[0, 1] != InstantiateBonesBLUE[1, 1] & InstantiateBonesBLUE[0, 1] != InstantiateBonesBLUE[2, 1] & InstantiateBonesBLUE[1, 1] != InstantiateBonesBLUE[2, 1])
             {
-                Debug.Log("все не равны2---" + InstantiateBonesBLUE[0, 1] + InstantiateBonesBLUE[1, 1] + InstantiateBonesBLUE[2, 1]);
+                //Debug.Log("все не равны2---" + InstantiateBonesBLUE[0, 1] + InstantiateBonesBLUE[1, 1] + InstantiateBonesBLUE[2, 1]);
                 //все не равны  2 столбец
-                return;
+                //return;
             }
             if (InstantiateBonesBLUE[0, 2] != InstantiateBonesBLUE[1, 2] & InstantiateBonesBLUE[0, 2] != InstantiateBonesBLUE[2, 2] & InstantiateBonesBLUE[1, 2] != InstantiateBonesBLUE[2, 2])
             {
-                Debug.Log("все не равны3---" + InstantiateBonesBLUE[0, 2] + InstantiateBonesBLUE[1, 2] + InstantiateBonesBLUE[2, 2]);
+                //Debug.Log("все не равны3---" + InstantiateBonesBLUE[0, 2] + InstantiateBonesBLUE[1, 2] + InstantiateBonesBLUE[2, 2]);
                 //все не равны  3 столбец
-                return;
+                //return;
             }
             //все не равны
             else
             {
-                Debug.Log("ни чё нету");
+                //Debug.Log("ни чё нету");
                 bool found = false;
                 for (int i = 0; i < 3; i++)
                 {
@@ -329,38 +643,38 @@ public class BOTGamePanelButtonRed : MonoBehaviour
                             IFj = j;
                             IFColumnName = j;
                             IFNameScore = $"CNR{j + 1}";
-                            Debug.Log($"if{j} --- CNR{j}");
+                           // Debug.Log($"if{j} --- CNR{j}");
                             found = true;
                             IFvector();
-                            Debug.Log("for-for-if CheckArraysBotBlue");
+                          //  Debug.Log("for-for-if CheckArraysBotBlue");
                             //return;
                             break;
                         }
                     }
                     if (found)
                     {
-                        Debug.Log("found CheckArraysBotBlue");
+                       // Debug.Log("found CheckArraysBotBlue");
                         found = false;
                         break; 
                     }
                 }
-                Debug.Log("BotRed()-IFvector() CheckArraysBotBlue");
+               // Debug.Log("BotRed()-IFvector() CheckArraysBotBlue");
                 BotRed(IFi, IFj, IFNameScore, IFColumnName);
                 IFvector();
             }
-            Debug.Log("конец CheckArraysBotBlue");
+            //Debug.Log("конец CheckArraysBotBlue");
         }
     
         else if (MasivRandomBones < 0)
         {
-            Debug.Log("MasivRandomBones < 0 --- " + MasivRandomBones);
+           // Debug.Log("MasivRandomBones < 0 --- " + MasivRandomBones);
         }
     } 
 
     public void StartBotPlay()
     {
         BOTGameBones.StartBot = false;
-        Debug.Log("MasivRandomBones - " + MasivRandomBones);
+        //Debug.Log("MasivRandomBones - " + MasivRandomBones);
         int RandXPlaceBotPlay = Random.Range(0, 3);
         int RandYPlaceBotPlay = Random.Range(0, 3);
         IFi = RandXPlaceBotPlay;
@@ -369,7 +683,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         BotStartNameScore = $"CNR{RandYPlaceBotPlay + 1}";
 
         BotRed(RandXPlaceBotPlay, RandYPlaceBotPlay, BotStartNameScore, BotStartColumnName);
-        Debug.Log("StartBotPlay");
+        //Debug.Log("StartBotPlay");
     }
 
     public void IFvector()
@@ -378,8 +692,8 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         if (IFi == 0 & IFj == 0 && InstantiateBonesRED[0, 0] == 10)
         {
             IFvectorBones = 0;
-            Debug.Log("IFvector(0);");
-            Debug.Log("InstantiateBonesRED[" + IFi + "," + IFj + "]---"+ InstantiateBonesRED[IFi, IFj]);
+           // Debug.Log("IFvector(0);");
+           // Debug.Log("InstantiateBonesRED[" + IFi + "," + IFj + "]---"+ InstantiateBonesRED[IFi, IFj]);
             //BotRed(IFi, IFj, IFNameScore, IFColumnName);
             return;
         }
@@ -387,7 +701,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         if(IFi == 1 & IFj == 0 && InstantiateBonesRED[1, 0] == 10)
         {
             IFvectorBones = 1;
-            Debug.Log("IFvector(1);");
+            //Debug.Log("IFvector(1);");
            //BotRed(IFi, IFj, IFNameScore, IFColumnName);
             return;
         }
@@ -395,7 +709,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         if (IFi == 2 & IFj == 0 && InstantiateBonesRED[2, 0] == 10)
         {
             IFvectorBones = 2;
-            Debug.Log("IFvector(2);");
+            //Debug.Log("IFvector(2);");
           //  BotRed(IFi, IFj, IFNameScore, IFColumnName);
             return;
         }
@@ -403,7 +717,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         if (IFi == 0 & IFj == 1 && InstantiateBonesRED[0, 1] == 10)
         {
             IFvectorBones = 3;
-            Debug.Log("IFvector(3);");
+           // Debug.Log("IFvector(3);");
            // BotRed(IFi, IFj, IFNameScore, IFColumnName);
             return;
         }
@@ -411,7 +725,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         if (IFi == 1 & IFj == 1 && InstantiateBonesRED[1, 1] == 10)
         {
             IFvectorBones = 4;
-            Debug.Log("IFvector(4);");
+            //Debug.Log("IFvector(4);");
             //BotRed(IFi, IFj, IFNameScore, IFColumnName);
             return;
         }
@@ -419,7 +733,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         if (IFi == 2 & IFj == 1 && InstantiateBonesRED[2, 1] == 10)
         {
             IFvectorBones = 5;
-            Debug.Log("IFvector(5);");
+            //Debug.Log("IFvector(5);");
           //  BotRed(IFi, IFj, IFNameScore, IFColumnName);
             return;
         }
@@ -427,7 +741,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         if (IFi == 0 & IFj == 2 && InstantiateBonesRED[0, 2] == 10)
         {
             IFvectorBones = 6;
-            Debug.Log("IFvector(6);");
+            //Debug.Log("IFvector(6);");
            // BotRed(IFi, IFj, IFNameScore, IFColumnName);
             return;
         }
@@ -435,7 +749,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         if (IFi == 1 & IFj == 2 && InstantiateBonesRED[1, 2] == 10)
         {
             IFvectorBones = 7;
-            Debug.Log("IFvector(7);");
+           //Debug.Log("IFvector(7);");
             //BotRed(IFi, IFj, IFNameScore, IFColumnName);
             return;
         }
@@ -443,7 +757,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         if (IFi == 2 & IFj == 2 && InstantiateBonesRED[2, 2] == 10)
         {
             IFvectorBones = 8;
-            Debug.Log("IFvector(8);");
+           // Debug.Log("IFvector(8);");
            // BotRed(IFi, IFj, IFNameScore, IFColumnName);
             return;
         }
@@ -454,10 +768,12 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         IFvector();
         if (PanelPlayer == 0 & MasivRandomBones >= 0 /*& InstantiateBonesRED[SetPositionArrayBotX, SetPositionArrayBotY] <= 0*/)
         {
-            Debug.Log("IFvectorBones-"+ IFvectorBones+ "  MasivRandomBones-"+ MasivRandomBones);
             PanelPlayer = 1;
             InstantiateBonesRED[SetPositionArrayBotX, SetPositionArrayBotY] = MasivRandomBones + 1;
             ResetBonesStart();
+            string NameRedMove = "R" + ColumnName;
+            BonesMoveDown(NameRedMove, 0);
+            InstantiateBonesRED[MoveXRed, MoveYRed] = MasivRandomBones + 1;
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[IFvectorBones], quaternionBones[MasivRandomBones]);
             bonesRed.name = "R-" + (MasivRandomBones + 1) + ColumnName;
@@ -465,10 +781,6 @@ public class BOTGamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesRED[SetPositionArrayBotX, SetPositionArrayBotY], ColumnName, "RED");
             _actionScore.Score(NameScore);
             _actionCheckingWinning.CheckingWinning();
-            Debug.Log(SetPositionArrayBotX+"---"+SetPositionArrayBotY +"---InstantiateBonesRED[SetPositionArrayBotX, SetPositionArrayBotY]---"+InstantiateBonesRED[SetPositionArrayBotX, SetPositionArrayBotY]);
-            Debug.Log(InstantiateBonesRED[2, 0] + " " + InstantiateBonesRED[2, 1] + " " + InstantiateBonesRED[2, 2]);
-            Debug.Log(InstantiateBonesRED[1, 0] + " " + InstantiateBonesRED[1, 1] + " " + InstantiateBonesRED[1, 2]);
-            Debug.Log(InstantiateBonesRED[0, 0] + " " + InstantiateBonesRED[0, 1] + " " + InstantiateBonesRED[0, 2]);
         }
     }
 
@@ -481,13 +793,14 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[0, 0] == 10)
         {
             PanelPlayer = 0;
-            InstantiateBonesBLUE[0, 0] = MasivRandomBones + 1;
             ResetBonesStart();
+            BonesMoveDown("B1", 0);
+            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[0], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + InstantiateBonesBLUE[0, 0] + "0";
-            gameObjectsInstantiateBLUE[0, 0] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[0, 0], 0, "BLUE");
+            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
+            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "0";
+            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
+            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 0, "BLUE");
             _actionScore.Score("CNB1");
             _actionCheckingWinning.CheckingWinning();
             _actionBones.RandomButtonBones(0, false);
@@ -499,13 +812,14 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[1, 0] == 10)
         {
             PanelPlayer = 0;
-            InstantiateBonesBLUE[1, 0] = MasivRandomBones + 1;
             ResetBonesStart();
+            BonesMoveDown("B1", 1);
+            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[1], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + InstantiateBonesBLUE[1, 0] + "0";
-            gameObjectsInstantiateBLUE[1, 0] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[1, 0], 0, "BLUE");
+            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
+            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "0";
+            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
+            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 0, "BLUE");
             _actionScore.Score("CNB1");
             _actionCheckingWinning.CheckingWinning();
             _actionBones.RandomButtonBones(0, false);
@@ -518,12 +832,13 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         {
             PanelPlayer = 0;
             ResetBonesStart();
-            InstantiateBonesBLUE[2, 0] = MasivRandomBones + 1;
+            BonesMoveDown("B1", 2);
+            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[2], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + InstantiateBonesBLUE[2, 0] + "0";
-            gameObjectsInstantiateBLUE[2, 0] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[2, 0], 0, "BLUE");
+            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
+            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "0";
+            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
+            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 0, "BLUE");
             _actionScore.Score("CNB1");
             _actionCheckingWinning.CheckingWinning();
             _actionBones.RandomButtonBones(0, false);
@@ -535,13 +850,14 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[0, 1] == 10)
         {
             PanelPlayer = 0;
-            InstantiateBonesBLUE[0, 1] = MasivRandomBones + 1;
             ResetBonesStart();
+            BonesMoveDown("B2", 0);
+            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[3], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + InstantiateBonesBLUE[0, 1] + "1";
-            gameObjectsInstantiateBLUE[0, 1] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[0, 1], 1, "BLUE");
+            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
+            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "1";
+            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
+            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 1, "BLUE");
             _actionScore.Score("CNB2");
             _actionCheckingWinning.CheckingWinning();
             _actionBones.RandomButtonBones(0, false);
@@ -553,13 +869,14 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[1, 1] == 10)
         {
             PanelPlayer = 0;
-            InstantiateBonesBLUE[1, 1] = MasivRandomBones + 1;
             ResetBonesStart();
+            BonesMoveDown("B2", 1);
+            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[4], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + InstantiateBonesBLUE[1, 1] + "1";
-            gameObjectsInstantiateBLUE[1, 1] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[1, 1], 1, "BLUE");
+            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
+            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "1";
+            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
+            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 1, "BLUE");
             _actionScore.Score("CNB2");
             _actionCheckingWinning.CheckingWinning();
             _actionBones.RandomButtonBones(0, false);
@@ -571,13 +888,14 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[2, 1] == 10)
         {
             PanelPlayer = 0;
-            InstantiateBonesBLUE[2, 1] = MasivRandomBones + 1;
             ResetBonesStart();
+            BonesMoveDown("B2", 2);
+            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[5], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + InstantiateBonesBLUE[2, 1] + "1";
-            gameObjectsInstantiateBLUE[2, 1] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[2, 1], 1, "BLUE");
+            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
+            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "1";
+            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
+            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 1, "BLUE");
             _actionScore.Score("CNB2");
             _actionCheckingWinning.CheckingWinning();
             _actionBones.RandomButtonBones(0, false);
@@ -589,13 +907,14 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[0, 2] == 10)
         {
             PanelPlayer = 0;
-            InstantiateBonesBLUE[0, 2] = MasivRandomBones + 1;
             ResetBonesStart();
+            BonesMoveDown("B3",0);
+            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[6], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + InstantiateBonesBLUE[0, 2] + "2";
-            gameObjectsInstantiateBLUE[0, 2] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[0, 2], 2, "BLUE");
+            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
+            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "2";
+            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
+            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 2, "BLUE");
             _actionScore.Score("CNB3");
             _actionCheckingWinning.CheckingWinning();
             _actionBones.RandomButtonBones(0, false);
@@ -607,13 +926,14 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[1, 2] == 10)
         {
             PanelPlayer = 0;
-            InstantiateBonesBLUE[1, 2] = MasivRandomBones + 1;
             ResetBonesStart();
+            BonesMoveDown("B3", 1);
+            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[7], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + InstantiateBonesBLUE[1, 2] + "2";
-            gameObjectsInstantiateBLUE[1, 2] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[1, 2], 2, "BLUE");
+            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
+            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "2";
+            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
+            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 2, "BLUE");
             _actionScore.Score("CNB3");
             _actionCheckingWinning.CheckingWinning();
             _actionBones.RandomButtonBones(0, false);
@@ -625,13 +945,14 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[2, 2] == 10)
         {
             PanelPlayer = 0;
-            InstantiateBonesBLUE[2, 2] = MasivRandomBones + 1;
             ResetBonesStart();
+            BonesMoveDown("B3", 2);
+            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[8], quaternionBones[MasivRandomBones]);
+            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
             bonesBlue.name = "B-" + (MasivRandomBones + 1) + "2";
-            gameObjectsInstantiateBLUE[2, 2] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[2, 2], 2, "BLUE");
+            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
+            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 2, "BLUE");
             _actionScore.Score("CNB3");
             _actionCheckingWinning.CheckingWinning();
             _actionBones.RandomButtonBones(0, false);
