@@ -81,30 +81,33 @@ public class BOTScorePlayer : MonoBehaviour
 
     public void DeleteBones(int numberToFind, int j, string array)
     {
-        int DeleteBonesI;
+        string NameBLUEPost = "B";
         if (array == "RED")
         {
             for (int i = 0; i < arrayBLUE.GetLength(0); i++)
             {
                 if (arrayBLUE[i, j] == numberToFind)
                 {
-                    if (i == 0)
+                    if (j == 0)
                     {
-                        DeleteBonesI = 0;
+                        NameBLUEPost = "B" + 1;
                     }
-                    else
+                    else if (j == 1)
                     {
-                        DeleteBonesI = i - 1;
-                        Debug.Log("DeleteBonesI = i - 1;");
+                        NameBLUEPost = "B" + 2;
                     }
-                    string NameBLUEPost = "B" + (j + 1);
+                    else if (j == 2)
+                    {
+                        NameBLUEPost = "B" + 3;
+                    }
+                    //string NameBLUEPost = "B1";
                     //_BonesMoveDownB.BonesMoveDown(NameBLUEPost, DeleteBonesI);
                     Destroy(_arrayGameObjectB.gameObjectsInstantiateBLUE[i, j]);
                     _arrayB.InstantiateBonesBLUE[i, j] = 10;
                     _arrayGameObjectB.gameObjectsInstantiateBLUE[i, j] = null;
                     Score("CNB" + (j + 1));
-                    Debug.Log("DeleteBones---i-" + i + "---j-" + j + "---NameBLUEPost-" + NameBLUEPost);
-                    _BonesMoveDownB.BonesMoveDelete(NameBLUEPost, DeleteBonesI, i , j);
+                    //Debug.Log("DeleteBones---i-" + i + "---j-" + j + "---NameBLUEPost-" + NameBLUEPost);
+                    _BonesMoveDownB.BonesMoveDelete(NameBLUEPost, i , j);
                 }
             }
         }

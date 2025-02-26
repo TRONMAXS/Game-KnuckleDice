@@ -31,6 +31,8 @@ public class BOTwinPlayer : MonoBehaviour
     private BOTScorePlayer _TextScoreB3;
 
     public int ScoreWinerRed, ScoreWinerBlue;
+   /* public *//*static*//* bool isFilledRED = true;//true
+    public *//*static*//* bool isFilledBLUE = true;//true*/
 
     private void Start()
     {
@@ -50,6 +52,7 @@ public class BOTwinPlayer : MonoBehaviour
     {
         bool isFilledRED = true;
         bool isFilledBLUE = true;
+
         for (int i = 0; i < _arrayR.InstantiateBonesRED.GetLength(0) && isFilledRED; i++)
         {
             for (int j = 0; j < _arrayR.InstantiateBonesRED.GetLength(1) && isFilledRED; j++)
