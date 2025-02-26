@@ -5790,6 +5790,12 @@ MonoBehaviour:
   IFColumnName: 0
   IFi: 0
   IFj: 0
+  MoveXBlue: 0
+  MoveYBlue: 0
+  MoveXRed: 0
+  MoveYRed: 0
+  MoveVector2Red: 0
+  MoveVector2Blue: 0
   ScorePlayer: {fileID: 1300118940}
   ScorePlayer1: {fileID: 1300118940}
   ScorePlayerWIN: {fileID: 2032553532}
@@ -7122,6 +7128,8 @@ MonoBehaviour:
   InstantiateMSBLUE: {fileID: 1124031140}
   InstantiateGameObjectRED: {fileID: 1124031140}
   InstantiateGameObjectBLUE: {fileID: 1124031140}
+  BonesMoveDownRED: {fileID: 1124031140}
+  BonesMoveDownBLUE: {fileID: 1124031140}
 --- !u!1 &1318497616
 GameObject:
   m_ObjectHideFlags: 0
