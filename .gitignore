@@ -70,3 +70,121 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+/Assets/_Heathen Engineering/Assets/UX/Icons/Flat Icons \[Free\]
+/Assets/_Heathen Engineering.meta
+/Assets/_Heathen Engineering/Assets.meta
+/Assets/_Heathen Engineering/Assets/Common.meta
+/Assets/_Heathen Engineering/Assets/Common/Images.meta
+/Assets/_Heathen Engineering/Assets/Common/Images/Heathen Corporate.meta
+/Assets/_Heathen Engineering/Assets/Common/Images/Heathen Corporate/Heathen Logo 2019.png
+/Assets/_Heathen Engineering/Assets/Common/Images/Heathen Corporate/Heathen Logo 2019.png.meta
+/Assets/_Heathen Engineering/Assets/Common/Images/Heathen Corporate/Heathen Logo With FullName.png
+/Assets/_Heathen Engineering/Assets/Common/Images/Heathen Corporate/Heathen Logo With FullName.png.meta
+/Assets/_Heathen Engineering/Assets/Common/Images/Heathen Corporate/Heathen Logo With ShortName.png
+/Assets/_Heathen Engineering/Assets/Common/Images/Heathen Corporate/Heathen Logo With ShortName.png.meta
+/Assets/_Heathen Engineering/Assets/Common/Images/Heathen Corporate/HeathenLogoVectorized.svg
+/Assets/_Heathen Engineering/Assets/Common/Images/Heathen Corporate/HeathenLogoVectorized.svg.meta
+/Assets/_Heathen Engineering/Assets/UX.meta
+/Assets/_Heathen Engineering/Assets/UX/HeathenEngineering.UX.asmdef
+/Assets/_Heathen Engineering/Assets/UX/HeathenEngineering.UX.asmdef.meta
+/Assets/_Heathen Engineering/Assets/UX/Icons.meta
+/Assets/_Heathen Engineering/Assets/UX/Icons/Flat Icons \[Free\].meta
+/Assets/_Heathen Engineering/Documentation.meta
+/Assets/_Heathen Engineering/Documentation/UX.meta
+/Assets/_Heathen Engineering/Documentation/UX/Flat Icons \[Free\].meta
+/Assets/_Heathen Engineering/Documentation/UX/Flat Icons \[Free\]/Read Me.txt
+/Assets/_Heathen Engineering/Documentation/UX/Flat Icons \[Free\]/Read Me.txt.meta
+/Assets/_Heathen Engineering/Samples.meta
+/Assets/_Heathen Engineering/Samples/UX Examples.meta
+/Assets/_Heathen Engineering/Samples/UX Examples/Flat Icons \[Free\].meta
+/Assets/_Heathen Engineering/Samples/UX Examples/Flat Icons \[Free\]/Example Use Cases.unity
+/Assets/_Heathen Engineering/Samples/UX Examples/Flat Icons \[Free\]/Example Use Cases.unity.meta
+/Assets/_Heathen Engineering/Samples/UX Examples/Flat Icons \[Free\]/Image Preview Scene.unity
+/Assets/_Heathen Engineering/Samples/UX Examples/Flat Icons \[Free\]/Image Preview Scene.unity.meta
+/Assets/_Heathen Engineering/Samples/UX Examples/Flat Icons \[Free\]/Simple Slide Toggle.controller
+/Assets/_Heathen Engineering/Samples/UX Examples/Flat Icons \[Free\]/Simple Slide Toggle.controller.meta
+/Assets/_Heathen Engineering/Samples/UX Examples/Flat Icons \[Free\]/ToggleOff.anim
+/Assets/_Heathen Engineering/Samples/UX Examples/Flat Icons \[Free\]/ToggleOff.anim.meta
+/Assets/_Heathen Engineering/Samples/UX Examples/Flat Icons \[Free\]/ToggleOn.anim
+/Assets/_Heathen Engineering/Samples/UX Examples/Flat Icons \[Free\]/ToggleOn.anim.meta
+/Assets/_Heathen Engineering/Samples/UX Examples/Flat Icons \[Free\]/ToggleSetAnimatorBoolean.cs
+/Assets/_Heathen Engineering/Samples/UX Examples/Flat Icons \[Free\]/ToggleSetAnimatorBoolean.cs.meta
+/Assets/Pack Free 3.meta
+/Assets/Pack Free 3/Demo.meta
+/Assets/Pack Free 3/Demo.unity
+/Assets/Pack Free 3/Demo.unity.meta
+/Assets/Pack Free 3/Demo/LightingData.asset
+/Assets/Pack Free 3/Demo/LightingData.asset.meta
+/Assets/Pack Free 3/Demo/ReflectionProbe-0.exr
+/Assets/Pack Free 3/Demo/ReflectionProbe-0.exr.meta
+/Assets/Pack Free 3/Materials.meta
+/Assets/Pack Free 3/Materials/Grass 3.mat
+/Assets/Pack Free 3/Materials/Grass 3.mat.meta
+/Assets/Pack Free 3/Materials/Stone 3.mat
+/Assets/Pack Free 3/Materials/Stone 3.mat.meta
+/Assets/Pack Free 3/Materials/Tile 3.mat
+/Assets/Pack Free 3/Materials/Tile 3.mat.meta
+/Assets/Pack Free 3/Materials/Wall 3.mat
+/Assets/Pack Free 3/Materials/Wall 3.mat.meta
+/Assets/Pack Free 3/Materials/Wooden Floor 3.mat
+/Assets/Pack Free 3/Materials/Wooden Floor 3.mat.meta
+/Assets/Pack Free 3/Textures.meta
+/Assets/Pack Free 3/Textures/Grass 3.meta
+/Assets/Pack Free 3/Textures/Grass 3/T_Pack_Free_Grass_3_ambientocclusion.tga
+/Assets/Pack Free 3/Textures/Grass 3/T_Pack_Free_Grass_3_ambientocclusion.tga.meta
+/Assets/Pack Free 3/Textures/Grass 3/T_Pack_Free_Grass_3_basecolor.tga
+/Assets/Pack Free 3/Textures/Grass 3/T_Pack_Free_Grass_3_basecolor.tga.meta
+/Assets/Pack Free 3/Textures/Grass 3/T_Pack_Free_Grass_3_height.tga
+/Assets/Pack Free 3/Textures/Grass 3/T_Pack_Free_Grass_3_height.tga.meta
+/Assets/Pack Free 3/Textures/Grass 3/T_Pack_Free_Grass_3_normal.tga
+/Assets/Pack Free 3/Textures/Grass 3/T_Pack_Free_Grass_3_normal.tga.meta
+/Assets/Pack Free 3/Textures/Grass 3/T_Pack_Free_Grass_3_roughness.tga
+/Assets/Pack Free 3/Textures/Grass 3/T_Pack_Free_Grass_3_roughness.tga.meta
+/Assets/Pack Free 3/Textures/Stone 3.meta
+/Assets/Pack Free 3/Textures/Stone 3/T_Pack_Free_Stone_3_ambientocclusion.tga
+/Assets/Pack Free 3/Textures/Stone 3/T_Pack_Free_Stone_3_ambientocclusion.tga.meta
+/Assets/Pack Free 3/Textures/Stone 3/T_Pack_Free_Stone_3_basecolor.tga
+/Assets/Pack Free 3/Textures/Stone 3/T_Pack_Free_Stone_3_basecolor.tga.meta
+/Assets/Pack Free 3/Textures/Stone 3/T_Pack_Free_Stone_3_height.tga
+/Assets/Pack Free 3/Textures/Stone 3/T_Pack_Free_Stone_3_height.tga.meta
+/Assets/Pack Free 3/Textures/Stone 3/T_Pack_Free_Stone_3_normal.tga
+/Assets/Pack Free 3/Textures/Stone 3/T_Pack_Free_Stone_3_normal.tga.meta
+/Assets/Pack Free 3/Textures/Stone 3/T_Pack_Free_Stone_3_roughness.tga
+/Assets/Pack Free 3/Textures/Stone 3/T_Pack_Free_Stone_3_roughness.tga.meta
+/Assets/Pack Free 3/Textures/Tile 3.meta
+/Assets/Pack Free 3/Textures/Tile 3/T_Pack_Free_Tile_3_ambientocclusion.tga
+/Assets/Pack Free 3/Textures/Tile 3/T_Pack_Free_Tile_3_ambientocclusion.tga.meta
+/Assets/Pack Free 3/Textures/Tile 3/T_Pack_Free_Tile_3_basecolor.tga
+/Assets/Pack Free 3/Textures/Tile 3/T_Pack_Free_Tile_3_basecolor.tga.meta
+/Assets/Pack Free 3/Textures/Tile 3/T_Pack_Free_Tile_3_height.tga
+/Assets/Pack Free 3/Textures/Tile 3/T_Pack_Free_Tile_3_height.tga.meta
+/Assets/Pack Free 3/Textures/Tile 3/T_Pack_Free_Tile_3_normal.tga
+/Assets/Pack Free 3/Textures/Tile 3/T_Pack_Free_Tile_3_normal.tga.meta
+/Assets/Pack Free 3/Textures/Tile 3/T_Pack_Free_Tile_3_roughness.tga
+/Assets/Pack Free 3/Textures/Tile 3/T_Pack_Free_Tile_3_roughness.tga.meta
+/Assets/Pack Free 3/Textures/Wall 3.meta
+/Assets/Pack Free 3/Textures/Wall 3/T_Pack_Free_Wall_3_ambientocclusion.tga
+/Assets/Pack Free 3/Textures/Wall 3/T_Pack_Free_Wall_3_ambientocclusion.tga.meta
+/Assets/Pack Free 3/Textures/Wall 3/T_Pack_Free_Wall_3_basecolor.tga
+/Assets/Pack Free 3/Textures/Wall 3/T_Pack_Free_Wall_3_basecolor.tga.meta
+/Assets/Pack Free 3/Textures/Wall 3/T_Pack_Free_Wall_3_height.tga
+/Assets/Pack Free 3/Textures/Wall 3/T_Pack_Free_Wall_3_height.tga.meta
+/Assets/Pack Free 3/Textures/Wall 3/T_Pack_Free_Wall_3_normal.tga
+/Assets/Pack Free 3/Textures/Wall 3/T_Pack_Free_Wall_3_normal.tga.meta
+/Assets/Pack Free 3/Textures/Wall 3/T_Pack_Free_Wall_3_roughness.tga
+/Assets/Pack Free 3/Textures/Wall 3/T_Pack_Free_Wall_3_roughness.tga.meta
+/Assets/Pack Free 3/Textures/Wooden Floor 3.meta
+/Assets/Pack Free 3/Textures/Wooden Floor 3/T_Pack_Free_Wooden_Floor_3_ambientocclusion.tga
+/Assets/Pack Free 3/Textures/Wooden Floor 3/T_Pack_Free_Wooden_Floor_3_ambientocclusion.tga.meta
+/Assets/Pack Free 3/Textures/Wooden Floor 3/T_Pack_Free_Wooden_Floor_3_basecolor.tga
+/Assets/Pack Free 3/Textures/Wooden Floor 3/T_Pack_Free_Wooden_Floor_3_basecolor.tga.meta
+/Assets/Pack Free 3/Textures/Wooden Floor 3/T_Pack_Free_Wooden_Floor_3_height.tga
+/Assets/Pack Free 3/Textures/Wooden Floor 3/T_Pack_Free_Wooden_Floor_3_height.tga.meta
+/Assets/Pack Free 3/Textures/Wooden Floor 3/T_Pack_Free_Wooden_Floor_3_normal.tga
+/Assets/Pack Free 3/Textures/Wooden Floor 3/T_Pack_Free_Wooden_Floor_3_normal.tga.meta
+/Assets/Pack Free 3/Textures/Wooden Floor 3/T_Pack_Free_Wooden_Floor_3_roughness.tga
+/Assets/Pack Free 3/Textures/Wooden Floor 3/T_Pack_Free_Wooden_Floor_3_roughness.tga.meta
+/Assets/Models/поля красные.mat
+/Assets/Models/поля красные.mat.meta
+/Assets/Models/поля синие.mat
+/Assets/Models/поля синие.mat.meta
