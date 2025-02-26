@@ -38,7 +38,7 @@ public class BOTScorePlayer : MonoBehaviour
     public GameObject BonesMoveDownRED;
     private BOTGamePanelButtonRed _BonesMoveDownR;
     public GameObject BonesMoveDownBLUE;
-    private BOTGamePanelButtonRed _BonesMoveDownB;
+    private BOTGamePanelButtonRed _BonesMoveDown;
 
     private void Start()
     {
@@ -49,7 +49,7 @@ public class BOTScorePlayer : MonoBehaviour
         _arrayGameObjectB = InstantiateGameObjectBLUE.GetComponent<BOTGamePanelButtonRed>();
 
         _BonesMoveDownR = BonesMoveDownRED.GetComponent<BOTGamePanelButtonRed>();
-        _BonesMoveDownB = BonesMoveDownBLUE.GetComponent<BOTGamePanelButtonRed>();
+        _BonesMoveDown = BonesMoveDownBLUE.GetComponent<BOTGamePanelButtonRed>();
     }
 
     public void Array()
@@ -82,48 +82,56 @@ public class BOTScorePlayer : MonoBehaviour
     public void DeleteBones(int numberToFind, int j, string array)
     {
         string NameBLUEPost = "B";
+        string NameREDPost = "R";
         if (array == "RED")
         {
+            if (j == 0)
+            {
+                NameBLUEPost = "B" + 1;
+            }
+            else if (j == 1)
+            {
+                NameBLUEPost = "B" + 2;
+            }
+            else if (j == 2)
+            {
+                NameBLUEPost = "B" + 3;
+            }
             for (int i = 0; i < arrayBLUE.GetLength(0); i++)
             {
                 if (arrayBLUE[i, j] == numberToFind)
                 {
-                    if (j == 0)
-                    {
-                        NameBLUEPost = "B" + 1;
-                    }
-                    else if (j == 1)
-                    {
-                        NameBLUEPost = "B" + 2;
-                    }
-                    else if (j == 2)
-                    {
-                        NameBLUEPost = "B" + 3;
-                    }
-                    //string NameBLUEPost = "B1";
-                    //_BonesMoveDownB.BonesMoveDown(NameBLUEPost, DeleteBonesI);
                     Destroy(_arrayGameObjectB.gameObjectsInstantiateBLUE[i, j]);
                     _arrayB.InstantiateBonesBLUE[i, j] = 10;
                     _arrayGameObjectB.gameObjectsInstantiateBLUE[i, j] = null;
+                    _BonesMoveDown.BonesMoveDelete(NameBLUEPost, i , j);
                     Score("CNB" + (j + 1));
-                    //Debug.Log("DeleteBones---i-" + i + "---j-" + j + "---NameBLUEPost-" + NameBLUEPost);
-                    _BonesMoveDownB.BonesMoveDelete(NameBLUEPost, i , j);
                 }
             }
         }
         else if (array == "BLUE")
         {
-            for (int i = 0; i < arrayBLUE.GetLength(0); i++)
+            if (j == 0)
+            {
+                NameREDPost = "R" + 1;
+            }
+            else if (j == 1)
+            {
+                NameREDPost = "R" + 2;
+            }
+            else if (j == 2)
+            {
+                NameREDPost = "R" + 3;
+            }
+            for (int i = 0; i < arrayRED.GetLength(0); i++)
             {
                 if (arrayRED[i, j] == numberToFind)
                 {
-                    /*string NameBLUEPost = "R" + j;
-                    _BonesMoveDownB.BonesMoveDown(NameBLUEPost, 0);
-                    _BonesMoveDownB.BonesMoveDown(NameBLUEPost, 1);
-                    _BonesMoveDownB.BonesMoveDown(NameBLUEPost, 2);*/
+                    Debug.Log("arrayRED["+i+","+ j+"] == numberToFind-"+ numberToFind);
                     Destroy(_arrayGameObjectR.gameObjectsInstantiateRED[i, j]);
                     _arrayR.InstantiateBonesRED[i, j] = 10;
                     _arrayGameObjectR.gameObjectsInstantiateRED[i, j] = null;
+                    _BonesMoveDown.BonesMoveDelete(NameREDPost, i, j);
                     Score("CNR" + (j + 1));
                 }
             }

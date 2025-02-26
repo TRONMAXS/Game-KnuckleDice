@@ -31,8 +31,6 @@ public class BOTwinPlayer : MonoBehaviour
     private BOTScorePlayer _TextScoreB3;
 
     public int ScoreWinerRed, ScoreWinerBlue;
-   /* public *//*static*//* bool isFilledRED = true;//true
-    public *//*static*//* bool isFilledBLUE = true;//true*/
 
     private void Start()
     {
