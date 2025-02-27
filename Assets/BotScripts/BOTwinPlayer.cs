@@ -89,6 +89,7 @@ public class BOTwinPlayer : MonoBehaviour
             }
             ScoreRED.text = ScoreWinerRed.ToString();
             ScoreBLUE.text = ScoreWinerBlue.ToString();
+            Time.timeScale = 0f;
         }
         else if (isFilledBLUE == true)
         {
@@ -107,6 +108,7 @@ public class BOTwinPlayer : MonoBehaviour
             }
             ScoreBLUE.text = ScoreWinerBlue.ToString();
             ScoreRED.text = ScoreWinerRed.ToString();
+            Time.timeScale = 0f;
         }
     }
 }

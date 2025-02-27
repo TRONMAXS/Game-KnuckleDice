@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour
     public int timeMax;
     public int randMinStart;
     public int randMax;
-    private float timeDell = 2f;
+    private float timeDell = 5f;
 
     public static int direction;
 

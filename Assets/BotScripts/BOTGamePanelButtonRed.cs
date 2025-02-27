@@ -136,7 +136,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         MasivRandomBones = BOTGameBones.MasivRandomBonesPlayer;
     }
 
-    public void BonesMoveDelete(string Post, int i, int j)
+    public void BonesMoveDelete(string Post)
     {
         int NoFull = 0;
         int IndexX = 0;
@@ -285,7 +285,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
                     }
                 }
                 break;
-                
+
             case "R1":
                 for (int a = 0; a < 3; a++)
                 {
@@ -586,6 +586,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
                     }
                 }
                 break;
+
             case "R1":
                 if (place == 2)
                 {
@@ -753,12 +754,12 @@ public class BOTGamePanelButtonRed : MonoBehaviour
     {
         if (BOTGameBones.StartBot == true)
         {
-            Invoke("StartBotPlay", 2f);
+            Invoke("StartBotPlay", 1f);
             return;
         }
         else if(BOTGameBones.StartBot == false)
         {
-            Invoke("CheckArraysBotBlue", 2f);
+            Invoke("CheckArraysBotBlue", 1f);
         }
     }
 
@@ -964,14 +965,12 @@ public class BOTGamePanelButtonRed : MonoBehaviour
     public void StartBotPlay()
     {
         BOTGameBones.StartBot = false;
-        int RandXPlaceBotPlay = Random.Range(0, 3);
         int RandYPlaceBotPlay = Random.Range(0, 3);
-        IFi = RandXPlaceBotPlay;
         IFj = RandYPlaceBotPlay;
         BotStartColumnName = RandYPlaceBotPlay;
         BotStartNameScore = $"CNR{RandYPlaceBotPlay + 1}";
 
-        BotRed(RandXPlaceBotPlay, RandYPlaceBotPlay, BotStartNameScore, BotStartColumnName);
+        BotRed(0, RandYPlaceBotPlay, BotStartNameScore, BotStartColumnName);
     }
 
     public void IFvector()
@@ -1049,7 +1048,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
            // BotRed(IFi, IFj, IFNameScore, IFColumnName);
             return;
         }
-    }
+    } 
 
     public void BotRed(int SetPositionArrayBotX, int SetPositionArrayBotY, string NameScore, int ColumnName)
     {
@@ -1059,7 +1058,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
             PanelPlayer = 1;
             InstantiateBonesRED[SetPositionArrayBotX, SetPositionArrayBotY] = MasivRandomBones + 1;
             ResetBonesStart();
-            /*string NameRedMove = "R" + ColumnName;
+            /*string NameRedMove = "R" + ColumnName; // передвиение кубиков при размещении
             BonesMoveDown(NameRedMove, 0);
             InstantiateBonesRED[MoveXRed, MoveYRed] = MasivRandomBones + 1;*/
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
