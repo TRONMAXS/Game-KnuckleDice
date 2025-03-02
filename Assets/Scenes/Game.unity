@@ -6849,6 +6849,12 @@ MonoBehaviour:
   BonesBlue: {fileID: 8611441520705628849, guid: dc7cc3cf327d17f489ef509bf66807ea, type: 3}
   MasivRandomBones: 0
   PanelPlayer: 0
+  MoveXBlue: 0
+  MoveYBlue: 0
+  MoveXRed: 0
+  MoveYRed: 0
+  MoveVector2Red: 0
+  MoveVector2Blue: 0
   ScorePlayer: {fileID: 1300118940}
   ScorePlayer1: {fileID: 1300118940}
   ScorePlayerWIN: {fileID: 2032553532}
@@ -8135,6 +8141,7 @@ MonoBehaviour:
   InstantiateMSBLUE: {fileID: 1124031140}
   InstantiateGameObjectRED: {fileID: 1124031140}
   InstantiateGameObjectBLUE: {fileID: 1124031140}
+  BonesMoveDown: {fileID: 1124031140}
 --- !u!4 &1300118942
 Transform:
   m_ObjectHideFlags: 0

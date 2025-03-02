@@ -50,11 +50,12 @@ public class WinPlayer : MonoBehaviour
     {
         bool isFilledRED = true;
         bool isFilledBLUE = true;
+
         for (int i = 0; i < _arrayR.InstantiateBonesRED.GetLength(0) && isFilledRED; i++)
         {
             for (int j = 0; j < _arrayR.InstantiateBonesRED.GetLength(1) && isFilledRED; j++)
             {
-                if (_arrayR.InstantiateBonesRED[i, j] == 0)
+                if (_arrayR.InstantiateBonesRED[i, j] == 10)
                 {
                     isFilledRED = false;
                 }
@@ -64,7 +65,7 @@ public class WinPlayer : MonoBehaviour
         {
             for (int j = 0; j < _arrayR.InstantiateBonesBLUE.GetLength(1) && isFilledBLUE; j++)
             {
-                if (_arrayR.InstantiateBonesBLUE[i, j] == 0)
+                if (_arrayR.InstantiateBonesBLUE[i, j] == 10)
                 {
                     isFilledBLUE = false;
                 }
@@ -88,6 +89,7 @@ public class WinPlayer : MonoBehaviour
             }
             ScoreRED.text = ScoreWinerRed.ToString();
             ScoreBLUE.text = ScoreWinerBlue.ToString();
+            Time.timeScale = 0f;
         }
         else if (isFilledBLUE == true)
         {
@@ -106,6 +108,7 @@ public class WinPlayer : MonoBehaviour
             }
             ScoreBLUE.text = ScoreWinerBlue.ToString();
             ScoreRED.text = ScoreWinerRed.ToString();
+            Time.timeScale = 0f;
         }
     }
 }        

@@ -31,14 +31,26 @@ public class GamePanelButtonRed : MonoBehaviour
     private Vector2[] vector2BonesRed;
     private Vector2[] vector2BonesBlue;
 
-    public int[,] InstantiateBonesRED = new int[3, 3];
-    public int[,] InstantiateBonesBLUE = new int[3, 3];
+    public int[,] InstantiateBonesRED =  { { 10, 10, 10 },
+                                           { 10, 10, 10 },
+                                           { 10, 10, 10 } };
+
+    public int[,] InstantiateBonesBLUE = { { 10, 10, 10 },
+                                           { 10, 10, 10 },
+                                           { 10, 10, 10 } };
 
     public GameObject[,] gameObjectsInstantiateRED = new GameObject[3, 3];
     public GameObject[,] gameObjectsInstantiateBLUE = new GameObject[3, 3];
 
     public int MasivRandomBones;
     public int PanelPlayer;
+
+    public int MoveXBlue;
+    public int MoveYBlue;
+    public int MoveXRed;
+    public int MoveYRed;
+    public int MoveVector2Red;
+    public int MoveVector2Blue;
 
     public static int ResetRandomBones = 0;
 
@@ -123,6 +135,610 @@ public class GamePanelButtonRed : MonoBehaviour
     private void Update()
     {
         MasivRandomBones = GameBones.MasivRandomBonesPlayer;
+    }
+
+    public void BonesMoveDelete(string Post)
+    {
+        int NoFull = 0;
+        int IndexX = 0;
+        int IndexQuaternion = 0;
+        switch (Post)
+        {
+            case "B1":
+                for (int a = 0; a < 3; a++)
+                {
+                    if (InstantiateBonesBLUE[a, 0] == 10)
+                    {
+                        NoFull++;
+                    }
+                }
+                if (NoFull == 3)
+                {
+                    return;
+                }
+
+                for (int b = 2; b >= 0; b--)
+                {
+                    if (InstantiateBonesBLUE[b, 0] == 10)
+                    {
+                        if (b > 0)
+                        {
+                            InstantiateBonesBLUE[b, 0] = InstantiateBonesBLUE[b - 1, 0];
+                            gameObjectsInstantiateBLUE[b, 0] = gameObjectsInstantiateBLUE[b - 1, 0];
+                            if (gameObjectsInstantiateBLUE[b, 0] != null)
+                            {
+                                if (InstantiateBonesBLUE[b - 1, 0] == 0)
+                                {
+                                    IndexQuaternion = InstantiateBonesBLUE[b - 1, 0];
+                                }
+                                else
+                                {
+                                    IndexQuaternion = InstantiateBonesBLUE[b - 1, 0] - 1;
+                                }
+                                gameObjectsInstantiateBLUE[b, 0].GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[b], quaternionBones[IndexQuaternion]);
+                            }
+                            InstantiateBonesBLUE[b - 1, 0] = 10;
+                            gameObjectsInstantiateBLUE[b - 1, 0] = null;
+                        }
+                    }
+                }
+                break;
+            case "B2":
+                for (int a = 0; a < 3; a++)
+                {
+                    if (InstantiateBonesBLUE[a, 1] == 10)
+                    {
+                        NoFull++;
+                    }
+                }
+                if (NoFull == 3)
+                {
+                    return;
+                }
+
+                for (int b = 5; b >= 3; b--)
+                {
+                    if (b == 5)
+                    {
+                        IndexX = 2;
+                    }
+                    else if (b == 4)
+                    {
+                        IndexX = 1;
+                    }
+                    else if (b == 3)
+                    {
+                        IndexX = 0;
+                    }
+
+                    if (InstantiateBonesBLUE[IndexX, 1] == 10)
+                    {
+                        if (IndexX > 0)
+                        {
+                            InstantiateBonesBLUE[IndexX, 1] = InstantiateBonesBLUE[IndexX - 1, 1];
+                            gameObjectsInstantiateBLUE[IndexX, 1] = gameObjectsInstantiateBLUE[IndexX - 1, 1];
+                            if (gameObjectsInstantiateBLUE[IndexX, 1] != null)
+                            {
+                                if (InstantiateBonesBLUE[IndexX - 1, 1] == 0)
+                                {
+                                    IndexQuaternion = InstantiateBonesBLUE[IndexX - 1, 1];
+                                }
+                                else
+                                {
+                                    IndexQuaternion = InstantiateBonesBLUE[IndexX - 1, 1] - 1;
+                                }
+                                gameObjectsInstantiateBLUE[IndexX, 1].GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[b], quaternionBones[IndexQuaternion]);
+                            }
+                            InstantiateBonesBLUE[IndexX - 1, 1] = 10;
+                            gameObjectsInstantiateBLUE[IndexX - 1, 1] = null;
+                        }
+                    }
+                }
+                break;
+            case "B3":
+                for (int a = 0; a < 3; a++)
+                {
+                    if (InstantiateBonesBLUE[a, 2] == 10)
+                    {
+                        NoFull++;
+                    }
+                }
+                if (NoFull == 3)
+                {
+                    return;
+                }
+                for (int b = 8; b >= 6; b--)
+                {
+                    if (b == 8)
+                    {
+                        IndexX = 2;
+                    }
+                    else if (b == 7)
+                    {
+                        IndexX = 1;
+                    }
+                    else if (b == 6)
+                    {
+                        IndexX = 0;
+                    }
+
+                    if (InstantiateBonesBLUE[IndexX, 2] == 10)
+                    {
+                        if (IndexX > 0)
+                        {
+                            InstantiateBonesBLUE[IndexX, 2] = InstantiateBonesBLUE[IndexX - 1, 2];
+                            gameObjectsInstantiateBLUE[IndexX, 2] = gameObjectsInstantiateBLUE[IndexX - 1, 2];
+                            if (gameObjectsInstantiateBLUE[IndexX, 2] != null)
+                            {
+                                if (InstantiateBonesBLUE[IndexX - 1, 2] == 0)
+                                {
+                                    IndexQuaternion = InstantiateBonesBLUE[IndexX - 1, 2];
+                                }
+                                else
+                                {
+                                    IndexQuaternion = InstantiateBonesBLUE[IndexX - 1, 2] - 1;
+                                }
+                                gameObjectsInstantiateBLUE[IndexX, 2].GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[b], quaternionBones[IndexQuaternion]);
+                            }
+                            InstantiateBonesBLUE[IndexX - 1, 2] = 10;
+                            gameObjectsInstantiateBLUE[IndexX - 1, 2] = null;
+                        }
+                    }
+                }
+                break;
+
+            case "R1":
+                for (int a = 0; a < 3; a++)
+                {
+                    if (InstantiateBonesRED[a, 0] == 10)
+                    {
+                        NoFull++;
+                    }
+                }
+                if (NoFull == 3)
+                {
+                    return;
+                }
+
+                for (int b = 0; b < 3; b++)
+                {
+                    if (InstantiateBonesRED[b, 0] == 10)
+                    {
+                        if (b < 2)
+                        {
+                            InstantiateBonesRED[b, 0] = InstantiateBonesRED[b + 1, 0];
+                            gameObjectsInstantiateRED[b, 0] = gameObjectsInstantiateRED[b + 1, 0];
+                            if (gameObjectsInstantiateRED[b, 0] != null)
+                            {
+                                if (InstantiateBonesRED[b + 1, 0] == 0)
+                                {
+                                    IndexQuaternion = InstantiateBonesRED[b + 1, 0];
+                                }
+                                else
+                                {
+                                    IndexQuaternion = InstantiateBonesRED[b + 1, 0] - 1;
+                                }
+                                gameObjectsInstantiateRED[b, 0].GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[b], quaternionBones[IndexQuaternion]);
+                            }
+                            InstantiateBonesRED[b + 1, 0] = 10;
+                            gameObjectsInstantiateRED[b + 1, 0] = null;
+                        }
+                    }
+                }
+                break;
+            case "R2":
+                for (int a = 0; a < 3; a++)
+                {
+                    if (InstantiateBonesRED[a, 1] == 10)
+                    {
+                        NoFull++;
+                    }
+                }
+                if (NoFull == 3)
+                {
+                    return;
+                }
+                for (int b = 3; b <= 5; b++)
+                {
+                    if (b == 3)
+                    {
+                        IndexX = 0;
+                    }
+                    else if (b == 4)
+                    {
+                        IndexX = 1;
+                    }
+                    else if (b == 5)
+                    {
+                        IndexX = 2;
+                    }
+
+                    if (InstantiateBonesRED[IndexX, 1] == 10)
+                    {
+                        if (IndexX < 2)
+                        {
+                            InstantiateBonesRED[IndexX, 1] = InstantiateBonesRED[IndexX + 1, 1];
+                            gameObjectsInstantiateRED[IndexX, 1] = gameObjectsInstantiateRED[IndexX + 1, 1];
+                            if (gameObjectsInstantiateRED[IndexX, 1] != null)
+                            {
+                                if (InstantiateBonesRED[IndexX + 1, 1] == 0)
+                                {
+                                    IndexQuaternion = InstantiateBonesRED[IndexX + 1, 1];
+                                }
+                                else
+                                {
+                                    IndexQuaternion = InstantiateBonesRED[IndexX + 1, 1] - 1;
+                                }
+                                gameObjectsInstantiateRED[IndexX, 1].GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[b], quaternionBones[IndexQuaternion]);
+                            }
+                            InstantiateBonesRED[IndexX + 1, 1] = 10;
+                            gameObjectsInstantiateRED[IndexX + 1, 1] = null;
+                        }
+                    }
+                }
+                break;
+            case "R3":
+                for (int a = 0; a < 3; a++)
+                {
+                    if (InstantiateBonesRED[a, 2] == 10)
+                    {
+                        NoFull++;
+                    }
+                }
+                if (NoFull == 3)
+                {
+                    return;
+                }
+                for (int b = 6; b <= 8; b++)
+                {
+                    if (b == 6)
+                    {
+                        IndexX = 0;
+                    }
+                    else if (b == 7)
+                    {
+                        IndexX = 1;
+                    }
+                    else if (b == 8)
+                    {
+                        IndexX = 2;
+                    }
+
+                    if (InstantiateBonesRED[IndexX, 2] == 10)
+                    {
+                        if (IndexX < 2)
+                        {
+                            InstantiateBonesRED[IndexX, 2] = InstantiateBonesRED[IndexX + 1, 2];
+                            gameObjectsInstantiateRED[IndexX, 2] = gameObjectsInstantiateRED[IndexX + 1, 2];
+                            if (gameObjectsInstantiateRED[IndexX, 2] != null)
+                            {
+                                if (InstantiateBonesRED[IndexX + 1, 2] == 0)
+                                {
+                                    IndexQuaternion = InstantiateBonesRED[IndexX + 1, 2];
+                                }
+                                else
+                                {
+                                    IndexQuaternion = InstantiateBonesRED[IndexX + 1, 2] - 1;
+                                }
+                                gameObjectsInstantiateRED[IndexX, 2].GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[b], quaternionBones[IndexQuaternion]);
+                            }
+                            InstantiateBonesRED[IndexX + 1, 2] = 10;
+                            gameObjectsInstantiateRED[IndexX + 1, 2] = null;
+                        }
+                    }
+                }
+                break;
+        }
+
+    }
+
+    public void BonesMoveDown(string Post, int place)
+    {
+        switch (Post)
+        {
+            case "B1":
+                if (place == 0)
+                {
+                    if (InstantiateBonesBLUE[1, 0] == 10)
+                    {
+                        InstantiateBonesBLUE[1, 0] = InstantiateBonesBLUE[0, 0];
+                        InstantiateBonesBLUE[0, 0] = 10;
+                        MoveXBlue = 1;
+                        MoveYBlue = 0;
+                        MoveVector2Blue = 1;
+                        if (InstantiateBonesBLUE[2, 0] == 10)
+                        {
+                            InstantiateBonesBLUE[2, 0] = InstantiateBonesBLUE[1, 0];
+                            InstantiateBonesBLUE[1, 0] = 10;
+                            MoveXBlue = 2;
+                            MoveYBlue = 0;
+                            MoveVector2Blue = 2;
+                        }
+                    }
+                    else
+                    {
+                        MoveXBlue = 0;
+                        MoveYBlue = 0;
+                        MoveVector2Blue = 0;
+                    }
+                }
+                if (place == 1)
+                {
+                    if (InstantiateBonesBLUE[2, 0] == 10)
+                    {
+                        InstantiateBonesBLUE[2, 0] = InstantiateBonesBLUE[1, 0];
+                        InstantiateBonesBLUE[1, 0] = 10;
+                        MoveXBlue = 2;
+                        MoveYBlue = 0;
+                        MoveVector2Blue = 2;
+                    }
+                    else
+                    {
+                        MoveXBlue = 1;
+                        MoveYBlue = 0;
+                        MoveVector2Blue = 1;
+                    }
+                }
+                if (place == 2)
+                {
+                    MoveXBlue = 2;
+                    MoveYBlue = 0;
+                    MoveVector2Blue = 2;
+                }
+
+                break;
+            case "B2":
+                if (place == 2)
+                {
+                    MoveXBlue = 2;
+                    MoveYBlue = 1;
+                    MoveVector2Blue = 5;
+                }
+                if (place == 1)
+                {
+                    if (InstantiateBonesBLUE[2, 1] == 10)
+                    {
+                        InstantiateBonesBLUE[2, 1] = InstantiateBonesBLUE[1, 1];
+                        InstantiateBonesBLUE[1, 1] = 10;
+                        MoveXBlue = 2;
+                        MoveYBlue = 1;
+                        MoveVector2Blue = 5;
+                    }
+                    else
+                    {
+                        MoveXBlue = 1;
+                        MoveYBlue = 1;
+                        MoveVector2Blue = 4;
+                    }
+                }
+                if (place == 0)
+                {
+                    if (InstantiateBonesBLUE[1, 1] == 10)
+                    {
+                        InstantiateBonesBLUE[1, 1] = InstantiateBonesBLUE[0, 1];
+                        InstantiateBonesBLUE[0, 1] = 10;
+                        MoveXBlue = 1;
+                        MoveYBlue = 1;
+                        MoveVector2Blue = 4;
+                        if (InstantiateBonesBLUE[2, 1] == 10)
+                        {
+                            InstantiateBonesBLUE[2, 1] = InstantiateBonesBLUE[1, 1];
+                            InstantiateBonesBLUE[1, 1] = 10;
+                            MoveXBlue = 2;
+                            MoveYBlue = 1;
+                            MoveVector2Blue = 5;
+                        }
+                    }
+                    else
+                    {
+                        MoveXBlue = 0;
+                        MoveYBlue = 1;
+                        MoveVector2Blue = 3;
+                    }
+                }
+                break;
+            case "B3":
+                if (place == 2)
+                {
+                    MoveXBlue = 2;
+                    MoveYBlue = 2;
+                    MoveVector2Blue = 8;
+                }
+                if (place == 1)
+                {
+                    if (InstantiateBonesBLUE[2, 2] == 10)
+                    {
+                        InstantiateBonesBLUE[2, 2] = InstantiateBonesBLUE[1, 2];
+                        InstantiateBonesBLUE[1, 2] = 10;
+                        MoveXBlue = 2;
+                        MoveYBlue = 2;
+                        MoveVector2Blue = 8;
+                    }
+                    else
+                    {
+                        MoveXBlue = 1;
+                        MoveYBlue = 2;
+                        MoveVector2Blue = 7;
+                    }
+                }
+                if (place == 0)
+                {
+                    if (InstantiateBonesBLUE[1, 2] == 10)
+                    {
+                        InstantiateBonesBLUE[1, 2] = InstantiateBonesBLUE[0, 2];
+                        InstantiateBonesBLUE[0, 2] = 10;
+                        MoveXBlue = 1;
+                        MoveYBlue = 2;
+                        MoveVector2Blue = 7;
+                        if (InstantiateBonesBLUE[2, 2] == 10)
+                        {
+                            InstantiateBonesBLUE[2, 2] = InstantiateBonesBLUE[1, 2];
+                            InstantiateBonesBLUE[1, 2] = 10;
+                            MoveXBlue = 2;
+                            MoveYBlue = 2;
+                            MoveVector2Blue = 8;
+                        }
+                    }
+                    else
+                    {
+                        MoveXBlue = 0;
+                        MoveYBlue = 2;
+                        MoveVector2Blue = 6;
+                    }
+                }
+                break;
+
+            case "R1":
+                if (place == 2)
+                {
+                    MoveXBlue = 2;
+                    MoveYBlue = 0;
+                    MoveVector2Blue = 2;
+                }
+                if (place == 1)
+                {
+                    if (InstantiateBonesBLUE[2, 0] == 10)
+                    {
+                        InstantiateBonesBLUE[2, 0] = InstantiateBonesBLUE[1, 0];
+                        InstantiateBonesBLUE[1, 0] = 10;
+                        MoveXBlue = 2;
+                        MoveYBlue = 0;
+                        MoveVector2Blue = 2;
+                    }
+                    else
+                    {
+                        MoveXBlue = 1;
+                        MoveYBlue = 0;
+                        MoveVector2Blue = 1;
+                    }
+                }
+                if (place == 0)
+                {
+                    if (InstantiateBonesBLUE[1, 0] == 10)
+                    {
+                        InstantiateBonesBLUE[1, 0] = InstantiateBonesBLUE[0, 0];
+                        InstantiateBonesBLUE[0, 0] = 10;
+                        MoveXBlue = 1;
+                        MoveYBlue = 0;
+                        MoveVector2Blue = 1;
+                        if (InstantiateBonesBLUE[2, 0] == 10)
+                        {
+                            InstantiateBonesBLUE[2, 0] = InstantiateBonesBLUE[1, 0];
+                            InstantiateBonesBLUE[1, 0] = 10;
+                            MoveXBlue = 2;
+                            MoveYBlue = 0;
+                            MoveVector2Blue = 2;
+                        }
+                    }
+                    else
+                    {
+                        MoveXBlue = 0;
+                        MoveYBlue = 0;
+                        MoveVector2Blue = 0;
+                    }
+                }
+                break;
+            case "R2":
+                if (place == 2)
+                {
+                    MoveXBlue = 2;
+                    MoveYBlue = 1;
+                    MoveVector2Blue = 5;
+                }
+                if (place == 1)
+                {
+                    if (InstantiateBonesBLUE[2, 1] == 10)
+                    {
+                        InstantiateBonesBLUE[2, 1] = InstantiateBonesBLUE[1, 1];
+                        InstantiateBonesBLUE[1, 1] = 10;
+                        MoveXBlue = 2;
+                        MoveYBlue = 1;
+                        MoveVector2Blue = 5;
+                    }
+                    else
+                    {
+                        MoveXBlue = 1;
+                        MoveYBlue = 1;
+                        MoveVector2Blue = 4;
+                    }
+                }
+                if (place == 0)
+                {
+                    if (InstantiateBonesBLUE[1, 1] == 10)
+                    {
+                        InstantiateBonesBLUE[1, 1] = InstantiateBonesBLUE[0, 1];
+                        InstantiateBonesBLUE[0, 1] = 10;
+                        MoveXBlue = 1;
+                        MoveYBlue = 1;
+                        MoveVector2Blue = 4;
+                        if (InstantiateBonesBLUE[2, 1] == 10)
+                        {
+                            InstantiateBonesBLUE[2, 1] = InstantiateBonesBLUE[1, 1];
+                            InstantiateBonesBLUE[1, 1] = 10;
+                            MoveXBlue = 2;
+                            MoveYBlue = 1;
+                            MoveVector2Blue = 5;
+                        }
+                    }
+                    else
+                    {
+                        MoveXBlue = 0;
+                        MoveYBlue = 1;
+                        MoveVector2Blue = 3;
+                    }
+                }
+                break;
+            case "R3":
+                if (place == 2)
+                {
+                    MoveXBlue = 2;
+                    MoveYBlue = 2;
+                    MoveVector2Blue = 8;
+                }
+                if (place == 1)
+                {
+                    if (InstantiateBonesBLUE[2, 2] == 10)
+                    {
+                        InstantiateBonesBLUE[2, 2] = InstantiateBonesBLUE[1, 2];
+                        InstantiateBonesBLUE[1, 2] = 10;
+                        MoveXBlue = 2;
+                        MoveYBlue = 2;
+                        MoveVector2Blue = 8;
+                    }
+                    else
+                    {
+                        MoveXBlue = 1;
+                        MoveYBlue = 2;
+                        MoveVector2Blue = 7;
+                    }
+                }
+                if (place == 0)
+                {
+                    if (InstantiateBonesBLUE[1, 2] == 10)
+                    {
+                        InstantiateBonesBLUE[1, 2] = InstantiateBonesBLUE[0, 2];
+                        InstantiateBonesBLUE[0, 2] = 10;
+                        MoveXBlue = 1;
+                        MoveYBlue = 2;
+                        MoveVector2Blue = 7;
+                        if (InstantiateBonesBLUE[2, 2] == 10)
+                        {
+                            InstantiateBonesBLUE[2, 2] = InstantiateBonesBLUE[1, 2];
+                            InstantiateBonesBLUE[1, 2] = 10;
+                            MoveXBlue = 2;
+                            MoveYBlue = 2;
+                            MoveVector2Blue = 8;
+                        }
+                    }
+                    else
+                    {
+                        MoveXBlue = 0;
+                        MoveYBlue = 2;
+                        MoveVector2Blue = 6;
+                    }
+                }
+                break;
+        }
     }
 
     private void ResetBonesStart()
@@ -290,146 +906,154 @@ public class GamePanelButtonRed : MonoBehaviour
 
     private void OnButtonBlue0Clicked()
     {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[0, 0] <= 0)
+        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[0, 0] == 10)
         {
             PanelPlayer = 0;
-            InstantiateBonesBLUE[0, 0] = MasivRandomBones + 1;
             ResetBonesStart();
+            BonesMoveDown("B1", 0);
+            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[0], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + InstantiateBonesBLUE[0, 0] + "0";
-            gameObjectsInstantiateBLUE[0, 0] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[0, 0], 0, "BLUE");
+            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
+            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "0";
+            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
+            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 0, "BLUE");
             _actionScore.Score("CNB1");
             _actionCheckingWinning.CheckingWinning();
         }
     }
     private void OnButtonBlue1Clicked()
     {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[1, 0] <= 0)
+        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[1, 0] == 10)
         {
             PanelPlayer = 0;
             ResetBonesStart();
-            InstantiateBonesBLUE[1, 0] = MasivRandomBones + 1;
+            BonesMoveDown("B1", 1);
+            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[1], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + InstantiateBonesBLUE[1, 0] + "0";
-            gameObjectsInstantiateBLUE[1, 0] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[1, 0], 0, "BLUE");
+            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
+            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "0";
+            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
+            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 0, "BLUE");
             _actionScore.Score("CNB1");
             _actionCheckingWinning.CheckingWinning();
         }
     }
+
     private void OnButtonBlue2Clicked()
     {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[2, 0] <= 0)
+        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[2, 0] == 10)
         {
             PanelPlayer = 0;
             ResetBonesStart();
-            InstantiateBonesBLUE[2, 0] = MasivRandomBones + 1;
+            BonesMoveDown("B1", 2);
+            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[2], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + InstantiateBonesBLUE[2, 0] + "0";
-            gameObjectsInstantiateBLUE[2, 0] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[2, 0], 0, "BLUE");
+            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
+            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "0";
+            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
+            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 0, "BLUE");
             _actionScore.Score("CNB1");
             _actionCheckingWinning.CheckingWinning();
         }
     }
     private void OnButtonBlue3Clicked()
     {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[0, 1] <= 0)
+        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[0, 1] == 10)
         {
             PanelPlayer = 0;
-            InstantiateBonesBLUE[0, 1] = MasivRandomBones + 1;
             ResetBonesStart();
+            BonesMoveDown("B2", 0);
+            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[3], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + InstantiateBonesBLUE[0, 1] + "1";
-            gameObjectsInstantiateBLUE[0, 1] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[0, 1], 1, "BLUE");
+            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
+            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "1";
+            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
+            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 1, "BLUE");
             _actionScore.Score("CNB2");
             _actionCheckingWinning.CheckingWinning();
         }
     }
     private void OnButtonBlue4Clicked()
     {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[1, 1] <= 0)
+        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[1, 1] == 10)
         {
             PanelPlayer = 0;
-            InstantiateBonesBLUE[1, 1] = MasivRandomBones + 1;
             ResetBonesStart();
+            BonesMoveDown("B2", 1);
+            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[4], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + InstantiateBonesBLUE[1, 1] + "1";
-            gameObjectsInstantiateBLUE[1, 1] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[1, 1], 1, "BLUE");
+            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
+            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "1";
+            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
+            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 1, "BLUE");
             _actionScore.Score("CNB2");
             _actionCheckingWinning.CheckingWinning();
         }
     }
     private void OnButtonBlue5Clicked()
     {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[2, 1] <= 0)
+        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[2, 1] == 10)
         {
             PanelPlayer = 0;
-            InstantiateBonesBLUE[2, 1] = MasivRandomBones + 1;
             ResetBonesStart();
+            BonesMoveDown("B2", 2);
+            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[5], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + InstantiateBonesBLUE[2, 1] + "1";
-            gameObjectsInstantiateBLUE[2, 1] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[2, 1], 1, "BLUE");
+            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
+            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "1";
+            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
+            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 1, "BLUE");
             _actionScore.Score("CNB2");
             _actionCheckingWinning.CheckingWinning();
-            
-
         }
     }
     private void OnButtonBlue6Clicked()
     {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[0, 2] <= 0)
+        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[0, 2] == 10)
         {
             PanelPlayer = 0;
-            InstantiateBonesBLUE[0, 2] = MasivRandomBones + 1;
             ResetBonesStart();
+            BonesMoveDown("B3", 0);
+            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[6], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + InstantiateBonesBLUE[0, 2] + "2";
-            gameObjectsInstantiateBLUE[0, 2] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[0, 2], 2, "BLUE");
+            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
+            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "2";
+            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
+            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 2, "BLUE");
             _actionScore.Score("CNB3");
             _actionCheckingWinning.CheckingWinning();
         }
     }
     private void OnButtonBlue7Clicked()
     {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[1, 2] <= 0)
+        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[1, 2] == 10)
         {
             PanelPlayer = 0;
-            InstantiateBonesBLUE[1, 2] = MasivRandomBones + 1;
             ResetBonesStart();
+            BonesMoveDown("B3", 1);
+            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[7], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + InstantiateBonesBLUE[1, 2] + "2";
-            gameObjectsInstantiateBLUE[1, 2] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[1, 2], 2, "BLUE");
+            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
+            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "2";
+            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
+            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 2, "BLUE");
             _actionScore.Score("CNB3");
             _actionCheckingWinning.CheckingWinning();
         }
     }
     private void OnButtonBlue8Clicked()
     {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[2, 2] <= 0)
+        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[2, 2] == 10)
         {
             PanelPlayer = 0;
-            InstantiateBonesBLUE[2, 2] = MasivRandomBones + 1;
             ResetBonesStart();
+            BonesMoveDown("B3", 2);
+            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[8], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + (MasivRandomBones + 1) + "2";
-            gameObjectsInstantiateBLUE[2, 2] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[2, 2], 2, "BLUE");
+            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
+            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "2";
+            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
+            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 2, "BLUE");
             _actionScore.Score("CNB3");
             _actionCheckingWinning.CheckingWinning();
         }
