@@ -90,7 +90,7 @@ public  class ScorePlayer : MonoBehaviour
                     Destroy(_arrayGameObjectB.gameObjectsInstantiateBLUE[i, j]);
                     _arrayB.InstantiateBonesBLUE[i, j] = 10;
                     _arrayGameObjectB.gameObjectsInstantiateBLUE[i, j] = null;
-                    _BonesMoveDown.BonesMoveDelete(NameBLUEPost);
+                    //_BonesMoveDown.BonesMoveDelete(NameBLUEPost);
                     Score("CNB" + (j + 1));
                 }
             }
@@ -107,7 +107,7 @@ public  class ScorePlayer : MonoBehaviour
                     Destroy(_arrayGameObjectR.gameObjectsInstantiateRED[i, j]);
                     _arrayR.InstantiateBonesRED[i, j] = 10;
                     _arrayGameObjectR.gameObjectsInstantiateRED[i, j] = null;
-                    _BonesMoveDown.BonesMoveDelete(NameREDPost);
+                   // _BonesMoveDown.BonesMoveDelete(NameREDPost);
                     Score("CNR" + (j + 1));
                 }
             }

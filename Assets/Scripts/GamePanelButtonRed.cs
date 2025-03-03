@@ -589,152 +589,152 @@ public class GamePanelButtonRed : MonoBehaviour
                 break;
 
             case "R1":
-                if (place == 2)
+                if (place == 0)
                 {
-                    MoveXBlue = 2;
-                    MoveYBlue = 0;
-                    MoveVector2Blue = 2;
+                    MoveXRed = 0;
+                    MoveYRed = 0;
+                    MoveVector2Red = 0;
                 }
                 if (place == 1)
                 {
-                    if (InstantiateBonesBLUE[2, 0] == 10)
+                    if (InstantiateBonesRED[0, 0] == 10)
                     {
-                        InstantiateBonesBLUE[2, 0] = InstantiateBonesBLUE[1, 0];
-                        InstantiateBonesBLUE[1, 0] = 10;
-                        MoveXBlue = 2;
-                        MoveYBlue = 0;
-                        MoveVector2Blue = 2;
+                        InstantiateBonesRED[0, 0] = InstantiateBonesRED[1, 0];
+                        InstantiateBonesRED[1, 0] = 10;
+                        MoveXRed = 0;
+                        MoveYRed = 0;
+                        MoveVector2Red = 0;
                     }
                     else
                     {
-                        MoveXBlue = 1;
-                        MoveYBlue = 0;
-                        MoveVector2Blue = 1;
+                        MoveXRed = 1;
+                        MoveYRed = 0;
+                        MoveVector2Red = 1;
                     }
                 }
-                if (place == 0)
+                if (place == 2)
                 {
-                    if (InstantiateBonesBLUE[1, 0] == 10)
+                    if (InstantiateBonesRED[1, 0] == 10)
                     {
-                        InstantiateBonesBLUE[1, 0] = InstantiateBonesBLUE[0, 0];
-                        InstantiateBonesBLUE[0, 0] = 10;
-                        MoveXBlue = 1;
-                        MoveYBlue = 0;
-                        MoveVector2Blue = 1;
-                        if (InstantiateBonesBLUE[2, 0] == 10)
+                        InstantiateBonesRED[1, 0] = InstantiateBonesRED[2, 0];
+                        InstantiateBonesRED[2, 0] = 10;
+                        MoveXRed = 1;
+                        MoveYRed = 0;
+                        MoveVector2Red = 1;
+                        if (InstantiateBonesRED[0, 0] == 10)
                         {
-                            InstantiateBonesBLUE[2, 0] = InstantiateBonesBLUE[1, 0];
-                            InstantiateBonesBLUE[1, 0] = 10;
-                            MoveXBlue = 2;
-                            MoveYBlue = 0;
-                            MoveVector2Blue = 2;
+                            InstantiateBonesRED[2, 0] = InstantiateBonesRED[1, 0];
+                            InstantiateBonesRED[1, 0] = 10;
+                            MoveXRed = 0;
+                            MoveYRed = 0;
+                            MoveVector2Red = 0;
                         }
                     }
                     else
                     {
-                        MoveXBlue = 0;
-                        MoveYBlue = 0;
-                        MoveVector2Blue = 0;
+                        MoveXRed = 2;
+                        MoveYRed = 0;
+                        MoveVector2Red = 2;
                     }
                 }
                 break;
             case "R2":
-                if (place == 2)
+                if (place == 0)
                 {
-                    MoveXBlue = 2;
-                    MoveYBlue = 1;
-                    MoveVector2Blue = 5;
+                    MoveXRed = 0;
+                    MoveYRed = 1;
+                    MoveVector2Red = 3;
                 }
                 if (place == 1)
                 {
-                    if (InstantiateBonesBLUE[2, 1] == 10)
+                    if (InstantiateBonesRED[0, 1] == 10)
                     {
-                        InstantiateBonesBLUE[2, 1] = InstantiateBonesBLUE[1, 1];
-                        InstantiateBonesBLUE[1, 1] = 10;
-                        MoveXBlue = 2;
-                        MoveYBlue = 1;
-                        MoveVector2Blue = 5;
+                        InstantiateBonesRED[0, 1] = InstantiateBonesRED[1, 1];
+                        InstantiateBonesRED[1, 1] = 10;
+                        MoveXRed = 0;
+                        MoveYRed = 1;
+                        MoveVector2Red = 3;
                     }
                     else
                     {
-                        MoveXBlue = 1;
-                        MoveYBlue = 1;
-                        MoveVector2Blue = 4;
+                        MoveXRed = 1;
+                        MoveYRed = 1;
+                        MoveVector2Red = 4;
                     }
                 }
-                if (place == 0)
+                if (place == 2)
                 {
-                    if (InstantiateBonesBLUE[1, 1] == 10)
+                    if (InstantiateBonesRED[1, 1] == 10)
                     {
-                        InstantiateBonesBLUE[1, 1] = InstantiateBonesBLUE[0, 1];
-                        InstantiateBonesBLUE[0, 1] = 10;
-                        MoveXBlue = 1;
-                        MoveYBlue = 1;
-                        MoveVector2Blue = 4;
-                        if (InstantiateBonesBLUE[2, 1] == 10)
+                        InstantiateBonesRED[1, 1] = InstantiateBonesRED[2, 1];
+                        InstantiateBonesRED[2, 1] = 10;
+                        MoveXRed = 1;
+                        MoveYRed = 1;
+                        MoveVector2Red = 4;
+                        if (InstantiateBonesRED[0, 1] == 10)
                         {
-                            InstantiateBonesBLUE[2, 1] = InstantiateBonesBLUE[1, 1];
-                            InstantiateBonesBLUE[1, 1] = 10;
-                            MoveXBlue = 2;
-                            MoveYBlue = 1;
-                            MoveVector2Blue = 5;
+                            InstantiateBonesRED[2, 1] = InstantiateBonesRED[1, 1];
+                            InstantiateBonesRED[1, 1] = 10;
+                            MoveXRed = 0;
+                            MoveYRed = 1;
+                            MoveVector2Red = 3;
                         }
                     }
                     else
                     {
-                        MoveXBlue = 0;
-                        MoveYBlue = 1;
-                        MoveVector2Blue = 3;
+                        MoveXRed = 2;
+                        MoveYRed = 1;
+                        MoveVector2Red = 5;
                     }
                 }
                 break;
             case "R3":
-                if (place == 2)
+                if (place == 0)
                 {
-                    MoveXBlue = 2;
-                    MoveYBlue = 2;
-                    MoveVector2Blue = 8;
+                    MoveXRed = 0;
+                    MoveYRed = 2;
+                    MoveVector2Red = 6;
                 }
                 if (place == 1)
                 {
-                    if (InstantiateBonesBLUE[2, 2] == 10)
+                    if (InstantiateBonesRED[0, 2] == 10)
                     {
-                        InstantiateBonesBLUE[2, 2] = InstantiateBonesBLUE[1, 2];
-                        InstantiateBonesBLUE[1, 2] = 10;
-                        MoveXBlue = 2;
-                        MoveYBlue = 2;
-                        MoveVector2Blue = 8;
+                        InstantiateBonesRED[0, 2] = InstantiateBonesRED[1, 2];
+                        InstantiateBonesRED[1, 2] = 10;
+                        MoveXRed = 0;
+                        MoveYRed = 2;
+                        MoveVector2Red = 6;
                     }
                     else
                     {
-                        MoveXBlue = 1;
-                        MoveYBlue = 2;
-                        MoveVector2Blue = 7;
+                        MoveXRed = 1;
+                        MoveYRed = 2;
+                        MoveVector2Red = 7;
                     }
                 }
-                if (place == 0)
+                if (place == 2)
                 {
-                    if (InstantiateBonesBLUE[1, 2] == 10)
+                    if (InstantiateBonesRED[1, 2] == 10)
                     {
-                        InstantiateBonesBLUE[1, 2] = InstantiateBonesBLUE[0, 2];
-                        InstantiateBonesBLUE[0, 2] = 10;
-                        MoveXBlue = 1;
-                        MoveYBlue = 2;
-                        MoveVector2Blue = 7;
-                        if (InstantiateBonesBLUE[2, 2] == 10)
+                        InstantiateBonesRED[1, 2] = InstantiateBonesRED[2, 2];
+                        InstantiateBonesRED[2, 2] = 10;
+                        MoveXRed = 1;
+                        MoveYRed = 2;
+                        MoveVector2Red = 7;
+                        if (InstantiateBonesRED[0, 2] == 10)
                         {
-                            InstantiateBonesBLUE[2, 2] = InstantiateBonesBLUE[1, 2];
-                            InstantiateBonesBLUE[1, 2] = 10;
-                            MoveXBlue = 2;
-                            MoveYBlue = 2;
-                            MoveVector2Blue = 8;
+                            InstantiateBonesRED[2, 2] = InstantiateBonesRED[1, 2];
+                            InstantiateBonesRED[1, 2] = 10;
+                            MoveXRed = 0;
+                            MoveYRed = 2;
+                            MoveVector2Red = 6;
                         }
                     }
                     else
                     {
-                        MoveXBlue = 0;
-                        MoveYBlue = 2;
-                        MoveVector2Blue = 6;
+                        MoveXRed = 2;
+                        MoveYRed = 2;
+                        MoveVector2Red = 8;
                     }
                 }
                 break;
@@ -748,16 +748,17 @@ public class GamePanelButtonRed : MonoBehaviour
 
     private void OnButtonRed0Clicked()
     {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[0, 0] <= 0)
+        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[0, 0] == 10)
         {
             PanelPlayer = 1;
-            InstantiateBonesRED[0, 0] = MasivRandomBones + 1;
             ResetBonesStart();
+            BonesMoveDown("R1", 0);
+            InstantiateBonesRED[MoveXRed, MoveYRed] = MasivRandomBones + 1;
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[0], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + (MasivRandomBones + 1) + "0";
-            gameObjectsInstantiateRED[0, 0] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[0, 0], 0, "RED");
+            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[MoveVector2Red], quaternionBones[MasivRandomBones]);
+            bonesRed.name = "R-" + InstantiateBonesRED[MoveXRed, MoveYRed] + "0";
+            gameObjectsInstantiateRED[MoveXRed, MoveYRed] = bonesRed;
+            _actionDeleteBones.DeleteBones(InstantiateBonesRED[MoveXRed, MoveYRed], 0, "RED");
             _actionScore.Score("CNR1");
             _actionCheckingWinning.CheckingWinning();
         }
@@ -765,16 +766,17 @@ public class GamePanelButtonRed : MonoBehaviour
 
     private void OnButtonRed1Clicked()
     {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[1, 0] <= 0)
+        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[1, 0] == 10)
         {
             PanelPlayer = 1;
-            InstantiateBonesRED[1, 0] = MasivRandomBones + 1;
             ResetBonesStart();
+            BonesMoveDown("R1", 1);
+            InstantiateBonesRED[MoveXRed, MoveYRed] = MasivRandomBones + 1;
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[1], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + InstantiateBonesRED[1, 0] + "0";
-            gameObjectsInstantiateRED[1, 0] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[1, 0], 0, "RED");
+            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[MoveVector2Red], quaternionBones[MasivRandomBones]);
+            bonesRed.name = "R-" + InstantiateBonesRED[MoveXRed, MoveYRed] + "0";
+            gameObjectsInstantiateRED[MoveXRed, MoveYRed] = bonesRed;
+            _actionDeleteBones.DeleteBones(InstantiateBonesRED[MoveXRed, MoveYRed], 0, "RED");
             _actionScore.Score("CNR1");
             _actionCheckingWinning.CheckingWinning();
         }
@@ -783,16 +785,17 @@ public class GamePanelButtonRed : MonoBehaviour
 
     private void OnButtonRed2Clicked()
     {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[2, 0] <= 0)
+        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[2, 0] == 10)
         {
             PanelPlayer = 1;
-            InstantiateBonesRED[2, 0] = MasivRandomBones + 1;
             ResetBonesStart();
+            BonesMoveDown("R1", 2);
+            InstantiateBonesRED[MoveXRed, MoveYRed] = MasivRandomBones + 1;
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[2], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + InstantiateBonesRED[2, 0] + "0";
-            gameObjectsInstantiateRED[2, 0] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[2, 0], 0, "RED");
+            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[MoveVector2Red], quaternionBones[MasivRandomBones]);
+            bonesRed.name = "R-" + InstantiateBonesRED[MoveXRed, MoveYRed] + "0";
+            gameObjectsInstantiateRED[MoveXRed, MoveYRed] = bonesRed;
+            _actionDeleteBones.DeleteBones(InstantiateBonesRED[MoveXRed, MoveYRed], 0, "RED");
             _actionScore.Score("CNR1");
             _actionCheckingWinning.CheckingWinning();
         }
@@ -801,16 +804,17 @@ public class GamePanelButtonRed : MonoBehaviour
 
     private void OnButtonRed3Clicked()
     {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[0, 1] <= 0)
+        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[0, 1] == 10)
         {
             PanelPlayer = 1;
-            InstantiateBonesRED[0, 1] = MasivRandomBones + 1;
             ResetBonesStart();
+            BonesMoveDown("R2", 0);
+            InstantiateBonesRED[MoveXRed, MoveYRed] = MasivRandomBones + 1;
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[3], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + InstantiateBonesRED[0, 1] + "1";
-            gameObjectsInstantiateRED[0, 1] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[0, 1], 1, "RED");
+            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[MoveVector2Red], quaternionBones[MasivRandomBones]);
+            bonesRed.name = "R-" + InstantiateBonesRED[MoveXRed, MoveYRed] + "1";
+            gameObjectsInstantiateRED[MoveXRed, MoveYRed] = bonesRed;
+            _actionDeleteBones.DeleteBones(InstantiateBonesRED[MoveXRed, MoveYRed], 1, "RED");
             _actionScore.Score("CNR2");
             _actionCheckingWinning.CheckingWinning();
         }
@@ -818,16 +822,17 @@ public class GamePanelButtonRed : MonoBehaviour
 
     private void OnButtonRed4Clicked()
     {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[1, 1] <= 0)
+        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[1, 1] == 10)
         {
             PanelPlayer = 1;
-            InstantiateBonesRED[1, 1] = MasivRandomBones + 1;
             ResetBonesStart();
+            BonesMoveDown("R2", 1);
+            InstantiateBonesRED[MoveXRed, MoveYRed] = MasivRandomBones + 1;
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[4], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + InstantiateBonesRED[1, 1] + "1";
-            gameObjectsInstantiateRED[1, 1] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[1, 1], 1, "RED");
+            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[MoveVector2Red], quaternionBones[MasivRandomBones]);
+            bonesRed.name = "R-" + InstantiateBonesRED[MoveXRed, MoveYRed] + "1";
+            gameObjectsInstantiateRED[MoveXRed, MoveYRed] = bonesRed;
+            _actionDeleteBones.DeleteBones(InstantiateBonesRED[MoveXRed, MoveYRed], 1, "RED");
             _actionScore.Score("CNR2");
             _actionCheckingWinning.CheckingWinning();
         }
@@ -835,16 +840,17 @@ public class GamePanelButtonRed : MonoBehaviour
 
     private void OnButtonRed5Clicked()
     {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[2, 1] <= 0)
+        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[2, 1] == 10)
         {
             PanelPlayer = 1;
-            InstantiateBonesRED[2, 1] = MasivRandomBones + 1;
             ResetBonesStart();
+            BonesMoveDown("R2", 2);
+            InstantiateBonesRED[MoveXRed, MoveYRed] = MasivRandomBones + 1;
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[5], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + InstantiateBonesRED[2, 1] + "1";
-            gameObjectsInstantiateRED[2, 1] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[2, 1], 1, "RED");
+            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[MoveVector2Red], quaternionBones[MasivRandomBones]);
+            bonesRed.name = "R-" + InstantiateBonesRED[MoveXRed, MoveYRed] + "1";
+            gameObjectsInstantiateRED[MoveXRed, MoveYRed] = bonesRed;
+            _actionDeleteBones.DeleteBones(InstantiateBonesRED[MoveXRed, MoveYRed], 1, "RED");
             _actionScore.Score("CNR2");
             _actionCheckingWinning.CheckingWinning();
         }
@@ -852,16 +858,17 @@ public class GamePanelButtonRed : MonoBehaviour
 
     private void OnButtonRed6Clicked()
     {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[0, 2] <= 0)
+        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[0, 2] == 10)
         {
             PanelPlayer = 1;
-            InstantiateBonesRED[0, 2] = MasivRandomBones + 1;
             ResetBonesStart();
+            BonesMoveDown("R3", 0);
+            InstantiateBonesRED[MoveXRed, MoveYRed] = MasivRandomBones + 1;
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[6], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + InstantiateBonesRED[0, 2] + "2";
-            gameObjectsInstantiateRED[0, 2] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[0, 2], 2, "RED");
+            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[MoveVector2Red], quaternionBones[MasivRandomBones]);
+            bonesRed.name = "R-" + InstantiateBonesRED[MoveXRed, MoveYRed] + "2";
+            gameObjectsInstantiateRED[MoveXRed, MoveYRed] = bonesRed;
+            _actionDeleteBones.DeleteBones(InstantiateBonesRED[MoveXRed, MoveYRed], 2, "RED");
             _actionScore.Score("CNR3");
             _actionCheckingWinning.CheckingWinning();
         }
@@ -869,16 +876,17 @@ public class GamePanelButtonRed : MonoBehaviour
 
     private void OnButtonRed7Clicked()
     {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[1, 2] <= 0)
+        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[1, 2] == 10)
         {
             PanelPlayer = 1;
-            InstantiateBonesRED[1, 2] = MasivRandomBones + 1;
             ResetBonesStart();
+            BonesMoveDown("R3", 1);
+            InstantiateBonesRED[MoveXRed, MoveYRed] = MasivRandomBones + 1;
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[7], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + InstantiateBonesRED[1, 2] + "2";
-            gameObjectsInstantiateRED[1, 2] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[1, 2], 2, "RED");
+            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[MoveVector2Red], quaternionBones[MasivRandomBones]);
+            bonesRed.name = "R-" + InstantiateBonesRED[MoveXRed, MoveYRed] + "2";
+            gameObjectsInstantiateRED[MoveXRed, MoveYRed] = bonesRed;
+            _actionDeleteBones.DeleteBones(InstantiateBonesRED[MoveXRed, MoveYRed], 2, "RED");
             _actionScore.Score("CNR3");
             _actionCheckingWinning.CheckingWinning();
         }
@@ -886,18 +894,23 @@ public class GamePanelButtonRed : MonoBehaviour
 
     private void OnButtonRed8Clicked()
     {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[2, 2] <= 0)
+        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[2, 2] == 10)
         {
             PanelPlayer = 1;
-            InstantiateBonesRED[2, 2] = MasivRandomBones + 1;
             ResetBonesStart();
+            BonesMoveDown("R3", 2);
+            InstantiateBonesRED[MoveXRed, MoveYRed] = MasivRandomBones + 1;
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[8], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + InstantiateBonesRED[2, 2] + "2";
-            gameObjectsInstantiateRED[2, 2] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[2, 2], 2, "RED");
+            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[MoveVector2Red], quaternionBones[MasivRandomBones]);
+            bonesRed.name = "R-" + InstantiateBonesRED[MoveXRed, MoveYRed] + "2";
+            gameObjectsInstantiateRED[MoveXRed, MoveYRed] = bonesRed;
+            _actionDeleteBones.DeleteBones(InstantiateBonesRED[MoveXRed, MoveYRed], 2, "RED");
             _actionScore.Score("CNR3");
             _actionCheckingWinning.CheckingWinning();
+
+            Debug.Log(InstantiateBonesRED[2, 0] + " " + InstantiateBonesRED[2, 1] + " " + InstantiateBonesRED[2, 2]);
+            Debug.Log(InstantiateBonesRED[1, 0] + " " + InstantiateBonesRED[1, 1] + " " + InstantiateBonesRED[1, 2]);
+            Debug.Log(InstantiateBonesRED[0, 0] + " " + InstantiateBonesRED[0, 1] + " " + InstantiateBonesRED[0, 2]);
         }
     }
     /// Red

@@ -123,7 +123,7 @@ public class BOTScorePlayer : MonoBehaviour
     //1 .  .  .
     //0 .  .  .
     //  0  1  2
-    ///////////
+    ////////////
 
     public void Score(string ÑolumnName)
     {
