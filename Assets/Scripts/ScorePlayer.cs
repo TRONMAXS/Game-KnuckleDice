@@ -34,7 +34,7 @@ public  class ScorePlayer : MonoBehaviour
     private GamePanelButtonRed _arrayGameObjectB;
 
     public GameObject BonesMoveDown;
-    private BOTGamePanelButtonRed _BonesMoveDown;
+    private GamePanelButtonRed _BonesMoveDown;
 
     private void Start()
     {
@@ -44,7 +44,7 @@ public  class ScorePlayer : MonoBehaviour
         _arrayGameObjectR = InstantiateGameObjectRED.GetComponent<GamePanelButtonRed>();
         _arrayGameObjectB = InstantiateGameObjectBLUE.GetComponent<GamePanelButtonRed>();
 
-        _BonesMoveDown = BonesMoveDown.GetComponent<BOTGamePanelButtonRed>();
+        _BonesMoveDown = BonesMoveDown.GetComponent<GamePanelButtonRed>();
     }
 
     public void Array()
@@ -90,7 +90,7 @@ public  class ScorePlayer : MonoBehaviour
                     Destroy(_arrayGameObjectB.gameObjectsInstantiateBLUE[i, j]);
                     _arrayB.InstantiateBonesBLUE[i, j] = 10;
                     _arrayGameObjectB.gameObjectsInstantiateBLUE[i, j] = null;
-                    //_BonesMoveDown.BonesMoveDelete(NameBLUEPost);
+                    _BonesMoveDown.BonesMoveDelete(NameBLUEPost);
                     Score("CNB" + (j + 1));
                 }
             }
@@ -107,7 +107,7 @@ public  class ScorePlayer : MonoBehaviour
                     Destroy(_arrayGameObjectR.gameObjectsInstantiateRED[i, j]);
                     _arrayR.InstantiateBonesRED[i, j] = 10;
                     _arrayGameObjectR.gameObjectsInstantiateRED[i, j] = null;
-                   // _BonesMoveDown.BonesMoveDelete(NameREDPost);
+                    _BonesMoveDown.BonesMoveDelete(NameREDPost);
                     Score("CNR" + (j + 1));
                 }
             }
