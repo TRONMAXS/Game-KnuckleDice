@@ -9,7 +9,12 @@ public class Spawner : MonoBehaviour
     public int timeMax;
     public int randMinStart;
     public int randMax;
-    private float timeDell = 5f;
+    public static bool Dell = true;
+
+    public int MoveSpeedL;
+    public int MoveSpeedR;
+    private Vector2 _movementDirectionR = Vector2.right;
+    private Vector2 _movementDirectionL = Vector2.left;
 
     public static int direction;
 
@@ -17,40 +22,50 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-       randMax = timeMax;
-       randMax -= 4;
-       direction = Random.Range(0, 2);
+        direction = Random.Range(0, 2);
     }
 
     private void Update()
     {
-        int rand = Random.Range(randMinStart, randMax);
-        timeStart += Time.deltaTime;
-
-        if (direction == 0)
+        if (Dell)
         {
+            int rand = Random.Range(randMinStart, randMax);
             float randY = Random.Range(120, 1000);
-            vectorY = new Vector2(2000, randY);
 
-            if (timeStart >= timeMax)
+            if (direction == 0) // Левое направление
             {
+                MoveSpeedL = Random.Range(1000, 1500);
+                vectorY = new Vector2(2000, randY);
                 ObjectBonesRB = Instantiate(BonesRB, vectorY, Quaternion.identity);
-                timeStart = rand;
-                Destroy(ObjectBonesRB, timeDell);
+                ObjectBonesRB.name = "ObjectBonesRB";
+                Dell = false;
+            }
+            else if (direction == 1) // Правое направление
+            {
+                MoveSpeedR = Random.Range(1000, 1500);
+                vectorY = new Vector2(-2000, randY);
+                ObjectBonesRB = Instantiate(BonesRB, vectorY, Quaternion.identity);
+                ObjectBonesRB.name = "ObjectBonesRB";
+                Dell = false;
             }
         }
 
-        if (direction == 1)
+        if (ObjectBonesRB != null)
         {
-            float randY = Random.Range(120, 1000);
-            vectorY = new Vector2(-2000, randY);
-
-            if (timeStart >= timeMax)
+            if (direction == 0) // Движение влево
             {
-                ObjectBonesRB = Instantiate(BonesRB, vectorY, Quaternion.identity);
-                timeStart = rand;
-                Destroy(ObjectBonesRB, timeDell);
+                ObjectBonesRB.transform.Translate(_movementDirectionL * MoveSpeedL * Time.deltaTime);
             }
+            else if (direction == 1) // Движение вправо
+            {
+                ObjectBonesRB.transform.Translate(_movementDirectionR * MoveSpeedR * Time.deltaTime);
+            }
+        }
+
+        if (GameObject.Find("ObjectBonesRB") != true)
+        {
+            direction = Random.Range(0, 2);
+            Dell = true;
         }
     }
 }

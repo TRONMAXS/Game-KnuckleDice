@@ -8,6 +8,7 @@ TagManager:
   - GameRedLine
   - GameBlueLine
   - Layer
+  - Dell
   layers:
   - Default
   - TransparentFX
