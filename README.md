@@ -5,7 +5,8 @@
 ![GitHub issues](https://img.shields.io/github/issues/TRONMAXS/Game-KnuckleBones)
 ![itch.io](https://img.shields.io/badge/play-on_itch.io-red?logo=itchdotio)
 
-Мобильная реализация мини-игры **KnuckleBones**, вдохновлённой *Cult of the Lamb*. Это пошаговая настольная стратегия, сочетающая простоту и тактику.
+Мобильная реализация мини-игры KnuckleBones, вдохновлённой игрой Cult of the Lamb.
+Это пошаговая настольная стратегия для двоих игроков, которая сочетает в себе простоту правил и глубокую тактику.
 
 ---
 
