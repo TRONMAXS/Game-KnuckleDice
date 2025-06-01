@@ -1,32 +1,39 @@
-<h2>📱 Game-KnuckleBones v0.1.3</h2>
+# 📱 Game-KnuckleBones v0.1.3
 
-<h3>⚙️ Будущие игровые режимы:</h3>
-<ul>
-    <li>Режим игры с ботом</li>
-    <li>Режим игры сетевой multiplayer </li>
-</ul>
+![GitHub release](https://img.shields.io/github/v/release/TRONMAXS/Game-KnuckleBones?include_prereleases&label=release)
+![GitHub repo size](https://img.shields.io/github/repo-size/TRONMAXS/Game-KnuckleBones)
+![GitHub issues](https://img.shields.io/github/issues/TRONMAXS/Game-KnuckleBones)
+![itch.io](https://img.shields.io/badge/play-on_itch.io-red?logo=itchdotio)
 
-<h3>📥 Где скачать:</h3>
-<ul>
-    <li><a href="https://github.com/TRONMAXS/Game-KnuckleBones/releases/tag/Release">GitHub</a></li>
-    <li><a href="https://tronmax.itch.io/knucklebones">itch.io</a></li>
-</ul>
+Мобильная реализация мини-игры **KnuckleBones**, вдохновлённой *Cult of the Lamb*. Это пошаговая настольная стратегия, сочетающая простоту и тактику.
 
-<h2>👤 Привет, я Максим!</h2>
+---
 
-<h3>🌱 Я изучаю:</h3>
-<ul>
-    <li>C#</li>
-    <li>Разработка игр на Unity</li>
-</ul>
+## 🎮 Особенности
 
-<h3>💼  Проекты:</h3>
-<ul>
-    <li> <a href="https://github.com/TRONMAXS/Game-KnuckleBones/tree/master">Проект №1</a></li>
-</ul>
+- Простой, но затягивающий геймплей
+- Разработка на **Unity** с использованием **C#**
 
-<h3>📫 Связаться со мной:</h3>
-<ul>
-    <li>popik.maxim@gmail.com</a></li>
-</ul>
+---
 
+## ⚙️ Планы на будущее
+
+- 🤖 Игра против ИИ (бота)
+- 🌐 Онлайн мультиплеер
+
+---
+
+## 📸 Скриншоты
+
+
+| <img src="Assets/StartWindow.jpg" width="250"/> | <img src="Assets/GameWindow.jpg" width="250"/> |
+|:-----------------------------------------------:|:----------------------------------------------:|
+|                  Начальный экран                |                 Игровой процесс                |
+
+## 👤 Обо мне
+
+Привет! Меня зовут Максим — я изучаю C# и разработку игр на Unity.  
+Этот проект — моя практика и вдохновение от любимой игры *Cult of the Lamb*.  
+
+Если хочешь связаться — пиши на: popik.maxim@gmail.com  
+[Мои проекты на GitHub](https://github.com/TRONMAXS)
