@@ -229,12 +229,12 @@ GameObject:
   - component: {fileID: 44647627}
   - component: {fileID: 44647626}
   m_Layer: 5
-  m_Name: SceneStart (1)
+  m_Name: SceneGameBot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &44647625
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1122,7 +1122,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -341.00006, y: 906}
+  m_AnchoredPosition: {x: -341.00003, y: 906}
   m_SizeDelta: {x: -980, y: -2118}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &460828855
@@ -1261,12 +1261,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BonesRB: {fileID: 6218569463586070386, guid: 2b0e663bc14be664185efca67995c7b5, type: 3}
-  DeleteRight: {fileID: 0}
-  DeleteLeft: {fileID: 0}
   timeStart: 9
   timeMax: 10
   randMinStart: 0
   randMax: 10
+  MoveSpeedL: 0
+  MoveSpeedR: 0
 --- !u!4 &508976823
 Transform:
   m_ObjectHideFlags: 0
@@ -1560,7 +1560,7 @@ GameObject:
   - component: {fileID: 804262441}
   - component: {fileID: 804262440}
   m_Layer: 5
-  m_Name: SceneStart
+  m_Name: SceneGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
