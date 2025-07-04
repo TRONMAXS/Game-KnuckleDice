@@ -3,26 +3,6 @@ using UnityEngine.UI;
 
 public class GamePanelButtonRed : MonoBehaviour
 {
-    public Button ButtonRed1;
-    public Button ButtonRed2;
-    public Button ButtonRed3;
-    public Button ButtonRed4;
-    public Button ButtonRed5;
-    public Button ButtonRed6;
-    public Button ButtonRed7;
-    public Button ButtonRed8;
-    public Button ButtonRed9;
-
-    public Button ButtonBlue1;
-    public Button ButtonBlue2;
-    public Button ButtonBlue3;
-    public Button ButtonBlue4;
-    public Button ButtonBlue5;
-    public Button ButtonBlue6;
-    public Button ButtonBlue7;
-    public Button ButtonBlue8;
-    public Button ButtonBlue9;
-
     public GameObject BonesRed;
     public GameObject BonesBlue;
 
@@ -75,28 +55,6 @@ public class GamePanelButtonRed : MonoBehaviour
         _actionCheckingWinning  = ScorePlayerWIN.GetComponent<WinPlayer>();
 
         _actionResetBones = Resetaction.GetComponent<GameBones>();
-
-
-        ButtonRed1.onClick.AddListener(OnButtonRed0Clicked);
-        ButtonRed2.onClick.AddListener(OnButtonRed1Clicked);
-        ButtonRed3.onClick.AddListener(OnButtonRed2Clicked);
-        ButtonRed4.onClick.AddListener(OnButtonRed3Clicked);
-        ButtonRed5.onClick.AddListener(OnButtonRed4Clicked);
-        ButtonRed6.onClick.AddListener(OnButtonRed5Clicked);
-        ButtonRed7.onClick.AddListener(OnButtonRed6Clicked);
-        ButtonRed8.onClick.AddListener(OnButtonRed7Clicked);
-        ButtonRed9.onClick.AddListener(OnButtonRed8Clicked);
-
-        ButtonBlue1.onClick.AddListener(OnButtonBlue0Clicked);
-        ButtonBlue2.onClick.AddListener(OnButtonBlue1Clicked);
-        ButtonBlue3.onClick.AddListener(OnButtonBlue2Clicked);
-        ButtonBlue4.onClick.AddListener(OnButtonBlue3Clicked);
-        ButtonBlue5.onClick.AddListener(OnButtonBlue4Clicked);
-        ButtonBlue6.onClick.AddListener(OnButtonBlue5Clicked);
-        ButtonBlue7.onClick.AddListener(OnButtonBlue6Clicked);
-        ButtonBlue8.onClick.AddListener(OnButtonBlue7Clicked);
-        ButtonBlue9.onClick.AddListener(OnButtonBlue8Clicked);
-
 
         quaternionBones[0] = Quaternion.Euler(-180f, 0f, 0f);
         quaternionBones[1] = Quaternion.Euler(-90f, 0f, 0f);
@@ -746,331 +704,40 @@ public class GamePanelButtonRed : MonoBehaviour
         _actionResetBones.ResetBones();
     }
 
-    private void OnButtonRed0Clicked()
+
+    public void ButtonRedClicked(int Index—olumn)
     {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[0, 0] == 10)
+        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[2, Index—olumn] == 10)
         {
             PanelPlayer = 1;
             ResetBonesStart();
-            BonesMoveDown("R1", 0);
+            BonesMoveDown("R" + (Index—olumn + 1), 2);
             InstantiateBonesRED[MoveXRed, MoveYRed] = MasivRandomBones + 1;
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[MoveVector2Red], quaternionBones[MasivRandomBones]);
             bonesRed.name = "R-" + InstantiateBonesRED[MoveXRed, MoveYRed] + "0";
             gameObjectsInstantiateRED[MoveXRed, MoveYRed] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[MoveXRed, MoveYRed], 0, "RED");
-            _actionScore.Score("CNR1");
+            _actionDeleteBones.DeleteBones(InstantiateBonesRED[MoveXRed, MoveYRed], Index—olumn, "RED");
+            _actionScore.Score("CNR" + (Index—olumn + 1));
             _actionCheckingWinning.CheckingWinning();
         }
     }
 
-    private void OnButtonRed1Clicked()
+    public void ButtonBlueClicked(int Index—olumn)
     {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[1, 0] == 10)
-        {
-            PanelPlayer = 1;
-            ResetBonesStart();
-            BonesMoveDown("R1", 1);
-            InstantiateBonesRED[MoveXRed, MoveYRed] = MasivRandomBones + 1;
-            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[MoveVector2Red], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + InstantiateBonesRED[MoveXRed, MoveYRed] + "0";
-            gameObjectsInstantiateRED[MoveXRed, MoveYRed] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[MoveXRed, MoveYRed], 0, "RED");
-            _actionScore.Score("CNR1");
-            _actionCheckingWinning.CheckingWinning();
-        }
-
-    }
-
-    private void OnButtonRed2Clicked()
-    {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[2, 0] == 10)
-        {
-            PanelPlayer = 1;
-            ResetBonesStart();
-            BonesMoveDown("R1", 2);
-            InstantiateBonesRED[MoveXRed, MoveYRed] = MasivRandomBones + 1;
-            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[MoveVector2Red], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + InstantiateBonesRED[MoveXRed, MoveYRed] + "0";
-            gameObjectsInstantiateRED[MoveXRed, MoveYRed] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[MoveXRed, MoveYRed], 0, "RED");
-            _actionScore.Score("CNR1");
-            _actionCheckingWinning.CheckingWinning();
-        }
-
-    }
-
-    private void OnButtonRed3Clicked()
-    {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[0, 1] == 10)
-        {
-            PanelPlayer = 1;
-            ResetBonesStart();
-            BonesMoveDown("R2", 0);
-            InstantiateBonesRED[MoveXRed, MoveYRed] = MasivRandomBones + 1;
-            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[MoveVector2Red], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + InstantiateBonesRED[MoveXRed, MoveYRed] + "1";
-            gameObjectsInstantiateRED[MoveXRed, MoveYRed] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[MoveXRed, MoveYRed], 1, "RED");
-            _actionScore.Score("CNR2");
-            _actionCheckingWinning.CheckingWinning();
-        }
-    }
-
-    private void OnButtonRed4Clicked()
-    {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[1, 1] == 10)
-        {
-            PanelPlayer = 1;
-            ResetBonesStart();
-            BonesMoveDown("R2", 1);
-            InstantiateBonesRED[MoveXRed, MoveYRed] = MasivRandomBones + 1;
-            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[MoveVector2Red], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + InstantiateBonesRED[MoveXRed, MoveYRed] + "1";
-            gameObjectsInstantiateRED[MoveXRed, MoveYRed] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[MoveXRed, MoveYRed], 1, "RED");
-            _actionScore.Score("CNR2");
-            _actionCheckingWinning.CheckingWinning();
-        }
-    }
-
-    private void OnButtonRed5Clicked()
-    {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[2, 1] == 10)
-        {
-            PanelPlayer = 1;
-            ResetBonesStart();
-            BonesMoveDown("R2", 2);
-            InstantiateBonesRED[MoveXRed, MoveYRed] = MasivRandomBones + 1;
-            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[MoveVector2Red], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + InstantiateBonesRED[MoveXRed, MoveYRed] + "1";
-            gameObjectsInstantiateRED[MoveXRed, MoveYRed] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[MoveXRed, MoveYRed], 1, "RED");
-            _actionScore.Score("CNR2");
-            _actionCheckingWinning.CheckingWinning();
-        }
-    }
-
-    private void OnButtonRed6Clicked()
-    {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[0, 2] == 10)
-        {
-            PanelPlayer = 1;
-            ResetBonesStart();
-            BonesMoveDown("R3", 0);
-            InstantiateBonesRED[MoveXRed, MoveYRed] = MasivRandomBones + 1;
-            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[MoveVector2Red], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + InstantiateBonesRED[MoveXRed, MoveYRed] + "2";
-            gameObjectsInstantiateRED[MoveXRed, MoveYRed] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[MoveXRed, MoveYRed], 2, "RED");
-            _actionScore.Score("CNR3");
-            _actionCheckingWinning.CheckingWinning();
-        }
-    }
-
-    private void OnButtonRed7Clicked()
-    {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[1, 2] == 10)
-        {
-            PanelPlayer = 1;
-            ResetBonesStart();
-            BonesMoveDown("R3", 1);
-            InstantiateBonesRED[MoveXRed, MoveYRed] = MasivRandomBones + 1;
-            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[MoveVector2Red], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + InstantiateBonesRED[MoveXRed, MoveYRed] + "2";
-            gameObjectsInstantiateRED[MoveXRed, MoveYRed] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[MoveXRed, MoveYRed], 2, "RED");
-            _actionScore.Score("CNR3");
-            _actionCheckingWinning.CheckingWinning();
-        }
-    }
-
-    private void OnButtonRed8Clicked()
-    {
-        if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[2, 2] == 10)
-        {
-            PanelPlayer = 1;
-            ResetBonesStart();
-            BonesMoveDown("R3", 2);
-            InstantiateBonesRED[MoveXRed, MoveYRed] = MasivRandomBones + 1;
-            GameObject bonesRed = Instantiate(BonesRed) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[MoveVector2Red], quaternionBones[MasivRandomBones]);
-            bonesRed.name = "R-" + InstantiateBonesRED[MoveXRed, MoveYRed] + "2";
-            gameObjectsInstantiateRED[MoveXRed, MoveYRed] = bonesRed;
-            _actionDeleteBones.DeleteBones(InstantiateBonesRED[MoveXRed, MoveYRed], 2, "RED");
-            _actionScore.Score("CNR3");
-            _actionCheckingWinning.CheckingWinning();
-
-            Debug.Log(InstantiateBonesRED[2, 0] + " " + InstantiateBonesRED[2, 1] + " " + InstantiateBonesRED[2, 2]);
-            Debug.Log(InstantiateBonesRED[1, 0] + " " + InstantiateBonesRED[1, 1] + " " + InstantiateBonesRED[1, 2]);
-            Debug.Log(InstantiateBonesRED[0, 0] + " " + InstantiateBonesRED[0, 1] + " " + InstantiateBonesRED[0, 2]);
-        }
-    }
-    /// Red
-    /// ///////////////////////////////////////////////////////////////////////////////////////
-    /// Blue
-
-    private void OnButtonBlue0Clicked()
-    {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[0, 0] == 10)
+        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[0, Index—olumn] == 10)
         {
             PanelPlayer = 0;
             ResetBonesStart();
-            BonesMoveDown("B1", 0);
+            BonesMoveDown("B" + (Index—olumn + 1), 0);
             InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
             bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
             bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "0";
             gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 0, "BLUE");
-            _actionScore.Score("CNB1");
+            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], Index—olumn, "BLUE");
+            _actionScore.Score("CNB" + (Index—olumn + 1));
             _actionCheckingWinning.CheckingWinning();
         }
     }
-    private void OnButtonBlue1Clicked()
-    {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[1, 0] == 10)
-        {
-            PanelPlayer = 0;
-            ResetBonesStart();
-            BonesMoveDown("B1", 1);
-            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
-            GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "0";
-            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 0, "BLUE");
-            _actionScore.Score("CNB1");
-            _actionCheckingWinning.CheckingWinning();
-        }
-    }
-
-    private void OnButtonBlue2Clicked()
-    {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[2, 0] == 10)
-        {
-            PanelPlayer = 0;
-            ResetBonesStart();
-            BonesMoveDown("B1", 2);
-            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
-            GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "0";
-            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 0, "BLUE");
-            _actionScore.Score("CNB1");
-            _actionCheckingWinning.CheckingWinning();
-        }
-    }
-    private void OnButtonBlue3Clicked()
-    {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[0, 1] == 10)
-        {
-            PanelPlayer = 0;
-            ResetBonesStart();
-            BonesMoveDown("B2", 0);
-            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
-            GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "1";
-            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 1, "BLUE");
-            _actionScore.Score("CNB2");
-            _actionCheckingWinning.CheckingWinning();
-        }
-    }
-    private void OnButtonBlue4Clicked()
-    {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[1, 1] == 10)
-        {
-            PanelPlayer = 0;
-            ResetBonesStart();
-            BonesMoveDown("B2", 1);
-            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
-            GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "1";
-            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 1, "BLUE");
-            _actionScore.Score("CNB2");
-            _actionCheckingWinning.CheckingWinning();
-        }
-    }
-    private void OnButtonBlue5Clicked()
-    {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[2, 1] == 10)
-        {
-            PanelPlayer = 0;
-            ResetBonesStart();
-            BonesMoveDown("B2", 2);
-            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
-            GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "1";
-            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 1, "BLUE");
-            _actionScore.Score("CNB2");
-            _actionCheckingWinning.CheckingWinning();
-        }
-    }
-    private void OnButtonBlue6Clicked()
-    {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[0, 2] == 10)
-        {
-            PanelPlayer = 0;
-            ResetBonesStart();
-            BonesMoveDown("B3", 0);
-            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
-            GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "2";
-            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 2, "BLUE");
-            _actionScore.Score("CNB3");
-            _actionCheckingWinning.CheckingWinning();
-        }
-    }
-    private void OnButtonBlue7Clicked()
-    {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[1, 2] == 10)
-        {
-            PanelPlayer = 0;
-            ResetBonesStart();
-            BonesMoveDown("B3", 1);
-            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
-            GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "2";
-            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 2, "BLUE");
-            _actionScore.Score("CNB3");
-            _actionCheckingWinning.CheckingWinning();
-        }
-    }
-    private void OnButtonBlue8Clicked()
-    {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[2, 2] == 10)
-        {
-            PanelPlayer = 0;
-            ResetBonesStart();
-            BonesMoveDown("B3", 2);
-            InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
-            GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
-            bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "2";
-            gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
-            _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], 2, "BLUE");
-            _actionScore.Score("CNB3");
-            _actionCheckingWinning.CheckingWinning();
-        }
-    }
-
-
 }
