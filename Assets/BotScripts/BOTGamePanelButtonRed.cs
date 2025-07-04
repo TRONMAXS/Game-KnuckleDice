@@ -1059,11 +1059,11 @@ public class BOTGamePanelButtonRed : MonoBehaviour
 
     public void ButtonBlueClicked(int Index—olumn)
     {
-        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[2, 0] == 10)
+        if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[2, Index—olumn] == 10)
         {
             PanelPlayer = 0;
             ResetBonesStart();
-            BonesMoveDown("B1", 2);
+            BonesMoveDown("B" + (Index—olumn + 1), 0);
             InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
             bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);
