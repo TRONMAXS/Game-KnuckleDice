@@ -304,7 +304,6 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionCheckingWinning.CheckingWinning();
         }
     }
-
     private void OnButtonBlue1Clicked()
     {
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[1, 0] <= 0)
@@ -337,7 +336,6 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionCheckingWinning.CheckingWinning();
         }
     }
-
     private void OnButtonBlue3Clicked()
     {
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[0, 1] <= 0)
@@ -354,7 +352,6 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionCheckingWinning.CheckingWinning();
         }
     }
-
     private void OnButtonBlue4Clicked()
     {
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[1, 1] <= 0)
@@ -371,7 +368,6 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionCheckingWinning.CheckingWinning();
         }
     }
-
     private void OnButtonBlue5Clicked()
     {
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[2, 1] <= 0)
@@ -390,7 +386,6 @@ public class GamePanelButtonRed : MonoBehaviour
 
         }
     }
-
     private void OnButtonBlue6Clicked()
     {
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[0, 2] <= 0)
@@ -407,7 +402,6 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionCheckingWinning.CheckingWinning();
         }
     }
-
     private void OnButtonBlue7Clicked()
     {
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[1, 2] <= 0)
@@ -424,7 +418,6 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionCheckingWinning.CheckingWinning();
         }
     }
-
     private void OnButtonBlue8Clicked()
     {
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[2, 2] <= 0)
@@ -441,4 +434,6 @@ public class GamePanelButtonRed : MonoBehaviour
             _actionCheckingWinning.CheckingWinning();
         }
     }
+
+
 }
