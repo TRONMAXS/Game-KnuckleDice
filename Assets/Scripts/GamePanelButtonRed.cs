@@ -1,12 +1,11 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GamePanelButtonRed : MonoBehaviour
 {
     public GameObject BonesRed;
     public GameObject BonesBlue;
 
-    private Quaternion[] quaternionBones = new Quaternion[6];
+    private readonly Quaternion[] quaternionBones = new Quaternion[6];
 
     private Vector2[] vector2BonesRed;
     private Vector2[] vector2BonesBlue;
@@ -99,7 +98,7 @@ public class GamePanelButtonRed : MonoBehaviour
     {
         int NoFull = 0;
         int IndexX = 0;
-        int IndexQuaternion = 0;
+        int IndexQuaternion;
         switch (Post)
         {
             case "B1":
@@ -390,38 +389,18 @@ public class GamePanelButtonRed : MonoBehaviour
 
     }
 
-    public void BonesMoveDown(string Post, int place)
+    private void BonesMoveDown(string Post)
     {
         switch (Post)
         {
             case "B1":
-                if (place == 0)
+                if (InstantiateBonesBLUE[1, 0] == 10)
                 {
-                    if (InstantiateBonesBLUE[1, 0] == 10)
-                    {
-                        InstantiateBonesBLUE[1, 0] = InstantiateBonesBLUE[0, 0];
-                        InstantiateBonesBLUE[0, 0] = 10;
-                        MoveXBlue = 1;
-                        MoveYBlue = 0;
-                        MoveVector2Blue = 1;
-                        if (InstantiateBonesBLUE[2, 0] == 10)
-                        {
-                            InstantiateBonesBLUE[2, 0] = InstantiateBonesBLUE[1, 0];
-                            InstantiateBonesBLUE[1, 0] = 10;
-                            MoveXBlue = 2;
-                            MoveYBlue = 0;
-                            MoveVector2Blue = 2;
-                        }
-                    }
-                    else
-                    {
-                        MoveXBlue = 0;
-                        MoveYBlue = 0;
-                        MoveVector2Blue = 0;
-                    }
-                }
-                if (place == 1)
-                {
+                    InstantiateBonesBLUE[1, 0] = InstantiateBonesBLUE[0, 0];
+                    InstantiateBonesBLUE[0, 0] = 10;
+                    MoveXBlue = 1;
+                    MoveYBlue = 0;
+                    MoveVector2Blue = 1;
                     if (InstantiateBonesBLUE[2, 0] == 10)
                     {
                         InstantiateBonesBLUE[2, 0] = InstantiateBonesBLUE[1, 0];
@@ -430,30 +409,22 @@ public class GamePanelButtonRed : MonoBehaviour
                         MoveYBlue = 0;
                         MoveVector2Blue = 2;
                     }
-                    else
-                    {
-                        MoveXBlue = 1;
-                        MoveYBlue = 0;
-                        MoveVector2Blue = 1;
-                    }
                 }
-                if (place == 2)
+                else
                 {
-                    MoveXBlue = 2;
+                    MoveXBlue = 0;
                     MoveYBlue = 0;
-                    MoveVector2Blue = 2;
+                    MoveVector2Blue = 0;
                 }
-
                 break;
             case "B2":
-                if (place == 2)
+                if (InstantiateBonesBLUE[1, 1] == 10)
                 {
-                    MoveXBlue = 2;
+                    InstantiateBonesBLUE[1, 1] = InstantiateBonesBLUE[0, 1];
+                    InstantiateBonesBLUE[0, 1] = 10;
+                    MoveXBlue = 1;
                     MoveYBlue = 1;
-                    MoveVector2Blue = 5;
-                }
-                if (place == 1)
-                {
+                    MoveVector2Blue = 4;
                     if (InstantiateBonesBLUE[2, 1] == 10)
                     {
                         InstantiateBonesBLUE[2, 1] = InstantiateBonesBLUE[1, 1];
@@ -462,48 +433,22 @@ public class GamePanelButtonRed : MonoBehaviour
                         MoveYBlue = 1;
                         MoveVector2Blue = 5;
                     }
-                    else
-                    {
-                        MoveXBlue = 1;
-                        MoveYBlue = 1;
-                        MoveVector2Blue = 4;
-                    }
                 }
-                if (place == 0)
+                else
                 {
-                    if (InstantiateBonesBLUE[1, 1] == 10)
-                    {
-                        InstantiateBonesBLUE[1, 1] = InstantiateBonesBLUE[0, 1];
-                        InstantiateBonesBLUE[0, 1] = 10;
-                        MoveXBlue = 1;
-                        MoveYBlue = 1;
-                        MoveVector2Blue = 4;
-                        if (InstantiateBonesBLUE[2, 1] == 10)
-                        {
-                            InstantiateBonesBLUE[2, 1] = InstantiateBonesBLUE[1, 1];
-                            InstantiateBonesBLUE[1, 1] = 10;
-                            MoveXBlue = 2;
-                            MoveYBlue = 1;
-                            MoveVector2Blue = 5;
-                        }
-                    }
-                    else
-                    {
-                        MoveXBlue = 0;
-                        MoveYBlue = 1;
-                        MoveVector2Blue = 3;
-                    }
+                    MoveXBlue = 0;
+                    MoveYBlue = 1;
+                    MoveVector2Blue = 3;
                 }
                 break;
             case "B3":
-                if (place == 2)
+                if (InstantiateBonesBLUE[1, 2] == 10)
                 {
-                    MoveXBlue = 2;
+                    InstantiateBonesBLUE[1, 2] = InstantiateBonesBLUE[0, 2];
+                    InstantiateBonesBLUE[0, 2] = 10;
+                    MoveXBlue = 1;
                     MoveYBlue = 2;
-                    MoveVector2Blue = 8;
-                }
-                if (place == 1)
-                {
+                    MoveVector2Blue = 7;
                     if (InstantiateBonesBLUE[2, 2] == 10)
                     {
                         InstantiateBonesBLUE[2, 2] = InstantiateBonesBLUE[1, 2];
@@ -512,49 +457,23 @@ public class GamePanelButtonRed : MonoBehaviour
                         MoveYBlue = 2;
                         MoveVector2Blue = 8;
                     }
-                    else
-                    {
-                        MoveXBlue = 1;
-                        MoveYBlue = 2;
-                        MoveVector2Blue = 7;
-                    }
                 }
-                if (place == 0)
+                else
                 {
-                    if (InstantiateBonesBLUE[1, 2] == 10)
-                    {
-                        InstantiateBonesBLUE[1, 2] = InstantiateBonesBLUE[0, 2];
-                        InstantiateBonesBLUE[0, 2] = 10;
-                        MoveXBlue = 1;
-                        MoveYBlue = 2;
-                        MoveVector2Blue = 7;
-                        if (InstantiateBonesBLUE[2, 2] == 10)
-                        {
-                            InstantiateBonesBLUE[2, 2] = InstantiateBonesBLUE[1, 2];
-                            InstantiateBonesBLUE[1, 2] = 10;
-                            MoveXBlue = 2;
-                            MoveYBlue = 2;
-                            MoveVector2Blue = 8;
-                        }
-                    }
-                    else
-                    {
-                        MoveXBlue = 0;
-                        MoveYBlue = 2;
-                        MoveVector2Blue = 6;
-                    }
+                    MoveXBlue = 0;
+                    MoveYBlue = 2;
+                    MoveVector2Blue = 6;
                 }
                 break;
 
             case "R1":
-                if (place == 0)
+                if (InstantiateBonesRED[1, 0] == 10)
                 {
-                    MoveXRed = 0;
+                    InstantiateBonesRED[1, 0] = InstantiateBonesRED[2, 0];
+                    InstantiateBonesRED[2, 0] = 10;
+                    MoveXRed = 1;
                     MoveYRed = 0;
-                    MoveVector2Red = 0;
-                }
-                if (place == 1)
-                {
+                    MoveVector2Red = 1;
                     if (InstantiateBonesRED[0, 0] == 10)
                     {
                         InstantiateBonesRED[0, 0] = InstantiateBonesRED[1, 0];
@@ -563,48 +482,22 @@ public class GamePanelButtonRed : MonoBehaviour
                         MoveYRed = 0;
                         MoveVector2Red = 0;
                     }
-                    else
-                    {
-                        MoveXRed = 1;
-                        MoveYRed = 0;
-                        MoveVector2Red = 1;
-                    }
                 }
-                if (place == 2)
+                else
                 {
-                    if (InstantiateBonesRED[1, 0] == 10)
-                    {
-                        InstantiateBonesRED[1, 0] = InstantiateBonesRED[2, 0];
-                        InstantiateBonesRED[2, 0] = 10;
-                        MoveXRed = 1;
-                        MoveYRed = 0;
-                        MoveVector2Red = 1;
-                        if (InstantiateBonesRED[0, 0] == 10)
-                        {
-                            InstantiateBonesRED[2, 0] = InstantiateBonesRED[1, 0];
-                            InstantiateBonesRED[1, 0] = 10;
-                            MoveXRed = 0;
-                            MoveYRed = 0;
-                            MoveVector2Red = 0;
-                        }
-                    }
-                    else
-                    {
-                        MoveXRed = 2;
-                        MoveYRed = 0;
-                        MoveVector2Red = 2;
-                    }
+                    MoveXRed = 2;
+                    MoveYRed = 0;
+                    MoveVector2Red = 2;
                 }
                 break;
             case "R2":
-                if (place == 0)
+                if (InstantiateBonesRED[1, 1] == 10)
                 {
-                    MoveXRed = 0;
+                    InstantiateBonesRED[1, 1] = InstantiateBonesRED[2, 1];
+                    InstantiateBonesRED[2, 1] = 10;
+                    MoveXRed = 1;
                     MoveYRed = 1;
-                    MoveVector2Red = 3;
-                }
-                if (place == 1)
-                {
+                    MoveVector2Red = 4;
                     if (InstantiateBonesRED[0, 1] == 10)
                     {
                         InstantiateBonesRED[0, 1] = InstantiateBonesRED[1, 1];
@@ -613,48 +506,23 @@ public class GamePanelButtonRed : MonoBehaviour
                         MoveYRed = 1;
                         MoveVector2Red = 3;
                     }
-                    else
-                    {
-                        MoveXRed = 1;
-                        MoveYRed = 1;
-                        MoveVector2Red = 4;
-                    }
                 }
-                if (place == 2)
+                else
                 {
-                    if (InstantiateBonesRED[1, 1] == 10)
-                    {
-                        InstantiateBonesRED[1, 1] = InstantiateBonesRED[2, 1];
-                        InstantiateBonesRED[2, 1] = 10;
-                        MoveXRed = 1;
-                        MoveYRed = 1;
-                        MoveVector2Red = 4;
-                        if (InstantiateBonesRED[0, 1] == 10)
-                        {
-                            InstantiateBonesRED[2, 1] = InstantiateBonesRED[1, 1];
-                            InstantiateBonesRED[1, 1] = 10;
-                            MoveXRed = 0;
-                            MoveYRed = 1;
-                            MoveVector2Red = 3;
-                        }
-                    }
-                    else
-                    {
-                        MoveXRed = 2;
-                        MoveYRed = 1;
-                        MoveVector2Red = 5;
-                    }
+                    MoveXRed = 2;
+                    MoveYRed = 1;
+                    MoveVector2Red = 5;
+
                 }
                 break;
             case "R3":
-                if (place == 0)
+                if (InstantiateBonesRED[1, 2] == 10)
                 {
-                    MoveXRed = 0;
+                    InstantiateBonesRED[1, 2] = InstantiateBonesRED[2, 2];
+                    InstantiateBonesRED[2, 2] = 10;
+                    MoveXRed = 1;
                     MoveYRed = 2;
-                    MoveVector2Red = 6;
-                }
-                if (place == 1)
-                {
+                    MoveVector2Red = 7;
                     if (InstantiateBonesRED[0, 2] == 10)
                     {
                         InstantiateBonesRED[0, 2] = InstantiateBonesRED[1, 2];
@@ -663,38 +531,14 @@ public class GamePanelButtonRed : MonoBehaviour
                         MoveYRed = 2;
                         MoveVector2Red = 6;
                     }
-                    else
-                    {
-                        MoveXRed = 1;
-                        MoveYRed = 2;
-                        MoveVector2Red = 7;
-                    }
                 }
-                if (place == 2)
+                else
                 {
-                    if (InstantiateBonesRED[1, 2] == 10)
-                    {
-                        InstantiateBonesRED[1, 2] = InstantiateBonesRED[2, 2];
-                        InstantiateBonesRED[2, 2] = 10;
-                        MoveXRed = 1;
-                        MoveYRed = 2;
-                        MoveVector2Red = 7;
-                        if (InstantiateBonesRED[0, 2] == 10)
-                        {
-                            InstantiateBonesRED[2, 2] = InstantiateBonesRED[1, 2];
-                            InstantiateBonesRED[1, 2] = 10;
-                            MoveXRed = 0;
-                            MoveYRed = 2;
-                            MoveVector2Red = 6;
-                        }
-                    }
-                    else
-                    {
-                        MoveXRed = 2;
-                        MoveYRed = 2;
-                        MoveVector2Red = 8;
-                    }
+                    MoveXRed = 2;
+                    MoveYRed = 2;
+                    MoveVector2Red = 8;
                 }
+
                 break;
         }
     }
@@ -704,14 +548,13 @@ public class GamePanelButtonRed : MonoBehaviour
         _actionResetBones.ResetBones();
     }
 
-
-    public void ButtonRedClicked(int Index—olumn)
+    private void ButtonsRedClicked(int Index—olumn)
     {
         if (PanelPlayer == 0 & MasivRandomBones >= 0 & InstantiateBonesRED[2, Index—olumn] == 10)
         {
             PanelPlayer = 1;
             ResetBonesStart();
-            BonesMoveDown("R" + (Index—olumn + 1), 2);
+            BonesMoveDown("R" + (Index—olumn + 1));
             InstantiateBonesRED[MoveXRed, MoveYRed] = MasivRandomBones + 1;
             GameObject bonesRed = Instantiate(BonesRed) as GameObject;
             bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[MoveVector2Red], quaternionBones[MasivRandomBones]);
@@ -723,13 +566,13 @@ public class GamePanelButtonRed : MonoBehaviour
         }
     }
 
-    public void ButtonBlueClicked(int Index—olumn)
+    private void ButtonsBlueClicked(int Index—olumn)
     {
         if (PanelPlayer == 1 & MasivRandomBones >= 0 & InstantiateBonesBLUE[0, Index—olumn] == 10)
         {
             PanelPlayer = 0;
             ResetBonesStart();
-            BonesMoveDown("B" + (Index—olumn + 1), 0);
+            BonesMoveDown("B" + (Index—olumn + 1));
             InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
             GameObject bonesBlue = Instantiate(BonesBlue) as GameObject;
             bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], quaternionBones[MasivRandomBones]);

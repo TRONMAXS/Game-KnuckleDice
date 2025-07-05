@@ -23,8 +23,6 @@ public class BOTGameBones : MonoBehaviour
     public GameObject[] RandomBonesPlayerBlue;
 
     private BOTGamePanelButtonRed _actionBotPlay;
-    //private BOTGamePanelButtonRed _actionStartBotPlay;
-
 
     private int GenerateRandomDigitPanel()
     {
@@ -64,16 +62,16 @@ public class BOTGameBones : MonoBehaviour
         if (PanelPlayer == 0)
         {
             StartBot = true;
-            RandomButtonBones(0, true);
+            RandomButtonBones(0);
         }
     }
 
-    public void ButtonPlayer()
+    private void ButtonPlayer()
     {
-        RandomButtonBones(1, false);
+        RandomButtonBones(1);
     }
 
-    public void RandomButtonBones(int PanelPlayer, bool StartBot)
+    public void RandomButtonBones(int PanelPlayer)
     {
         if (randomON == true)
         {
@@ -81,20 +79,11 @@ public class BOTGameBones : MonoBehaviour
             MasivRandomBonesBOTOFFRed = MasivRandomBonesPlayer;
             MasivRandomBonesPlayerOFFBlue = MasivRandomBonesPlayer;
 
-            if (PanelPlayer == 0 & StartBot == false  /*| BOTGamePanelButtonRed.PanelPlayer == 0*/)
+            if (PanelPlayer == 0)
             {
+                Debug.Log("RandomButtonBones-1");
                 RandomBonesBOTRed[MasivRandomBonesPlayer].SetActive(true);
-                _actionBotPlay.CheckArraysInvoke();
-                randomON = false;
-                Button.SetActive(false);
-                PanelStart[0].SetActive(false);
-                PanelStart[1].SetActive(false);
-                return;
-            }
-            if (PanelPlayer == 0 & StartBot == true)
-            {
-                RandomBonesBOTRed[MasivRandomBonesPlayer].SetActive(true);
-                _actionBotPlay.CheckArraysInvoke();
+                _actionBotPlay.CheckArraysInvoke(MasivRandomBonesPlayer);
                 randomON = false;
                 Button.SetActive(false);
                 PanelStart[0].SetActive(false);
@@ -103,6 +92,7 @@ public class BOTGameBones : MonoBehaviour
             }
             if (PanelPlayer == 1)
             {
+                Debug.Log("RandomButtonBones-2");
                 RandomBonesPlayerBlue[MasivRandomBonesPlayer].SetActive(true);
                 randomON = false;
                 Button.SetActive(false);

@@ -52,7 +52,7 @@ public class BOTScorePlayer : MonoBehaviour
         _BonesMoveDown = BonesMoveDownBLUE.GetComponent<BOTGamePanelButtonRed>();
     }
 
-    public void Array()
+    private void Array()
     {
         for (int i = 0; i < arrayRED.GetLength(0); i++)
         {
@@ -81,8 +81,8 @@ public class BOTScorePlayer : MonoBehaviour
 
     public void DeleteBones(int numberToFind, int j, string array)
     {
-        string NameBLUEPost = "B";
-        string NameREDPost = "R";
+        string NameBLUEPost;
+        string NameREDPost;
 
         if (array == "RED")
         {
@@ -118,12 +118,6 @@ public class BOTScorePlayer : MonoBehaviour
             }
         }
     }
-
-    //2 .  .  .
-    //1 .  .  .
-    //0 .  .  .
-    //  0  1  2
-    ////////////
 
     public void Score(string ÑolumnName)
     {
@@ -332,7 +326,8 @@ public class BOTScorePlayer : MonoBehaviour
                 break;
         }
     }
-    public void TextScore(string textUpdate)
+
+    private void TextScore(string textUpdate)
     {
         switch (textUpdate)
         {
@@ -356,7 +351,8 @@ public class BOTScorePlayer : MonoBehaviour
                 break;
         }
     }
-    public void TextScoreDelete(string textUpdate, int deletenambr)
+
+    private void TextScoreDelete(string textUpdate, int deletenambr)
     {
         switch (textUpdate)
         {

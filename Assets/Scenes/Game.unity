@@ -4511,7 +4511,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1124031144}
         m_TargetAssemblyTypeName: GamePanelButtonRed, Assembly-CSharp
-        m_MethodName: ButtonBlueClicked
+        m_MethodName: ButtonsBlueClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5154,7 +5154,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1124031144}
         m_TargetAssemblyTypeName: GamePanelButtonRed, Assembly-CSharp
-        m_MethodName: ButtonRedClicked
+        m_MethodName: ButtonsRedClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5669,7 +5669,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1124031144}
         m_TargetAssemblyTypeName: GamePanelButtonRed, Assembly-CSharp
-        m_MethodName: ButtonBlueClicked
+        m_MethodName: ButtonsBlueClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6137,15 +6137,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c31f9e0ebbfe285408e8a8b7d15cdbd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonRed1: {fileID: 0}
-  ButtonRed2: {fileID: 0}
-  ButtonRed3: {fileID: 0}
-  ButtonRed4: {fileID: 0}
-  ButtonRed5: {fileID: 0}
-  ButtonRed6: {fileID: 0}
-  ButtonRed7: {fileID: 0}
-  ButtonRed8: {fileID: 0}
-  ButtonRed9: {fileID: 0}
   BonesRed: {fileID: 9210855777731689666, guid: d1875f621d4aa5f43ba3257c494aacea, type: 3}
   BonesBlue: {fileID: 8611441520705628849, guid: dc7cc3cf327d17f489ef509bf66807ea, type: 3}
   MasivRandomBones: 0
@@ -6277,7 +6268,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1124031144}
         m_TargetAssemblyTypeName: GamePanelButtonRed, Assembly-CSharp
-        m_MethodName: ButtonBlueClicked
+        m_MethodName: ButtonsBlueClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7877,7 +7868,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1124031144}
         m_TargetAssemblyTypeName: GamePanelButtonRed, Assembly-CSharp
-        m_MethodName: ButtonRedClicked
+        m_MethodName: ButtonsRedClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10705,7 +10696,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1124031144}
         m_TargetAssemblyTypeName: GamePanelButtonRed, Assembly-CSharp
-        m_MethodName: ButtonRedClicked
+        m_MethodName: ButtonsRedClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

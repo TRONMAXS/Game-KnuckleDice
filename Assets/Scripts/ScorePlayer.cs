@@ -47,7 +47,7 @@ public  class ScorePlayer : MonoBehaviour
         _BonesMoveDown = BonesMoveDown.GetComponent<GamePanelButtonRed>();
     }
 
-    public void Array()
+    private void Array()
     {
         for (int i = 0; i < arrayRED.GetLength(0); i++)
         {
@@ -76,8 +76,8 @@ public  class ScorePlayer : MonoBehaviour
 
     public void DeleteBones(int numberToFind, int j, string array)
     {
-        string NameBLUEPost = "B";
-        string NameREDPost = "R";
+        string NameBLUEPost;
+        string NameREDPost;
 
         if (array == "RED")
         {
@@ -111,14 +111,9 @@ public  class ScorePlayer : MonoBehaviour
                     Score("CNR" + (j + 1));
                 }
             }
-        
+
         }
     }
-    //2 .  .  .
-    //1 .  .  .
-    //0 .  .  .
-    //  0  1  2
-    ///////////
 
     public void Score(string СolumnName)
     {
@@ -154,7 +149,7 @@ public  class ScorePlayer : MonoBehaviour
                     //все не равны
                 }
                 TextScore("R1");
-                break;            
+                break;
 
             case "CNR2":
 
@@ -168,7 +163,7 @@ public  class ScorePlayer : MonoBehaviour
                 {
                     REDtext2 = ((arrayRED[0, 1] + arrayRED[1, 1]) * 2) + arrayRED[2, 1];
                     TextScore("R2");
-                   //равны 0 и 1
+                    //равны 0 и 1
                 }
                 else if (arrayRED[1, 1] == arrayRED[2, 1] & arrayRED[1, 1] != arrayRED[0, 1])
                 {
@@ -327,7 +322,8 @@ public  class ScorePlayer : MonoBehaviour
                 break;
         }
     }
-    public void TextScore(string textUpdate)
+
+    private void TextScore(string textUpdate)
     {
         switch (textUpdate)
         {
@@ -351,7 +347,8 @@ public  class ScorePlayer : MonoBehaviour
                 break;
         }
     }
-    public void TextScoreDelete(string textUpdate, int deletenambr)
+
+    private void TextScoreDelete(string textUpdate, int deletenambr)
     {
         switch (textUpdate)
         {

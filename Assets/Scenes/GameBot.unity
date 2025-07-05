@@ -466,7 +466,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1124031145}
         m_TargetAssemblyTypeName: BOTGamePanelButtonRed, Assembly-CSharp
-        m_MethodName: ButtonBlueClicked
+        m_MethodName: ButtonsBlueClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5377,28 +5377,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c31f9e0ebbfe285408e8a8b7d15cdbd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonRed1: {fileID: 0}
-  ButtonRed2: {fileID: 0}
-  ButtonRed3: {fileID: 0}
-  ButtonRed4: {fileID: 0}
-  ButtonRed5: {fileID: 0}
-  ButtonRed6: {fileID: 0}
-  ButtonRed7: {fileID: 0}
-  ButtonRed8: {fileID: 0}
-  ButtonRed9: {fileID: 0}
-  ButtonBlue1: {fileID: 1136060097}
-  ButtonBlue2: {fileID: 0}
-  ButtonBlue3: {fileID: 0}
-  ButtonBlue4: {fileID: 132112600}
-  ButtonBlue5: {fileID: 0}
-  ButtonBlue6: {fileID: 0}
-  ButtonBlue7: {fileID: 1635695056}
-  ButtonBlue8: {fileID: 0}
-  ButtonBlue9: {fileID: 0}
   BonesRed: {fileID: 9210855777731689666, guid: d1875f621d4aa5f43ba3257c494aacea, type: 3}
   BonesBlue: {fileID: 8611441520705628849, guid: dc7cc3cf327d17f489ef509bf66807ea, type: 3}
   MasivRandomBones: 0
   PanelPlayer: 0
+  MoveXBlue: 0
+  MoveYBlue: 0
+  MoveXRed: 0
+  MoveYRed: 0
+  MoveVector2Red: 0
+  MoveVector2Blue: 0
   ScorePlayer: {fileID: 1300118940}
   ScorePlayer1: {fileID: 1300118940}
   ScorePlayerWIN: {fileID: 2032553532}
@@ -5418,15 +5406,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c7cfb806e727444a0d242d63b584aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonBlue1: {fileID: 1136060097}
-  ButtonBlue2: {fileID: 0}
-  ButtonBlue3: {fileID: 0}
-  ButtonBlue4: {fileID: 132112600}
-  ButtonBlue5: {fileID: 0}
-  ButtonBlue6: {fileID: 0}
-  ButtonBlue7: {fileID: 1635695056}
-  ButtonBlue8: {fileID: 0}
-  ButtonBlue9: {fileID: 0}
   BonesRed: {fileID: 9210855777731689666, guid: d1875f621d4aa5f43ba3257c494aacea, type: 3}
   BonesBlue: {fileID: 8611441520705628849, guid: dc7cc3cf327d17f489ef509bf66807ea, type: 3}
   MasivRandomBones: 0
@@ -5534,7 +5513,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1124031145}
         m_TargetAssemblyTypeName: BOTGamePanelButtonRed, Assembly-CSharp
-        m_MethodName: ButtonBlueClicked
+        m_MethodName: ButtonsBlueClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6742,6 +6721,7 @@ MonoBehaviour:
   InstantiateMSBLUE: {fileID: 1124031140}
   InstantiateGameObjectRED: {fileID: 1124031140}
   InstantiateGameObjectBLUE: {fileID: 1124031140}
+  BonesMoveDown: {fileID: 0}
 --- !u!4 &1300118942
 Transform:
   m_ObjectHideFlags: 0
@@ -7947,7 +7927,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1124031145}
         m_TargetAssemblyTypeName: BOTGamePanelButtonRed, Assembly-CSharp
-        m_MethodName: ButtonBlueClicked
+        m_MethodName: ButtonsBlueClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

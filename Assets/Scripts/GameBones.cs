@@ -36,7 +36,7 @@ public class GameBones : MonoBehaviour
         randomON = true;
     }
 
-    public int GenerateRandomDigitPanel()
+    private int GenerateRandomDigitPanel()
     {
         byte[] randomBytes1 = new byte[1];
         using (var CSP1 = new RNGCryptoServiceProvider())
@@ -46,7 +46,7 @@ public class GameBones : MonoBehaviour
         return Convert.ToInt32(randomBytes1[0]) % 2;
     }
 
-    public int GenerateRandomDigitBones()
+    private int GenerateRandomDigitBones()
     {
         byte[] randomBytes2 = new byte[1];
         using (var CSP2 = new RNGCryptoServiceProvider())
