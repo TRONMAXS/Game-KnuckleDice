@@ -1,4 +1,4 @@
-# 📱 Game-KnuckleBones v0.1.3
+# 📱 Game-KnuckleBones v0.3.0
 
 ![GitHub release](https://img.shields.io/github/v/release/TRONMAXS/Game-KnuckleBones?include_prereleases&label=release)
 ![GitHub repo size](https://img.shields.io/github/repo-size/TRONMAXS/Game-KnuckleBones)
@@ -20,7 +20,6 @@
 ## ⚙️ Планы на будущее
 
 - ⚒️ Изменить визуальный стиль
-- 🤖 Игра против ИИ (бота)
 - 🌐 Онлайн мультиплеер
 
 ---
