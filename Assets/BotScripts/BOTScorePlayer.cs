@@ -108,7 +108,6 @@ public class BOTScorePlayer : MonoBehaviour
             {
                 while (arrayRED[i, j] == numberToFind)
                 {
-                    Debug.Log("arrayRED[" + i + "," + j + "] == numberToFind-" + numberToFind);
                     Destroy(_arrayGameObjectR.gameObjectsInstantiateRED[i, j]);
                     _arrayR.InstantiateBonesRED[i, j] = 10;
                     _arrayGameObjectR.gameObjectsInstantiateRED[i, j] = null;
