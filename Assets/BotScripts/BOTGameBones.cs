@@ -5,7 +5,8 @@ using System;
 public class BOTGameBones : MonoBehaviour
 {
     public int PanelPlayer;
-    public int MasivRandomDicesOFF;
+    public int MasivRandomBonesBOTOFFRed;
+    public int MasivRandomBonesPlayerOFFBlue;
 
     public static int MasivRandomBonesPlayer = -1;
     public static int PanelStartRandom;
@@ -16,13 +17,10 @@ public class BOTGameBones : MonoBehaviour
     public GameObject Button;
     public GameObject BOTGamePanelButtonRed;
 
-    [SerializeField]
-    private Animator anim;
-    [SerializeField]
-    private GameObject PanelRandomBones;
 
     public GameObject[] PanelStart;
-    public GameObject[] RandomDices;
+    public GameObject[] RandomBonesBOTRed;
+    public GameObject[] RandomBonesPlayerBlue;
 
     private BOTGamePanelButtonRed _actionBotPlay;
 
@@ -49,19 +47,9 @@ public class BOTGameBones : MonoBehaviour
     private void Start()
     {
         _actionBotPlay = BOTGamePanelButtonRed.GetComponent<BOTGamePanelButtonRed>();
-        StartRandomPanel();
-    }
+        //_actionStartBotPlay = BOTGamePanelButtonRed.GetComponent<BOTGamePanelButtonRed>();
 
-    private void Update()
-    {
-        if (MasivRandomBonesPlayer == -1)
-        {
-            PanelRandomBones.SetActive(true);
-        }
-        else
-        {
-            PanelRandomBones.SetActive(false);
-        }
+        StartRandomPanel();
     }
 
     private void StartRandomPanel()
@@ -87,29 +75,35 @@ public class BOTGameBones : MonoBehaviour
         if (randomON == true)
         {
             MasivRandomBonesPlayer = GenerateRandomDigitBones();
-            MasivRandomDicesOFF = MasivRandomBonesPlayer;
+            MasivRandomBonesBOTOFFRed = MasivRandomBonesPlayer;
+            MasivRandomBonesPlayerOFFBlue = MasivRandomBonesPlayer;
 
             if (PanelPlayer == 0)
             {
-                RandomDices[MasivRandomBonesPlayer].SetActive(true);
+                RandomBonesBOTRed[MasivRandomBonesPlayer].SetActive(true);
                 _actionBotPlay.CheckArraysInvoke(MasivRandomBonesPlayer);
-                PanelPlayer = 1;
+                randomON = false;
+                Button.SetActive(false);
+                PanelStart[0].SetActive(false);
+                PanelStart[1].SetActive(false);
+                return;
             }
             if (PanelPlayer == 1)
             {
-                RandomDices[MasivRandomBonesPlayer].SetActive(true);
-                PanelPlayer = 0;
+                RandomBonesPlayerBlue[MasivRandomBonesPlayer].SetActive(true);
+                randomON = false;
+                Button.SetActive(false);
+                PanelStart[0].SetActive(false);
+                PanelStart[1].SetActive(false);
+                return;
             }
-            randomON = false;
-            Button.SetActive(false);
-            PanelStart[0].SetActive(false);
-            PanelStart[1].SetActive(false);
         }
     }
 
     public void ResetBones()
     {
-        RandomDices[MasivRandomDicesOFF].SetActive(false);
+        RandomBonesBOTRed[MasivRandomBonesBOTOFFRed].SetActive(false);
+        RandomBonesPlayerBlue[MasivRandomBonesPlayerOFFBlue].SetActive(false);
         randomON = true;
         Button.SetActive(true);
         MasivRandomBonesPlayer = -1;
