@@ -58,7 +58,6 @@ public class BOTGameBones : MonoBehaviour
         PanelPlayer = PanelStartRandom;
         PanelStart[PanelStartRandom].SetActive(true);
         randomON = true;
-        //Debug.Log(PanelPlayer + "---PanelPlayer");
         if (PanelPlayer == 0)
         {
             StartBot = true;
@@ -81,7 +80,6 @@ public class BOTGameBones : MonoBehaviour
 
             if (PanelPlayer == 0)
             {
-                Debug.Log("RandomButtonBones-1");
                 RandomBonesBOTRed[MasivRandomBonesPlayer].SetActive(true);
                 _actionBotPlay.CheckArraysInvoke(MasivRandomBonesPlayer);
                 randomON = false;
@@ -92,7 +90,6 @@ public class BOTGameBones : MonoBehaviour
             }
             if (PanelPlayer == 1)
             {
-                Debug.Log("RandomButtonBones-2");
                 RandomBonesPlayerBlue[MasivRandomBonesPlayer].SetActive(true);
                 randomON = false;
                 Button.SetActive(false);
@@ -101,7 +98,6 @@ public class BOTGameBones : MonoBehaviour
                 return;
             }
         }
-        //Debug.Log(MasivRandomBonesPlayer + "---MasivRandomBonesPlayer");      
     }
 
     public void ResetBones()
