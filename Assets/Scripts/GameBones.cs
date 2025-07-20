@@ -7,8 +7,8 @@ public class GameBones : MonoBehaviour
 {
     public static int MasivRandomBonesPlayer = -1;
     private int PanelPlayer;
-    private int MasivRandomBonesPlayerOFFRed;
-    private int MasivRandomBonesPlayerOFFBlue;
+
+    private int MasivRandomDicesOFF;
 
     public GameObject Button;
 
@@ -17,10 +17,10 @@ public class GameBones : MonoBehaviour
     public static int PanelStartRandom;
 
     public GameObject[] PanelStart;
-    public GameObject[] RandomBonesPlayer;
 
-    public GameObject[] RandomBonesPlayerRed;
-    public GameObject[] RandomBonesPlayerBlue;
+    public GameObject[] RandomDicesPlayer;
+
+
 
 
     private void Start()
@@ -62,17 +62,16 @@ public class GameBones : MonoBehaviour
         if (randomON == true)
         {
             MasivRandomBonesPlayer = GenerateRandomDigitBones();
+            MasivRandomDicesOFF = MasivRandomBonesPlayer;
 
             if (PanelPlayer == 0)
             {
-                MasivRandomBonesPlayerOFFRed = MasivRandomBonesPlayer;
-                RandomBonesPlayerRed[MasivRandomBonesPlayer].SetActive(true);
+                RandomDicesPlayer[MasivRandomBonesPlayer].SetActive(true);
                 PanelPlayer = 1;
             }
             else if (PanelPlayer == 1)
             {
-                MasivRandomBonesPlayerOFFBlue = MasivRandomBonesPlayer;
-                RandomBonesPlayerBlue[MasivRandomBonesPlayer].SetActive(true);
+                RandomDicesPlayer[MasivRandomBonesPlayer].SetActive(true);
                 PanelPlayer = 0;
             }
             randomON = false;
@@ -84,8 +83,7 @@ public class GameBones : MonoBehaviour
 
     public void ResetBones()
     {
-        RandomBonesPlayerRed[MasivRandomBonesPlayerOFFRed].SetActive(false);
-        RandomBonesPlayerBlue[MasivRandomBonesPlayerOFFBlue].SetActive(false);
+        RandomDicesPlayer[MasivRandomDicesOFF].SetActive(false);
         randomON = true;
         Button.SetActive(true);
         MasivRandomBonesPlayer = -1;
