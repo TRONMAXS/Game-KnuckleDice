@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class GameLeave : MonoBehaviour 
+public class GameLeave : MonoBehaviour
 {
     public void Leave()
     {
