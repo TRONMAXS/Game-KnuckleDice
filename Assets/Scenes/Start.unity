@@ -908,8 +908,6 @@ MonoBehaviour:
   - {fileID: 621618257304523116, guid: 029bc16dc37996f45a0a0b6810c010fa, type: 3}
   - {fileID: 1492197238162792936, guid: e4cca34817c37ca4e913fb9d4ddeb942, type: 3}
   - {fileID: 2474541998536387591, guid: 8bb9ebac276f2e64aabf8a5129ed63db, type: 3}
-  randTimeMin: 0
-  randTimeMax: 0
   randTime: 0
   MoveSpeedL: 0
   MoveSpeedR: 0
