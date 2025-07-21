@@ -5,8 +5,7 @@ using System;
 public class BOTGameBones : MonoBehaviour
 {
     public int PanelPlayer;
-    public int MasivRandomBonesBOTOFFRed;
-    public int MasivRandomBonesPlayerOFFBlue;
+    public int MasivRandomDicesOFF;
 
     public static int MasivRandomBonesPlayer = -1;
     public static int PanelStartRandom;
@@ -19,8 +18,7 @@ public class BOTGameBones : MonoBehaviour
 
 
     public GameObject[] PanelStart;
-    public GameObject[] RandomBonesBOTRed;
-    public GameObject[] RandomBonesPlayerBlue;
+    public GameObject[] RandomDices;
 
     private BOTGamePanelButtonRed _actionBotPlay;
 
@@ -47,8 +45,6 @@ public class BOTGameBones : MonoBehaviour
     private void Start()
     {
         _actionBotPlay = BOTGamePanelButtonRed.GetComponent<BOTGamePanelButtonRed>();
-        //_actionStartBotPlay = BOTGamePanelButtonRed.GetComponent<BOTGamePanelButtonRed>();
-
         StartRandomPanel();
     }
 
@@ -75,35 +71,29 @@ public class BOTGameBones : MonoBehaviour
         if (randomON == true)
         {
             MasivRandomBonesPlayer = GenerateRandomDigitBones();
-            MasivRandomBonesBOTOFFRed = MasivRandomBonesPlayer;
-            MasivRandomBonesPlayerOFFBlue = MasivRandomBonesPlayer;
+            MasivRandomDicesOFF = MasivRandomBonesPlayer;
 
             if (PanelPlayer == 0)
             {
-                RandomBonesBOTRed[MasivRandomBonesPlayer].SetActive(true);
+                RandomDices[MasivRandomBonesPlayer].SetActive(true);
                 _actionBotPlay.CheckArraysInvoke(MasivRandomBonesPlayer);
-                randomON = false;
-                Button.SetActive(false);
-                PanelStart[0].SetActive(false);
-                PanelStart[1].SetActive(false);
-                return;
+                PanelPlayer = 1;
             }
             if (PanelPlayer == 1)
             {
-                RandomBonesPlayerBlue[MasivRandomBonesPlayer].SetActive(true);
-                randomON = false;
-                Button.SetActive(false);
-                PanelStart[0].SetActive(false);
-                PanelStart[1].SetActive(false);
-                return;
+                RandomDices[MasivRandomBonesPlayer].SetActive(true);
+                PanelPlayer = 0;
             }
+            randomON = false;
+            Button.SetActive(false);
+            PanelStart[0].SetActive(false);
+            PanelStart[1].SetActive(false);
         }
     }
 
     public void ResetBones()
     {
-        RandomBonesBOTRed[MasivRandomBonesBOTOFFRed].SetActive(false);
-        RandomBonesPlayerBlue[MasivRandomBonesPlayerOFFBlue].SetActive(false);
+        RandomDices[MasivRandomDicesOFF].SetActive(false);
         randomON = true;
         Button.SetActive(true);
         MasivRandomBonesPlayer = -1;
