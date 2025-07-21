@@ -607,7 +607,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
@@ -728,8 +728,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d9033868feb92646bfaea793201e06a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slidersound: {fileID: 0}
-  soundsource: {fileID: 0}
 --- !u!1 &460828853
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,7 +888,7 @@ GameObject:
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &508976822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -903,11 +901,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7643c7ab2c5f53c42b763cf70f932a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BonesRB: {fileID: 6218569463586070386, guid: 2b0e663bc14be664185efca67995c7b5, type: 3}
-  timeStart: 9
-  timeMax: 10
-  randMinStart: 0
-  randMax: 10
+  BonesRB:
+  - {fileID: 758634474408377837, guid: 077e5aafb875b434a8eb5adde74aec16, type: 3}
+  - {fileID: 7016271413861626413, guid: 0daa1eaf92bd17d46939326fb2c23ecf, type: 3}
+  - {fileID: 5320519867068374743, guid: b5b12206f61175948b04993ab84c1381, type: 3}
+  - {fileID: 621618257304523116, guid: 029bc16dc37996f45a0a0b6810c010fa, type: 3}
+  - {fileID: 1492197238162792936, guid: e4cca34817c37ca4e913fb9d4ddeb942, type: 3}
+  - {fileID: 2474541998536387591, guid: 8bb9ebac276f2e64aabf8a5129ed63db, type: 3}
+  randTimeMin: 0
+  randTimeMax: 0
+  randTime: 0
   MoveSpeedL: 0
   MoveSpeedR: 0
 --- !u!4 &508976823
@@ -1604,7 +1607,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
