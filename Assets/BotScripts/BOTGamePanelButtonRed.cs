@@ -88,6 +88,17 @@ public class BOTGamePanelButtonRed : MonoBehaviour
     private void Update()
     {
         MasivRandomBones = BOTGameBones.MasivRandomBonesPlayer;
+
+        if (MasivRandomBones != -1 && PanelPlayer == 0)
+        {
+            PanelPlayerPlay01[0].SetActive(true);
+            PanelPlayerPlay01[1].SetActive(false);
+        }
+        else if (MasivRandomBones != -1 && PanelPlayer == 1)
+        {
+            PanelPlayerPlay01[0].SetActive(false);
+            PanelPlayerPlay01[1].SetActive(true);
+        }
     }
 
     public void BonesMoveDelete(string Post)
@@ -644,6 +655,8 @@ public class BOTGamePanelButtonRed : MonoBehaviour
             _actionDeleteBones.DeleteBones(InstantiateBonesRED[MoveXRed, MoveYRed], BotColumn, "RED");
             _actionScore.Score("CNR" + (MoveYRed + 1));
             _actionCheckingWinning.CheckingWinning();
+            PanelPlayerPlay01[0].SetActive(false);
+            PanelPlayerPlay01[1].SetActive(false);
         }
     }
 
@@ -663,6 +676,8 @@ public class BOTGamePanelButtonRed : MonoBehaviour
             _actionScore.Score("CNB" + (Index—olumn + 1));
             _actionCheckingWinning.CheckingWinning();
             _actionBones.RandomButtonBones(0);
+            PanelPlayerPlay01[0].SetActive(false);
+            PanelPlayerPlay01[1].SetActive(false);
         }
     }
 }
