@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,13 +11,13 @@ public class BOTScorePlayer : MonoBehaviour
 
     public int[,] arrayRED = new int[3, 3];
     public int[,] arrayBLUE = new int[3, 3];
-    public Text textScoreR1;
-    public Text textScoreR2;
-    public Text textScoreR3;
+    public TMP_Text textScoreR1;
+    public TMP_Text textScoreR2;
+    public TMP_Text textScoreR3;
 
-    public Text textScoreB1;
-    public Text textScoreB2;
-    public Text textScoreB3;
+    public TMP_Text textScoreB1;
+    public TMP_Text textScoreB2;
+    public TMP_Text textScoreB3;
 
     public int REDtext1;
     public int REDtext2;

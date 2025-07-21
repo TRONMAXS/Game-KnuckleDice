@@ -5,6 +5,7 @@ using System;
 
 public class GameBones : MonoBehaviour
 {
+    
     public static int MasivRandomBonesPlayer = -1;
     private int PanelPlayer;
 
@@ -16,16 +17,33 @@ public class GameBones : MonoBehaviour
 
     public static int PanelStartRandom;
 
+    [SerializeField]
+    private Animator anim;
+    [SerializeField]
+    private GameObject PanelRandomBones;
+
     public GameObject[] PanelStart;
 
     public GameObject[] RandomDicesPlayer;
 
 
-
-
     private void Start()
     {
+        PanelRandomBones.SetActive(true);
+        anim.enabled = true;
         PanelRandom();
+    }
+    
+    private void Update()
+    {
+        if (MasivRandomBonesPlayer == -1)
+        {
+            PanelRandomBones.SetActive(true);
+        }
+        else
+        {
+            PanelRandomBones.SetActive(false);
+        }
     }
 
     private void PanelRandom()

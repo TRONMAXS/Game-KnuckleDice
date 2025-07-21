@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,7 +6,7 @@ public class BOTwinPlayer : MonoBehaviour
 {
     public GameObject WinPanel;
 
-    public Text TextWinnerRED, TextWinnerBLUE, ScoreRED, ScoreBLUE;
+    public TMP_Text TextWinnerRED, TextWinnerBLUE, ScoreRED, ScoreBLUE;
 
     public GameObject InstantiateMSRED;
     private BOTGamePanelButtonRed _arrayR;
