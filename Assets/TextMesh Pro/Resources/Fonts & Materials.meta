@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/TextMesh Pro/Resources/Style Sheets.meta
+guid: 4aecb92fff08436c8303b10eab8da368
+folderAsset: yes
+timeCreated: 1441876950
+========
 guid: 731f1baa9d144a9897cb1d341c2092b8
 folderAsset: yes
 timeCreated: 1442040525
+>>>>>>>> 9d9a33f (Разработка v0.3.6):Assets/TextMesh Pro/Resources/Fonts & Materials.meta
 licenseType: Pro
 DefaultImporter:
   userData: 

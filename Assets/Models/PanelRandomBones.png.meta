@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 82a09e2251b099946ba8d34b0dbe9123
+<<<<<<<< HEAD:Assets/Models/player panel.png.meta
+guid: a8fa5afb10e49d4409a0eb72721a923e
+========
+guid: 572414f47cf845b42a03fad12bbb9a45
+>>>>>>>> 9d9a33f (Разработка v0.3.6):Assets/Models/PanelRandomBones.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

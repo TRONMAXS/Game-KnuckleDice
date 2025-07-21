@@ -16,6 +16,10 @@ public class BOTGameBones : MonoBehaviour
     public GameObject Button;
     public GameObject BOTGamePanelButtonRed;
 
+    [SerializeField]
+    private Animator anim;
+    [SerializeField]
+    private GameObject PanelRandomBones;
 
     public GameObject[] PanelStart;
     public GameObject[] RandomDices;
@@ -46,6 +50,18 @@ public class BOTGameBones : MonoBehaviour
     {
         _actionBotPlay = BOTGamePanelButtonRed.GetComponent<BOTGamePanelButtonRed>();
         StartRandomPanel();
+    }
+
+    private void Update()
+    {
+        if (MasivRandomBonesPlayer == -1)
+        {
+            PanelRandomBones.SetActive(true);
+        }
+        else
+        {
+            PanelRandomBones.SetActive(false);
+        }
     }
 
     private void StartRandomPanel()

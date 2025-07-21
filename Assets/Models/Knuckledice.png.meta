@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: a8fa5afb10e49d4409a0eb72721a923e
+<<<<<<<< HEAD:Assets/Models/icon3D.png.meta
+guid: ce18f04b0b5d520459a202c42e69d84a
+========
+guid: cfbc7b881c2921c4c9e264767dbbfba8
+>>>>>>>> 9d9a33f (Разработка v0.3.6):Assets/Models/Knuckledice.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
