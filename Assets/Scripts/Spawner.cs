@@ -1,71 +1,100 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject BonesRB;
+
+    [SerializeField]
+    private GameObject[] BonesRB;
     private GameObject ObjectBonesRB;
 
-    public float timeStart;
-    public int timeMax;
-    public int randMinStart;
-    public int randMax;
-    public static bool Dell = true;
+    private List<GameObject> spawnedObjects = new List<GameObject>();
 
-    public int MoveSpeedL;
-    public int MoveSpeedR;
-    private Vector2 _movementDirectionR = Vector2.right;
-    private Vector2 _movementDirectionL = Vector2.left;
+    private readonly int randTimeMin = 0;
+    private readonly int randTimeMax = 10;
+    [SerializeField]
+    private int randTime;
 
-    public static int direction;
+    [SerializeField]
+    private int MoveSpeedL;
+    [SerializeField]
+    private int MoveSpeedR;
+    private readonly Vector2 _movementDirectionR = Vector2.right;
+    private readonly Vector2 _movementDirectionL = Vector2.left;
 
-    Vector2 vectorY;
+    private static int direction;
+
+    private readonly Vector2[] RightVectorY = new Vector2[10];
+    private readonly Vector2[] LeftVectorY = new Vector2[10];
+
+
 
     private void Start()
     {
         direction = Random.Range(0, 2);
+        // Инициализация RightVectorY
+        RightVectorY[0] = new Vector2(2000, 100);
+        RightVectorY[1] = new Vector2(2000, 220);
+        RightVectorY[2] = new Vector2(2000, 340);
+        RightVectorY[3] = new Vector2(2000, 460);
+        RightVectorY[4] = new Vector2(2000, 580);
+        RightVectorY[5] = new Vector2(2000, 700);
+        RightVectorY[6] = new Vector2(2000, 820);
+        RightVectorY[7] = new Vector2(2000, 940);
+        RightVectorY[8] = new Vector2(2000, 1060);
+        RightVectorY[9] = new Vector2(2000, 1180);
+        // Инициализация LeftVectorY
+        LeftVectorY[0] = new Vector2(-2000, 100);
+        LeftVectorY[1] = new Vector2(-2000, 220);
+        LeftVectorY[2] = new Vector2(-2000, 340);
+        LeftVectorY[3] = new Vector2(-2000, 460);
+        LeftVectorY[4] = new Vector2(-2000, 580);
+        LeftVectorY[5] = new Vector2(-2000, 700);
+        LeftVectorY[6] = new Vector2(-2000, 820);
+        LeftVectorY[7] = new Vector2(-2000, 940);
+        LeftVectorY[8] = new Vector2(-2000, 1060);
+        LeftVectorY[9] = new Vector2(-2000, 1180);
+
+        StartCoroutine(SpawnObject());
     }
 
     private void Update()
     {
-        if (Dell)
+        foreach (var obj in spawnedObjects)
         {
-            int rand = Random.Range(randMinStart, randMax);
-            float randY = Random.Range(120, 1000);
+            if (obj != null)
+            {
+                if (direction == 0)
+                    obj.transform.Translate(MoveSpeedL * Time.deltaTime * _movementDirectionL);
+                else if (direction == 1)
+                    obj.transform.Translate(MoveSpeedR * Time.deltaTime * _movementDirectionR);
+            }
+        }
+    }
 
-            if (direction == 0) // Левое направление
+    private IEnumerator SpawnObject()
+    {
+        while (true)
+        {
+            randTime = Random.Range(randTimeMin, randTimeMax);
+            int randIndex = Random.Range(0, 6);
+            int randY = Random.Range(0, 10);
+
+            if (direction == 0)
             {
                 MoveSpeedL = Random.Range(1000, 1500);
-                vectorY = new Vector2(2000, randY);
-                ObjectBonesRB = Instantiate(BonesRB, vectorY, Quaternion.identity);
-                ObjectBonesRB.name = "ObjectBonesRB";
-                Dell = false;
+                ObjectBonesRB = Instantiate(BonesRB[randIndex], RightVectorY[randY], Quaternion.identity);
+                ObjectBonesRB.name = $"L{randY}";
             }
-            else if (direction == 1) // Правое направление
+            else if (direction == 1)
             {
                 MoveSpeedR = Random.Range(1000, 1500);
-                vectorY = new Vector2(-2000, randY);
-                ObjectBonesRB = Instantiate(BonesRB, vectorY, Quaternion.identity);
-                ObjectBonesRB.name = "ObjectBonesRB";
-                Dell = false;
+                ObjectBonesRB = Instantiate(BonesRB[randIndex], LeftVectorY[randY], Quaternion.identity);
+                ObjectBonesRB.name = $"R{randY}";
             }
-        }
-
-        if (ObjectBonesRB != null)
-        {
-            if (direction == 0) // Движение влево
-            {
-                ObjectBonesRB.transform.Translate(_movementDirectionL * MoveSpeedL * Time.deltaTime);
-            }
-            else if (direction == 1) // Движение вправо
-            {
-                ObjectBonesRB.transform.Translate(_movementDirectionR * MoveSpeedR * Time.deltaTime);
-            }
-        }
-
-        if (GameObject.Find("ObjectBonesRB") != true)
-        {
-            direction = Random.Range(0, 2);
-            Dell = true;
+            spawnedObjects.Add(ObjectBonesRB);
+            yield return new WaitForSeconds(randTime);
         }
     }
 }
