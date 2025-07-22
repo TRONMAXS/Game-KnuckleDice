@@ -1,9 +1,9 @@
-# 📱 Game-KnuckleBones v0.3.0
+# 📱 Game-KnuckleBones v0.3.8
 
-![GitHub release](https://img.shields.io/github/v/release/TRONMAXS/Game-KnuckleBones?include_prereleases&label=release)
-![GitHub repo size](https://img.shields.io/github/repo-size/TRONMAXS/Game-KnuckleBones)
-![GitHub issues](https://img.shields.io/github/issues/TRONMAXS/Game-KnuckleBones)
-![itch.io](https://img.shields.io/badge/play-on_itch.io-red?logo=itchdotio)
+[![GitHub release](https://img.shields.io/github/v/release/TRONMAXS/Game-KnuckleBones?include_prereleases&label=release)](https://github.com/TRONMAXS/Game-KnuckleDice/releases)
+[![GitHub repo size](https://img.shields.io/github/repo-size/TRONMAXS/Game-KnuckleBones)](https://github.com/TRONMAXS/Game-KnuckleDice/releases)
+[![GitHub issues](https://img.shields.io/github/issues/TRONMAXS/Game-KnuckleBones)](https://github.com/TRONMAXS/Game-KnuckleDice/issues)
+[![itch.io](https://img.shields.io/badge/play-on_itch.io-red?logo=itchdotio)](https://tronmaxs.itch.io/knuckledice)
 
 Мобильная реализация мини-игры *KnuckleBones*, вдохновлённой *Cult of the Lamb*.  
 Это пошаговая настольная стратегия для одного или двух игроков, сочетающая простые правила с глубокой тактической составляющей.
@@ -19,7 +19,6 @@
 
 ## ⚙️ Планы на будущее
 
-- ⚒️ Изменить визуальный стиль
 - 🌐 Онлайн мультиплеер
 
 ---
@@ -34,9 +33,6 @@
   **значение кубика × количество таких же кубиков**.
 - Побеждает игрок, набравший **больше очков** после заполнения всех колонок.
 
-▶️ **На начальном экране:**
-- **Синяя кнопка** — начать игру с другим человеком.
-- **Зелёная кнопка** — начать игру против бота.
 
 ---
 
