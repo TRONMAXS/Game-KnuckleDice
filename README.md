@@ -38,7 +38,7 @@
 
 ## 📸 Скриншоты
 
-| <img src="Assets/StartWindow.jpg" width="250"/> | <img src="Assets/GameWindow.jpg" width="250"/> |
+| <img src="Assets/Models/StartWindow.jpg" width="250"/> | <img src="Assets/Models/GameWindow.jpg" width="250"/> |
 |:-----------------------------------------------:|:----------------------------------------------:|
 |                  Начальный экран                |                 Игровой процесс                |
 
