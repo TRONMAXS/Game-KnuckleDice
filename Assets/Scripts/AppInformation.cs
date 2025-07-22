@@ -7,7 +7,6 @@ public class AppInformation : MonoBehaviour
     public void OpenUrlGitHub()
     {
         string url = "https://github.com/TRONMAXS/Game-KnuckleDice";
-
         Application.OpenURL(url);
     }
 }
