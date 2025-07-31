@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/TextMesh Pro/Fonts.meta
+guid: 2900514c052dcc04fad2532028a95319
+========
 guid: 444fdfdc21cb2114c9f8cb376678ca83
+>>>>>>>> dev:Assets/Prefabs/RBBones.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

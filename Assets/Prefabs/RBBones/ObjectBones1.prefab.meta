@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/RBBones/ObjectBones3.prefab.meta
+guid: b5b12206f61175948b04993ab84c1381
+========
 guid: 077e5aafb875b434a8eb5adde74aec16
+>>>>>>>> dev:Assets/Prefabs/RBBones/ObjectBones1.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

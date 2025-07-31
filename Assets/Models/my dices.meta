@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/RBBones.meta
+guid: 444fdfdc21cb2114c9f8cb376678ca83
+========
 guid: 67d707a8b2be75c418ba78acffae1c07
+>>>>>>>> dev:Assets/Models/my dices.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
