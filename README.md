@@ -4,6 +4,7 @@
 [![GitHub repo size](https://img.shields.io/github/repo-size/TRONMAXS/Game-KnuckleBones)](https://github.com/TRONMAXS/Game-KnuckleDice/releases)
 [![GitHub issues](https://img.shields.io/github/issues/TRONMAXS/Game-KnuckleBones)](https://github.com/TRONMAXS/Game-KnuckleDice/issues)
 [![itch.io](https://img.shields.io/badge/play-on_itch.io-red?logo=itchdotio)](https://tronmax.itch.io/knuckledice)
+[![RuStore.ru](https://img.shields.io/badge/play-on%20RuStore.ru-blue)](https://www.rustore.ru/catalog/app/com.tronmax.studio.knuckledice)
 
 Мобильная реализация мини-игры *KnuckleBones*, вдохновлённой *Cult of the Lamb*.  
 Это пошаговая настольная стратегия для одного или двух игроков, сочетающая простые правила с глубокой тактической составляющей.
