@@ -5,8 +5,10 @@ public class BOTGamePanelButtonRed : MonoBehaviour
 
     public GameObject[] Dices;
 
-    private Vector2[] vector2BonesRed;
-    private Vector2[] vector2BonesBlue;
+    [SerializeField]
+    private GameObject[] vector3BonesRed;
+    [SerializeField]
+    private GameObject[] vector3BonesBlue;
 
     public int[,] InstantiateBonesRED =  { { 10, 10, 10 },
                                            { 10, 10, 10 },
@@ -46,7 +48,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
     public GameObject Bones;
     private BOTGameBones _actionBones;
 
-    public GameObject[] PanelPlayerPlay01;
+    public GameObject[] PanelPlayersPlay;
 
     private void Start()
     {
@@ -58,30 +60,6 @@ public class BOTGamePanelButtonRed : MonoBehaviour
         _actionResetBones = ResetAction.GetComponent<BOTGameBones>();
         _actionBones = Bones.GetComponent<BOTGameBones>();
 
-        vector2BonesRed = new Vector2[9];
-
-        vector2BonesRed[0] = new Vector2(-162, 850);
-        vector2BonesRed[1] = new Vector2(-162, 990);
-        vector2BonesRed[2] = new Vector2(-162, 1130);
-        vector2BonesRed[3] = new Vector2(0, 850);
-        vector2BonesRed[4] = new Vector2(0, 990);
-        vector2BonesRed[5] = new Vector2(0, 1130);
-        vector2BonesRed[6] = new Vector2(162, 850);
-        vector2BonesRed[7] = new Vector2(162, 990);
-        vector2BonesRed[8] = new Vector2(162, 1130);
-
-        vector2BonesBlue = new Vector2[9];
-
-        vector2BonesBlue[0] = new Vector2(-162, 167);
-        vector2BonesBlue[1] = new Vector2(-162, 307);
-        vector2BonesBlue[2] = new Vector2(-162, 447);
-        vector2BonesBlue[3] = new Vector2(0, 167);
-        vector2BonesBlue[4] = new Vector2(0, 307);
-        vector2BonesBlue[5] = new Vector2(0, 447);
-        vector2BonesBlue[6] = new Vector2(162, 167);
-        vector2BonesBlue[7] = new Vector2(162, 307);
-        vector2BonesBlue[8] = new Vector2(162, 447);
-
         PanelPlayer = BOTGameBones.PanelStartRandom;
     }
 
@@ -91,14 +69,23 @@ public class BOTGamePanelButtonRed : MonoBehaviour
 
         if (MasivRandomBones != -1 && PanelPlayer == 0)
         {
-            PanelPlayerPlay01[0].SetActive(true);
-            PanelPlayerPlay01[1].SetActive(false);
+            PanelPlayersPlay[0].SetActive(true);
+            PanelPlayersPlay[1].SetActive(false);
         }
         else if (MasivRandomBones != -1 && PanelPlayer == 1)
         {
-            PanelPlayerPlay01[0].SetActive(false);
-            PanelPlayerPlay01[1].SetActive(true);
+            PanelPlayersPlay[0].SetActive(false);
+            PanelPlayersPlay[1].SetActive(true);
         }
+    }
+
+    private Vector3 NumToPosRed(int num)
+    {
+        return vector3BonesRed[num].transform.position;
+    }
+    private Vector3 NumToPosBlue(int num)
+    {
+        return vector3BonesBlue[num].transform.position;
     }
 
     public void BonesMoveDelete(string Post)
@@ -139,7 +126,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
                                 {
                                     IndexQuaternion = InstantiateBonesBLUE[b - 1, 0] - 1;
                                 }
-                                gameObjectsInstantiateBLUE[b, 0].GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[b], Quaternion.identity);
+                                gameObjectsInstantiateBLUE[b, 0].GetComponent<Transform>().SetPositionAndRotation(NumToPosBlue(b), Quaternion.identity);
                             }
                             InstantiateBonesBLUE[b - 1, 0] = 10;
                             gameObjectsInstantiateBLUE[b - 1, 0] = null;
@@ -191,7 +178,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
                                 {
                                     IndexQuaternion = InstantiateBonesBLUE[IndexX - 1, 1] - 1;
                                 }
-                                gameObjectsInstantiateBLUE[IndexX, 1].GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[b], Quaternion.identity);
+                                gameObjectsInstantiateBLUE[IndexX, 1].GetComponent<Transform>().SetPositionAndRotation(NumToPosBlue(b), Quaternion.identity);
                             }
                             InstantiateBonesBLUE[IndexX - 1, 1] = 10;
                             gameObjectsInstantiateBLUE[IndexX - 1, 1] = null;
@@ -242,7 +229,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
                                 {
                                     IndexQuaternion = InstantiateBonesBLUE[IndexX - 1, 2] - 1;
                                 }
-                                gameObjectsInstantiateBLUE[IndexX, 2].GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[b], Quaternion.identity);
+                                gameObjectsInstantiateBLUE[IndexX, 2].GetComponent<Transform>().SetPositionAndRotation(NumToPosBlue(b), Quaternion.identity);
                             }
                             InstantiateBonesBLUE[IndexX - 1, 2] = 10;
                             gameObjectsInstantiateBLUE[IndexX - 1, 2] = null;
@@ -282,7 +269,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
                                 {
                                     IndexQuaternion = InstantiateBonesRED[b + 1, 0] - 1;
                                 }
-                                gameObjectsInstantiateRED[b, 0].GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[b], Quaternion.identity);
+                                gameObjectsInstantiateRED[b, 0].GetComponent<Transform>().SetPositionAndRotation(NumToPosRed(b), Quaternion.identity);
                             }
                             InstantiateBonesRED[b + 1, 0] = 10;
                             gameObjectsInstantiateRED[b + 1, 0] = null;
@@ -333,7 +320,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
                                 {
                                     IndexQuaternion = InstantiateBonesRED[IndexX + 1, 1] - 1;
                                 }
-                                gameObjectsInstantiateRED[IndexX, 1].GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[b], Quaternion.identity);
+                                gameObjectsInstantiateRED[IndexX, 1].GetComponent<Transform>().SetPositionAndRotation(NumToPosRed(b), Quaternion.identity);
                             }
                             InstantiateBonesRED[IndexX + 1, 1] = 10;
                             gameObjectsInstantiateRED[IndexX + 1, 1] = null;
@@ -384,7 +371,7 @@ public class BOTGamePanelButtonRed : MonoBehaviour
                                 {
                                     IndexQuaternion = InstantiateBonesRED[IndexX + 1, 2] - 1;
                                 }
-                                gameObjectsInstantiateRED[IndexX, 2].GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[b], Quaternion.identity);
+                                gameObjectsInstantiateRED[IndexX, 2].GetComponent<Transform>().SetPositionAndRotation(NumToPosRed(b), Quaternion.identity);
                             }
                             InstantiateBonesRED[IndexX + 1, 2] = 10;
                             gameObjectsInstantiateRED[IndexX + 1, 2] = null;
@@ -649,14 +636,14 @@ public class BOTGamePanelButtonRed : MonoBehaviour
             BonesMoveDown("R" + (BotColumn + 1));
             InstantiateBonesRED[MoveXRed, MoveYRed] = MasivRandomBones + 1;
             GameObject bonesRed = Instantiate(Dices[MasivRandomBones]) as GameObject;
-            bonesRed.GetComponent<Transform>().SetPositionAndRotation(vector2BonesRed[MoveVector2Red], Quaternion.identity);
+            bonesRed.GetComponent<Transform>().SetPositionAndRotation(NumToPosRed(MoveVector2Red), Quaternion.identity);
             bonesRed.name = "R-" + (MasivRandomBones + 1) + BotColumn;
             gameObjectsInstantiateRED[MoveXRed, MoveYRed] = bonesRed;
             _actionDeleteBones.DeleteBones(InstantiateBonesRED[MoveXRed, MoveYRed], BotColumn, "RED");
             _actionScore.Score("CNR" + (MoveYRed + 1));
             _actionCheckingWinning.CheckingWinning();
-            PanelPlayerPlay01[0].SetActive(false);
-            PanelPlayerPlay01[1].SetActive(false);
+            PanelPlayersPlay[0].SetActive(false);
+            PanelPlayersPlay[1].SetActive(false);
         }
     }
 
@@ -669,15 +656,15 @@ public class BOTGamePanelButtonRed : MonoBehaviour
             BonesMoveDown("B" + (Index—olumn + 1));
             InstantiateBonesBLUE[MoveXBlue, MoveYBlue] = MasivRandomBones + 1;
             GameObject bonesBlue = Instantiate(Dices[MasivRandomBones]) as GameObject;
-            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(vector2BonesBlue[MoveVector2Blue], Quaternion.identity);
+            bonesBlue.GetComponent<Transform>().SetPositionAndRotation(NumToPosBlue(MoveVector2Blue), Quaternion.identity);
             bonesBlue.name = "B-" + InstantiateBonesBLUE[MoveXBlue, MoveYBlue] + "0";
             gameObjectsInstantiateBLUE[MoveXBlue, MoveYBlue] = bonesBlue;
             _actionDeleteBones.DeleteBones(InstantiateBonesBLUE[MoveXBlue, MoveYBlue], Index—olumn, "BLUE");
             _actionScore.Score("CNB" + (Index—olumn + 1));
             _actionCheckingWinning.CheckingWinning();
             _actionBones.RandomButtonBones(0);
-            PanelPlayerPlay01[0].SetActive(false);
-            PanelPlayerPlay01[1].SetActive(false);
+            PanelPlayersPlay[0].SetActive(false);
+            PanelPlayersPlay[1].SetActive(false);
         }
     }
 }

@@ -5,9 +5,9 @@ public class GamePanelButtonRed : MonoBehaviour
     public GameObject[] Dices;
 
     [SerializeField]
-    private GameObject[] vector2BonesRed;
+    private GameObject[] vector3BonesRed;
     [SerializeField]
-    private GameObject[] vector2BonesBlue;
+    private GameObject[] vector3BonesBlue;
 
     public int[,] InstantiateBonesRED =  { { 10, 10, 10 },
                                            { 10, 10, 10 },
@@ -75,11 +75,11 @@ public class GamePanelButtonRed : MonoBehaviour
 
     private Vector3 NumToPosRed(int num)
     {
-        return vector2BonesRed[num].transform.position;
+        return vector3BonesRed[num].transform.position;
     }
     private Vector3 NumToPosBlue(int num)
     {
-        return vector2BonesBlue[num].transform.position;
+        return vector3BonesBlue[num].transform.position;
     }
 
     public void BonesMoveDelete(string Post)
