@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BOTwinPlayer : MonoBehaviour
 {
@@ -83,6 +82,11 @@ public class BOTwinPlayer : MonoBehaviour
                 TextWinnerRED.text = "Победа";
                 TextWinnerBLUE.text = "Проигрыш";
             }
+            else if (ScoreWinerRed == ScoreWinerBlue)
+            {
+                TextWinnerRED.text = "Ничья";
+                TextWinnerBLUE.text = "Ничья";
+            }
             else
             {
                 TextWinnerRED.text = "Проигрыш";
@@ -101,6 +105,11 @@ public class BOTwinPlayer : MonoBehaviour
             {
                 TextWinnerBLUE.text = "Победа";
                 TextWinnerRED.text = "Проигрыш";
+            }
+            else if (ScoreWinerRed == ScoreWinerBlue)
+            {
+                TextWinnerRED.text = "Ничья";
+                TextWinnerBLUE.text = "Ничья";
             }
             else
             {

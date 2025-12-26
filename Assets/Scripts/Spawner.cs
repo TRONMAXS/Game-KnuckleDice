@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -34,7 +33,7 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         direction = Random.Range(0, 2);
-        // Инициализация RightVectorY
+
         RightVectorY[0] = new Vector2(2000, 100);
         RightVectorY[1] = new Vector2(2000, 220);
         RightVectorY[2] = new Vector2(2000, 340);
@@ -45,7 +44,7 @@ public class Spawner : MonoBehaviour
         RightVectorY[7] = new Vector2(2000, 940);
         RightVectorY[8] = new Vector2(2000, 1060);
         RightVectorY[9] = new Vector2(2000, 1180);
-        // Инициализация LeftVectorY
+
         LeftVectorY[0] = new Vector2(-2000, 100);
         LeftVectorY[1] = new Vector2(-2000, 220);
         LeftVectorY[2] = new Vector2(-2000, 340);

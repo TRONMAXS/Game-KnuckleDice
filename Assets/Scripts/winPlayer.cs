@@ -83,6 +83,11 @@ public class WinPlayer : MonoBehaviour
                 TextWinnerRED.text = "Победа";
                 TextWinnerBLUE.text = "Проигрыш";
             }
+            else if (ScoreWinerRed == ScoreWinerBlue)
+            {
+                TextWinnerRED.text = "Ничья";
+                TextWinnerBLUE.text = "Ничья";
+            }
             else
             {
                 TextWinnerRED.text = "Проигрыш";
@@ -101,6 +106,11 @@ public class WinPlayer : MonoBehaviour
             {
                 TextWinnerBLUE.text = "Победа";
                 TextWinnerRED.text = "Проигрыш";
+            }
+            else if (ScoreWinerRed == ScoreWinerBlue)
+            {
+                TextWinnerRED.text = "Ничья";
+                TextWinnerBLUE.text = "Ничья";
             }
             else
             {
