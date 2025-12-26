@@ -1,4 +1,4 @@
-# 📱 Game-KnuckleDice v0.3.8
+# 📱 Game-KnuckleDice v0.3.9
 
 [![GitHub release](https://img.shields.io/github/v/release/TRONMAXS/Game-KnuckleBones?include_prereleases&label=release)](https://github.com/TRONMAXS/Game-KnuckleDice/releases)
 [![GitHub repo size](https://img.shields.io/github/repo-size/TRONMAXS/Game-KnuckleBones)](https://github.com/TRONMAXS/Game-KnuckleDice/releases)
