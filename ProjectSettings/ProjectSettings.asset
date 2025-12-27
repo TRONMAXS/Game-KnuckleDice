@@ -144,7 +144,10 @@ PlayerSettings:
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
   bundleVersion: 0.3.9
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: -6118871102096254002, guid: 8aec2bf0eac0309488b88183c1ac17b8, type: 2}
+  - {fileID: 11400000, guid: 2d205e9804525de4b81005b5d868e07f, type: 2}
+  - {fileID: 11400000, guid: e9ad4d5dedb95484b8317673de277426, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -176,7 +179,7 @@ PlayerSettings:
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
-  AndroidBundleVersionCode: 1
+  AndroidBundleVersionCode: 2
   AndroidMinSdkVersion: 22
   AndroidTargetSdkVersion: 36
   AndroidPreferredInstallLocation: 1
@@ -690,8 +693,8 @@ PlayerSettings:
   ps4IncludedModules: []
   ps4attribVROutputEnabled: 0
   monoEnv: 
-  splashScreenBackgroundSourceLandscape: {fileID: 0}
-  splashScreenBackgroundSourcePortrait: {fileID: 0}
+  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: fb92fa1605ab39e41bc64a54c696fe88, type: 3}
+  splashScreenBackgroundSourcePortrait: {fileID: 21300000, guid: ce18f04b0b5d520459a202c42e69d84a, type: 3}
   blurSplashScreenBackground: 1
   spritePackerPolicy: 
   webGLMemorySize: 32

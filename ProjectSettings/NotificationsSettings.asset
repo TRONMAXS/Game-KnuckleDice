@@ -35,7 +35,7 @@
                 "UnityNotificationAndroidScheduleExactAlarms"
             ],
             "m_Values": [
-                "True",
+                "False",
                 "False",
                 "com.unity3d.player.UnityPlayerActivity",
                 "0"
