@@ -1,0 +1,5 @@
+V:/Unity Progect/Game(KnuckleBones)/Game(KnuckleBones)/.utmp/RelWithDebInfo/4k1k583d/x86_64/CMakeFiles/edit_cache.dir
+V:/Unity Progect/Game(KnuckleBones)/Game(KnuckleBones)/.utmp/RelWithDebInfo/4k1k583d/x86_64/CMakeFiles/rebuild_cache.dir
+V:/Unity Progect/Game(KnuckleBones)/Game(KnuckleBones)/.utmp/RelWithDebInfo/4k1k583d/x86_64/FramePacing/CMakeFiles/swappywrapper.dir
+V:/Unity Progect/Game(KnuckleBones)/Game(KnuckleBones)/.utmp/RelWithDebInfo/4k1k583d/x86_64/FramePacing/CMakeFiles/edit_cache.dir
+V:/Unity Progect/Game(KnuckleBones)/Game(KnuckleBones)/.utmp/RelWithDebInfo/4k1k583d/x86_64/FramePacing/CMakeFiles/rebuild_cache.dir

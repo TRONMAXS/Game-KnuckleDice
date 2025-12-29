@@ -1,3 +1,5 @@
 # ninja log v5
 1	523	7885391818975823	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	e712ec7bab7e4a0c
 525	1219	7885391825728633	V:/Unity Progect/Game(KnuckleBones)/Game(KnuckleBones)/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4k1k583d/obj/arm64-v8a/libswappywrapper.so	a865b4960e09a1c9
+3	827	7886972443720475	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	e712ec7bab7e4a0c
+828	1686	7886972452179952	V:/Unity Progect/Game(KnuckleBones)/Game(KnuckleBones)/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4k1k583d/obj/arm64-v8a/libswappywrapper.so	a865b4960e09a1c9
