@@ -33,7 +33,7 @@
 
 ## 📸 Скриншоты
 
-| <img src="Assets/GithubImage/StartWindow.png" width="250"/> | <img src="Assets/GithubImage/GameWindow.png" width="250"/> |
+| <img src="Assets/Github Image/StartWindow.png" width="250"/> | <img src="Assets/Github Image/GameWindow.png" width="250"/> |
 |:-----------------------------------------------:|:----------------------------------------------:|
 |                  Начальный экран            |                 Игровой процесс            |
 
